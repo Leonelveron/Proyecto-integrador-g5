@@ -1,32 +1,64 @@
-Grupo 1 - Nombre del Proyecto
+# Grupo 5 - E-Commerce "ShoPhone"
 
-Este proyecto se trata de [una red social | un ecommerce | un juego ] orientado a personas interesadas completar cual seria el perfil de usuarios interesados en este sitio Cuando comenzamos a planificar este proyecto nos propusimos lograr que completar explicando cual era la idea inicial. En esta aplicacion los usuarios registros pueden completar describiendo que servicios y/o productos ofrece la aplicacion que la distinguen del resto de sus competidores. En el futuro queremos expandir este desarrollo y lograr completar con objetivos a futuro.
-Participantes
-Homero Simpson
+Este proyecto se trata de un e-commerce orientado a personas adultas con poco o nulo de conocimiento de la compra online. Cuando comenzamos a planificar este proyecto nos propusimos lograr un sitio web dinamico y accesible. En esta aplicacion los usuarios registros pueden comprar y vender celulares usados y nuevos con la posibilidad de incluir su antiguo equipo como parte de pago. En el futuro queremos expandir este desarrollo y lograr incluir una gama de accesorios y todos los gadgets posibles.
 
-Padre de familia, 3 hijos, trabajo muy duro como un esclavo en la planta nuclear de Springfield. Hace 20 años funde Compumundo Hiper Mega Red, pero finalmente fuimos comprados por Microsoft. Mis habilidades son comer hasta 10 rosquillas a la vez.
-Jeff Albertson
 
-Vendedor de comics en Springfield. Quiero cerrar mi tienda porque estoy cansado de los burlones y vender solamente por internet, por eso decidi aprender a programar. Ademas quiero hacer mi propio comic y tener mi propia pagina web para publicarlos.
-Instalacion
 
-git clone https://github.com/alezvi/empty-project-example
-Utilizacion
+## Participantes
 
-Ingresar a http://localhost/proyecto/index.html
-Recursos
-Herramientas
+###### Sebastián Alomar
+24 Años. Escritor y ávido lector. Le encanta la Historia, Filosofía y Antropologia.
+Apasionado y analítico. Trabajando incansablemente para ser desarrollador full stack.
 
-    Trello para la gestion de las tareas
-    Workbench
-    XAMPP, servidor local de PHP y MySQL
 
-Guias
+###### Nicolás Díaz
+33 años. aficionado al deporte. Se considera un geek y techy. Es analítico y 
+detallista. En camino a ser un gran desarrollador full stack.
 
-    Buenas practicas de GIT
-    Como escribir Markdown
 
-Agradecimientos
+###### Agustín Sangiorgi
+21 años. Estudia ingeniería en sistemas, es gamer y le
+gusta el deporte. Futuro desarrollador de apps y paginas web.
 
-    A mi Perro Poochie por habernos dejado justo 3 dias antes de terminar
-    Y como olvidarnos del Niño Rata...
+
+###### Leonel Veron
+26 años. Fanatico de los libros, Basket, peliculas, series, cocina y Batman. Escritor aficionado.
+Despistado, entusiasta, futuro fullstaquero.
+
+
+## Instalacion
+
+```git clone https://github.com/Leonelveron/Proyecto-integrador-g5.git```
+
+
+
+## Utilizacion
+
+Ingresar a `````` 
+
+
+
+## Recursos
+
+#### Herramientas
+
+- 
+- 
+- XAMPP, servidor local de PHP y MySQL
+
+
+
+#### Paginas de referencia
+
+- [Mendo](https://www.mendo.nl/)
+- [Olx](https://www.olx.com.ar/)
+- [Nubikk](https://www.nubikk.com/nl)
+- [Park London](https://www.parkalondon.com/)
+- [Abaco](https://www.abaco.la)
+
+
+
+## Agradecimientos
+
+- 
+- 
