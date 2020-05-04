@@ -1,0 +1,138 @@
+body{
+    font-family: 'Roboto Slab', serif;
+    background-color: #E6DFDF ;
+}
+nav{
+    background-color: #71D3D5  ;
+    
+}
+.navegacion-Arriba{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.Logo-Marca{
+    width: 30%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    background-color: #7F52BD;
+    flex-grow: 1;
+    border-radius: 0 0 15px 0;
+}
+.Logo-Marca h1{
+    margin-left: 25px;
+}
+.Busqueda{
+    width: 30%;
+    background-color: #71D3D5  ;
+    border-radius: 0 0 15px 15px;
+}
+.Busqueda p {
+    margin-left: 25px;
+    margin-top: 10px;
+    margin-right: 25px;
+    border-radius: 7px 7px 7px 7px;
+    background-color: #7F52BD;
+}
+.Redes-Sociales{
+    width: 20%;
+    justify-self: center;
+    border-radius: 0 0 0 15px;
+}
+
+.navegacion-Arriba img{
+    width: 40px;
+
+}
+
+.Redes-Sociales{
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #7F52BD;
+    flex-direction: row-reverse;
+}
+
+.Redes-Sociales img{
+    width: 19px;
+    padding: 15px;
+    
+}
+.navegacion-Abajo{
+    height: 30px;
+
+}
+
+.barra-Nav{
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #71D3D5 ;
+    border-radius: 0 0 15px 15px;
+}
+.barra-Nav ul{
+    display: flex;
+    flex-wrap: wrap;
+    width: 80%;
+    list-style:none;
+    
+}
+.barra-Nav ul li{
+    width: 20%;
+    border: #7F52BD solid 1px;
+    background-color:#7F52BD ;
+    border-radius: 10px 10px 10px 10px;
+    margin-right: 10px;
+    font-style: normal;
+    
+}
+
+.shopphone{
+    font-size: 58px;
+    font-family: 'Fjalla One', sans-serif;
+    margin-left: 18px;
+    background-color: #71D3D5 ;
+    border-radius: 10px 10px 10px 10px;
+}
+.fotoMedio{
+    width: 97%;
+    margin-top: 50px;
+    margin-right: 50px;
+    margin-left: 25px;
+    border-radius: 15px 15px 15px 15px;
+    height: 250px;
+    border: #7F52BD 2px solid;
+}
+
+.Productos-main{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 90%;
+    margin: auto;
+}
+
+article{
+    width: 30%;
+    border: #7F52BD solid 2px;
+    border-radius: 10px 10px 10px 10px;
+    margin-bottom: 25px;
+}
+
+article img{ 
+    width: 100%;
+    border-bottom: solid 2px #71D3D5;
+    border-radius: 10px 10px 10px 10px;
+}
+
+footer{
+    border-top: 4px ;
+    background-color: #7F52BD ;
+    border-top: 4px solid #71D3D5 ;
+}
+
+h2{
+    width: 60%;
+    background-color: #71D3D5;
+    border-radius: 10px 10px 10px 10px;
+}
