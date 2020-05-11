@@ -1,0 +1,14 @@
+.bc-footer{
+    background-color: #5A2D82;
+    color: white;
+    margin: 0px;
+}
+
+.footer-centrado{
+    text-align: center;
+}
+
+.logo-footer{
+    font-family: 'Michroma', sans-serif;
+    padding-left: 15px;
+}
