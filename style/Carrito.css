@@ -140,4 +140,16 @@ h4{
 .tarjeta{
     display: flex;
     justify-content: space-evenly;
+    border-bottom: lightgray solid 1px;
+}
+
+.eliminar{
+    border-radius: 50%;
+}
+
+.eliminar:hover{
+    background-color: red;
+    color: white;
+    border-color: red;
+    border-radius: 50%;
 }
