@@ -4,33 +4,22 @@
     box-sizing: border-box;
 }
 
-body{
-    font-family: 'Roboto', sans-serif;
-}
-
 .centrado{
     width: 70%;
     margin:0 auto;
-    border: 1px solid  rgb(193, 154, 226);
+    border: 1px solid rgb(215, 224, 248);
     margin-bottom: 2%;
 }
 
 
 .arriba{
+    position: sticky;
     top: 0px;
     padding: 0;
-    background-color: #5A2D82;
-    
 }
-
-.logo{
-    color: white;
-    font-size: 32px;
-    font-weight: 600;
-}
-
 
 p{
+    font-family: Arial, Helvetica, sans-serif;
     font-size: 15px;
     font-weight: bold;
     padding: 15px 10px;
@@ -40,27 +29,13 @@ p{
     padding: 3% 5%;
     display: flex;
     justify-content: center;
-    font-family: 'Roboto', sans-serif;
+    font-weight: 600    ;
 
-}
-
-h1{
-    font-weight: 700;
 }
 
 .subtitulos{
     padding: 1% 2%;
-    display: flex;
-    justify-content: flex-start;
-    font-family: 'Roboto', sans-serif;
-   
 
-}
-
-
-.superalign{
-    margin-top: 0.5%;
-    padding-left: 1%;
 }
 
 .cajas{
@@ -68,7 +43,6 @@ h1{
     align-content: space-around;
     height: 35px;
     width: 70%;
-    border: 1px solid rgb(216, 214, 214);
 
 
 }
@@ -87,7 +61,7 @@ h3{
     height: 50px;
     float: right;
     overflow: hidden;
-    border: solid 1px rgb(179, 179, 179);
+    border: solid 1px black;
     
 }
 
@@ -105,10 +79,6 @@ h3{
     display: none;
 }
 
-.mostrar{
-    display: flex;
-}
-
 
 .botones{
     display: block;
@@ -121,21 +91,20 @@ a{
     text-decoration: none;
 }
 
-.bc-footer{
-    background-color: #5A2D82;
-    color: white;
-    margin: 0px;
-    
+.shopphone{
+    font-size: 58px;
+    font-family: 'Fjalla One', sans-serif;
+    margin-left: 18px;
+    background-color: #71D3D5 ;
+    border-radius: 10px 10px 10px 10px;
 }
 
-.footer-centrado{
-    text-align: center;
+footer{
+    border-top: 4px ;
+    background-color: #7F52BD ;
+    border-top: 4px solid #71D3D5 ;
 }
 
-.logo-footer{
-    font-family: 'Michroma', sans-serif;
-    padding-left: 15px;
-}
 
 .buttonLocation{
     display: flex;
@@ -144,14 +113,13 @@ a{
 }
 
 .subborder{
-    border-top: 1px rgb(193, 154, 226) solid;
+    border-top: 1px black solid;
     margin: 0;
 
 }
 
 h2{
     padding: 5px;
-    font-size: 32px;
 }
 
 .foto{
@@ -171,24 +139,13 @@ h2{
     margin: 3% 0;    
 }
 
-.fondoBoton{
-    background-color: #5A2D82;
-    color: white;
+.pie{
+    display: flex;
+    align-content: center;
+
 }
 
-@media (max-width:460px){
-
-    .mostrar{ display: none;}
-
-    h2{
-        font-size: 18px ;
-    }
-
-    .centrado{
-        margin: 4% auto;
-        width: 90%;
-    }
-
-
-
+.descripcion{
+    width: 20%;
+    height: 30%;
 }
