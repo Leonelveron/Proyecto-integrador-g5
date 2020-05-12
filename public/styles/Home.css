@@ -3,7 +3,7 @@ body{
     background-color: #E6DFDF ;
 }
 nav{
-    background-color: #71D3D5  ;
+    background-color: #5A2D82  ;
     
 }
 .navegacion-Arriba{
@@ -26,7 +26,7 @@ nav{
 }
 .Busqueda{
     width: 30%;
-    background-color: #71D3D5  ;
+    background-color: #5A2D82  ;
     border-radius: 0 0 15px 15px;
 }
 .Busqueda p {
@@ -67,7 +67,7 @@ nav{
 .barra-Nav{
     display: flex;
     flex-wrap: wrap;
-    background-color: #71D3D5 ;
+    background-color: #5A2D82 ;
     border-radius: 0 0 15px 15px;
 }
 .barra-Nav ul{
@@ -91,7 +91,7 @@ nav{
     font-size: 58px;
     font-family: 'Fjalla One', sans-serif;
     margin-left: 18px;
-    background-color: #71D3D5 ;
+    background-color: #5A2D82 ;
     border-radius: 10px 10px 10px 10px;
 }
 .fotoMedio{
@@ -102,37 +102,80 @@ nav{
     border-radius: 15px 15px 15px 15px;
     height: 250px;
     border: #7F52BD 2px solid;
-}
-
-.Productos-main{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    width: 90%;
-    margin: auto;
-}
-
-article{
-    width: 30%;
-    border: #7F52BD solid 2px;
-    border-radius: 10px 10px 10px 10px;
-    margin-bottom: 25px;
-}
-
-article img{ 
-    width: 100%;
-    border-bottom: solid 2px #71D3D5;
-    border-radius: 10px 10px 10px 10px;
-}
-
-footer{
-    border-top: 4px ;
-    background-color: #7F52BD ;
-    border-top: 4px solid #71D3D5 ;
+    margin-bottom: 15px;
 }
 
 h2{
     width: 60%;
-    background-color: #71D3D5;
-    border-radius: 10px 10px 10px 10px;
+    background-color: #5A2D82;
+    border-radius: 5px 5px 5px 5px;
+    color: white;
+    padding-bottom: 3px;
+    padding-right: 3px;
+    padding-left: 50px;
+}
+
+.logo{
+    font-family: 'Michroma', sans-serif;
+}
+
+ul{
+    list-style: none;
+}
+.bc-navbar{
+    background-color: #5A2D82;
+    color: white;
+    margin-bottom: 0px;
+}
+
+.form-control{
+    width: 60% !important;
+}
+
+.ingreso{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.letra{
+    color: white !important;
+    font-size: larger;
+}
+
+.btn-buscar{
+    background-color: white;
+    border-color: white;
+}
+
+.colorfondo{
+    background-color: #E6DFDF !important;
+}
+.bc-footer{
+    background-color: #5A2D82;
+    color: white;
+    margin: 0px;
+}
+
+.footer-centrado{
+    text-align: center;
+}
+
+.logo-footer{
+    font-family: 'Michroma', sans-serif;
+    padding-left: 15px;
+}
+
+.carousel {
+margin: 10px;
+border:#5A2D82 1px solid;
+border-radius: 3px 3px 3px 3px;
+}
+
+.negro{
+    color:black;
+}
+
+.distancia{
+    justify-content: space-evenly;
 }
