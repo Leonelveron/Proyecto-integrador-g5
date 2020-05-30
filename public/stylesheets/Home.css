@@ -1,0 +1,35 @@
+body{
+    background-color: #E6DFDF ;
+}
+
+
+.Productos-main{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 90%;
+    margin: auto;
+}
+
+section article{
+    width: 30%;
+    border: #7F52BD solid 2px;
+    border-radius: 10px 10px 10px 10px;
+    margin-bottom: 25px;
+}
+
+article img{ 
+    width: 100%;
+    border-bottom: solid 2px #71D3D5;
+    border-radius: 10px 10px 10px 10px;
+}
+
+.titulo-productos{
+    width: 60%;
+    background-color: #71D3D5;
+    border-radius: 10px 10px 10px 10px;
+    margin-top: 5px;
+    margin-left: 20px;
+    padding-bottom: 5px;
+    padding-left: 10px;
+}

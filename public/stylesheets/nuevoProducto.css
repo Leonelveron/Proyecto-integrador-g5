@@ -1,0 +1,90 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+.centrado{
+    width: 70%;
+    margin:0 auto;
+    border: 1px solid rgb(215, 224, 248);
+    box-shadow: 0px 0px 5px 1px;
+    margin-bottom: 2%;
+}
+
+
+.arriba{
+    position: sticky;
+    top: 0px;
+    padding: 0;
+}
+
+p{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    font-weight: bold;
+    padding: 15px 10px;
+}
+
+h1{ 
+    padding: 3% 5%;
+    text-decoration: underline blue;
+
+}
+
+.cajas{
+    display: flex;
+    align-content: space-around;
+    height: 50px;
+    width: 450px;
+    border-radius: 10px;
+
+}
+
+h2{
+    font-size: 18px;
+
+}
+
+.padding{
+    padding-left: 3%;
+}
+
+.porc{
+    width: 150px;
+    height: 50px;
+    float: right;
+    overflow: hidden;
+    border: solid 1px black;
+    
+}
+
+.estado{
+   
+    position: absolute;
+    bottom: 18%;
+    left: 70%;
+}
+
+.cambio{
+    position: absolute;
+    top: 132%;
+    left: 70%;
+    border: 1px solid black;
+
+}
+
+.padding2{
+    padding-bottom: 3%;
+}
+
+.oculto{
+    display: none;
+}
+
+.botones{
+    display: block;
+}
+ul li{
+    list-style: none;
+}

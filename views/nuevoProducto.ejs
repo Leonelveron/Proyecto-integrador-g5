@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Michroma&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a0c0bb4f74.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="/stylesheets/nuevoProducto.css">
+    <link rel="stylesheet" href="/stylesheets/navbar.css">
+    <title>Nuevo Producto </title>
+
+</head>
+
+<body>
+
+    <%- include('partials/navbar.ejs') %>
+    
+    <div class="container-fluid arriba">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+          <a class="navbar-brand" href="#">ShoPhone</a>
+        </nav>
+      </div>
+
+
+
+
+  <!----- <div class="arriba">
+        *logo ShoPhone*
+        *La hacemos facil para vos* 
+    </div>
+
+    <nav class="arriba"> *PRODUCTOS*  *MARCAS*  *icono usuario* *icono carrito*
+
+    </nav>
+
+    <div class="arriba">
+        *barra de busqueda* *Facebook* *Instagram* *Whatsapp*
+    </div>
+
+    <div class="arriba">
+        *barra del menu*
+    </div> -->
+
+<main class="centrado">
+
+<h1>Nuevo Producto</h1>
+
+    <form class="padding" action="validar.php" method="POST">
+<ul>
+    <div class="padding2">
+        <li> 
+        <label  for="tituloProducto"> <h2>Titulo de la Publicacion</h2></label>
+        <input class="cajas" type="text" name="tituloProducto" id="tituloProducto">
+    </li>
+    </div>
+
+    <div class="padding2"> 
+        <li>
+        <h2>Modelo*</h2>
+       
+        <select class="cajas" name="modelo" id="">
+            <option value="">V3</option>
+            <option value="">rAZR</option>
+            <option value="">Nokia</option>
+            <option value="">as</option>
+            <option value="">s</option>
+            <option value="">s</option>
+            <option value="">s</option>
+
+
+        </select>
+     </li>
+   
+    </div>
+
+
+    <div class="padding2" >
+        <li>
+        <h2>Marca*</h2>
+       
+        <select class="cajas" name="marca" id="">
+            <option value="">Motorola</option>
+            <option value="">Asus</option>
+            <option value="">Nokia</option>
+            <option value="">as</option>
+            <option value="">s</option>
+            <option value="">s</option>
+            <option value="">s</option>
+
+
+        </select>
+    </li>
+    
+</div>
+    
+   
+    
+    <div class="padding2"> 
+        <li>
+        
+        <label for="precio"><h2>Precio</h2></label>
+        <input class="cajas" type="text" name="precio" id="precio">
+    </li>
+    </div>
+
+    <div class="padding2"> 
+       <li>
+        
+        <label for="telefono"><h2>Numero de contacto</h2></label>
+        <input class="cajas" type="text" name="telefono" id="telefono">
+    </li>
+    </div>
+   
+     <div class="estado">
+        <input type="radio" name="Estado" value="">Usado
+        <input type="radio" name="Estado" value="">Nuevo
+</div>
+    <div class="padding2">
+        <li>
+        
+        <h2>Descripcion del Producto</h2>
+        
+        
+        <textarea name="descripcionProducto" id="" cols="65" rows="8">Describi tu producto</textarea>
+    </li>
+    </div>
+    
+    <div class="padding2"> 
+        <form>
+    <div class="form-group">
+      <label for="exampleFormControlFile1"><h2>Cargar Fotos</h2><li> </label>
+      <input type="file" class="form-control-file" id="exampleFormControlFile1"> <i class="fas fa-images"></i> 
+    </div>
+  </form>
+    </li>
+    </div>
+<div class="cambio" >
+<h2> % Por cambio de Equipo</h2>
+        
+        <select name="porcambio" id="">Marca
+            <option value="">ninguno</option>
+            <option value="">%5</option>
+            <option value="">%10</option>
+            <option value="">%15</option>
+            <option value="">s</option>
+            <option value="">s</option>
+            <option value="">s</option>
+
+
+        </select>
+</div>
+
+        
+   <div class="padding2"> 
+       <li>
+    
+    <h2>Ubicacion del vendedor *</h2>
+        <select name="ubicacion" id="">Zona
+            <option value="">C.A.B.A</option>
+            <option value="">Zona Norte</option>
+            <option value="">Zona Sur</option>
+            <option value="">Zona Oeste</option>
+        </select>
+        
+         <select class="oculto" name="ubicacion" id="">Barrio
+                <option value="">Belgrano</option>
+                <option value="">Villa Urquiza</option>
+                <option value="">Saavedra</option>
+                <option value="">Colegiales</option>
+        </select>
+
+         <select class="oculto" name="ubicacion" id="">Localidad1
+                    <option value="">Olivos</option>
+                    <option value="">Tigre</option>
+                    <option value="">Vicente Lopez</option>
+                    <option value="">Martinez</option>
+         </select>
+
+  
+        <select  class="oculto" sname="ubicacion" id="">Localidad2
+                    <option value="">Quilmes</option>
+                    <option value="">aa</option>
+                    <option value="">Vz</option>
+                    <option value="">aas</option> 
+                    
+                </select>
+        
+        
+       <select class="oculto" name="ubicacion" id="">Localidad3
+                    <option value="">San Martin</option>
+                    <option value="">22</option>
+                    <option value="">a</option>
+                     <option value="">s</option>
+
+
+
+        </select>
+
+    </li>
+
+    </div>
+</ul>
+    </form>
+
+<button class="botones" type="submit">Cargar Producto</button>
+<button class="botones" type="">Guardar</button>
+        
+
+</main>
+
+<%- include('partials/footer.ejs') %>
+ 
+
+</body>
+</html>

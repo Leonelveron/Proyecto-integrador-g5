@@ -1,0 +1,60 @@
+
+.logo{
+    font-family: 'Michroma', sans-serif;
+    text-decoration: none;
+}
+
+a.links-decoration{
+    text-decoration: none;
+    color: white;
+}
+
+a.links-decoration:hover{
+    color: white;
+    text-decoration: none;
+}
+
+ul{
+    list-style: none;
+}
+.bc-navbar{
+    background-color: #5A2D82;
+    color: white;
+    margin-bottom: 0px;
+}
+
+.busqueda{
+    width: 60% !important;
+}
+
+.ingreso{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+li a.letra{
+    color: white !important;
+    font-size: larger;
+    text-decoration: none;
+}
+
+button.btn-buscar{
+    background-color: white ;
+    border-color: white ;
+}
+
+.bc-footer{
+    background-color: #5A2D82;
+    color: white;
+    margin: 0px;
+}
+
+.footer-centrado{
+    text-align: center;
+}
+
+.logo-footer{
+    font-family: 'Michroma', sans-serif;
+    padding-left: 15px;
+}
