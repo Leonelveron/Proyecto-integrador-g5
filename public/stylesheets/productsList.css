@@ -16,3 +16,9 @@ div a.titulo:hover{
 div h2.price{
     padding: 5% 0;
 }
+
+a.btn-final:hover{
+    background-color: #7F52BD;
+    color: white;
+    border: #71D3D5 solid 1px;
+}
