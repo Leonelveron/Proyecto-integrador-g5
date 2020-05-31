@@ -1,6 +1,7 @@
-var router = express.Router();
-var usersController = require('../controllers/productsController')
 var express = require('express');
+var router = express.Router();
+var productsController = require('../controllers/productsController')
+
 
 router.get('/', productsController.list);
 router.get('/create', productsController.index);

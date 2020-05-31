@@ -1,6 +1,13 @@
+const fs = require('fs');
+const path = require('path');
+
+const productsFilePath = path.join(__dirname, '../data/products.json');
+const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+
 const controlador = {
     list: (req, res) => {
-        res.render('productslist')
+        let allProducts = products.filter(product => product.stock > 0)
+        res.render('productsList2', {allProducts})
     },
 
     index: (req, res) => {
@@ -8,7 +15,7 @@ const controlador = {
     },
 
     detail: (req, res) =>{
-        res.render('productDetail')
+        res.render('producto')
     },
 
     create: (req, res) => {
@@ -24,7 +31,7 @@ const controlador = {
     },
 
     deleteProduct: (req, res) => {
-        
+
     }
 };
 

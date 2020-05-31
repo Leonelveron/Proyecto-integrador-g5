@@ -1,0 +1,18 @@
+h2.title{
+    font-family: 'Michroma', sans-serif;
+    padding: 3% 0;
+}
+
+
+div a.titulo{
+    text-decoration: none;
+    color: rgb(126, 32, 207);
+}
+
+div a.titulo:hover{
+    text-decoration: none;
+}
+
+div h2.price{
+    padding: 5% 0;
+}
