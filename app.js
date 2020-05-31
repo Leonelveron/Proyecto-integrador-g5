@@ -22,11 +22,13 @@ const indexRouter = require("./routes/index");
 const carritoRouter = require("./routes/carrito");
 const nuevoProductoRouter = require("./routes/nuevoProducto");
 const usersRouter = require("./routes/users");
+const productsRouter = require("./routes/products");
 
 app.use('/', indexRouter);
 app.use('/carrito', carritoRouter);
 app.use('/nuevoproducto', nuevoProductoRouter);
 app.use('/registro', usersRouter);
+app.use('/products', productsRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
