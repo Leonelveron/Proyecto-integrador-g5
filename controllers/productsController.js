@@ -15,6 +15,7 @@ const controlador = {
     },
 
     detail: (req, res) =>{
+        let productDetail = products.filter(product => req.query.id == product.id)
         res.render('producto')
     },
 

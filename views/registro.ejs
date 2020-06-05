@@ -1,12 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css2?family=Michroma&display=swap" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/a0c0bb4f74.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link rel="stylesheet" href="./stylesheets/navbar.css">
+    <%- include('partials/head2.ejs') %>
     <link rel="stylesheet" href="./stylesheets/registro.css">
 
     <title>Registro</title>
@@ -25,9 +20,9 @@
                     <div class="form-group rectangulos">
                         <form action="#" method="POST"></form>
                         <label for="">Email</label>
-                        <input type="emailLogin" class="form-control shadow p-3 mb-3 bg-white rounded" name="emailLogin" aria-describedby="emailHelp">
+                        <input type="email" class="form-control shadow p-3 mb-3 bg-white rounded" name="email" aria-describedby="emailHelp">
                         <label for="">Contraseña</label>
-                        <input type="passwordLogin" class="form-control shadow p-3 mb-3 bg-white rounded" name="passwordLogin">
+                        <input type="password" class="form-control shadow p-3 mb-3 bg-white rounded" name="password">
                     </form>
                 </div>
                 <button type="submit" class="btn btn-dark btn-validar">Ingresar</button>
@@ -38,11 +33,11 @@
                     <h3>Registro</h3>
                     <div class="form-group rectangulos">
                         <label for="">Nombre</label>
-                        <input type="name" class="form-control shadow p-3 mb-3 bg-white rounded" name="name">
+                        <input type="fist_name" class="form-control shadow p-3 mb-3 bg-white rounded" name="name">
                     </div>
                     <div class="form-group rectangulos">
                         <label for="">Apellido</label>
-                        <input type="lastName" class="form-control shadow p-3 mb-3 bg-white rounded" name="lastName">
+                        <input type="last_name" class="form-control shadow p-3 mb-3 bg-white rounded" name="lastName">
                     </div>
                     <div class="form-group rectangulos">
                         <label for="">Email</label>
