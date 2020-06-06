@@ -20,14 +20,14 @@ const controlador = {
     },
 
     create: (req, res) => {
-        let product = {
+        let NewProduct = {
             name:null,
             precio:null,
         }
-        product.name = req.body.name
-        product.precio = req.body.precio
+        NewProduct.name = req.body.name
+        NewProduct.precio = req.body.precio
 
-        res.send ("nuevoProducto", {product: product})
+        res.send ("nuevoProducto", {NewProduct: product})
     },
 
     indexEdit: (req, res) => {
