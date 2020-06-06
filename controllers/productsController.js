@@ -36,11 +36,15 @@ const controlador = {
    },
 
     editProduct: (req, res) => {
+        res.send ('Fui por PUT')
 
     },
 
     deleteProduct: (req, res) => {
-
+        let productDeleted = products.filter(product => product.id != req.params.id)
+        let productDeletedJSON = JSON.stringify (productDeleted)
+        fs.writeFileSync('./data/products.json', productDeletedJSON)
+        res.redirect('/')
     }
 };
 

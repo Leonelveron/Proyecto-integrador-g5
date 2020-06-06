@@ -5,8 +5,6 @@
     <%- include('partials/head2.ejs') %>
     <title>Editar producto</title>
     <link rel="stylesheet" href="/stylesheets/productEdit.css">
-
-
 </head>
 
 <body>
@@ -16,7 +14,6 @@
     <div class="container">
         <div class="row">
             <div class="col 5 mt-3" id="col-izq">
-
                 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
                     <ol class="carousel-indicators">
                         <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -43,19 +40,14 @@
                         <span class="sr-only">Next</span>
                     </a>
                 </div>
-
-
-
-
-
             </div>
             <div class="col 7">
 
                 <% productDetail.forEach(product => {%>
-                <h1 class="product-title"><%= product.title %></h1>
+                <h2>Nombre del producto</h2>
+                <h3 class="product-title"><%= product.title %></h3>
                 <h2>Descripcion</h2>
                 <p class="product-description"><%= product.description %></p>
-
                 <h2>Especificaciones Tecnicas</h2>
                 <ul>
                     <li>lorem</li>
@@ -66,29 +58,22 @@
                     <li>lorem</li>
                     <li>lorem</li>
                 </ul>
-
-                <h2 class="price">Precio: <span><%= product.price %></span></h2>
-
-
-                <div class="action" id="botones">
-                    <form action="" method="POST">
-                        <button class="btn btn-primary btn-lg btnSeba" type="button">Guardar cambios</button>
-                        <form action="/products/edit/:id?_method" method="POST">
-                        </form>
-                        <button type="button" class="btn btn-secondary btn-lg btnSeba">Eliminar producto</button>
+                <h2 class="price">Precio: $<span><%= product.price %></span></h2>
+                <div class="action">
+                    <form action="/products/edit/:id?_method=PUT" method="POST">
+                        <button class="btn btn-primary btn-lg btnSeba" type="submit">Guardar cambios</button>
+                    </form>
+                    <form action="/products/edit/<%= product.id %>?_method=DELETE" method="POST">
+                        <button type="submit" class="btn btn-secondary btn-lg btnSeba">Eliminar producto</button>
                     </form>
                 </div>
             </div>
         </div>
     </div>
+
     <% })%>
 
-
-
     <%- include('partials/footer.ejs') %>
-
-
-
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"

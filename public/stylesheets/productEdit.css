@@ -8,8 +8,8 @@
   }
   
   .btn-secondary{
-    background-color: grey;
-    border-color:grey;
+    background-color: red;
+    border-color:rgb(161, 8, 8);
     color: white;
   }
   
@@ -23,8 +23,10 @@
     height: 80%;
     width: 80%;
   }
-  
+
   #botones{
     display: flex;
     flex-wrap: wrap;
   }
+  
+  
