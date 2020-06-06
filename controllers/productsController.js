@@ -20,7 +20,14 @@ const controlador = {
     },
 
     create: (req, res) => {
+        let product = {
+            name:null,
+            precio:null,
+        }
+        product.name = req.body.name
+        product.precio = req.body.precio
 
+        res.send ("nuevoProducto", {product: product})
     },
 
     indexEdit: (req, res) => {
