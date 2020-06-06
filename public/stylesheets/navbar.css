@@ -1,3 +1,6 @@
+body{
+    font-family: 'Roboto', sans-serif;
+}
 
 .logotipo{
     font-family: 'Michroma', sans-serif;
@@ -57,4 +60,12 @@ button.btn-buscar{
 .logo-footer{
     font-family: 'Michroma', sans-serif;
     padding-left: 15px;
+}
+
+.logo-footer{
+    font-size: 18px;
+}
+
+.letra-footer{
+    font-size: 18px;
 }

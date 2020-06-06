@@ -1,0 +1,30 @@
+.btnSeba{
+    background-color: #5A2D82;
+    border-color: #5A2D82;
+    color: white;
+    display: flex;
+    justify-content: space-evenly;
+    margin: 3%; 
+  }
+  
+  .btn-secondary{
+    background-color: grey;
+    border-color:grey;
+    color: white;
+  }
+  
+  p{
+    font-size: 15px;
+  
+    padding: 15px 10px;
+  }
+  
+  #col-izq{
+    height: 80%;
+    width: 80%;
+  }
+  
+  #botones{
+    display: flex;
+    flex-wrap: wrap;
+  }
