@@ -20,14 +20,19 @@ const controlador = {
     },
 
     create: (req, res) => {
-        let NewProduct = {
-            name:null,
-            precio:null,
+        let jsonproduct = fs.readFileSync("../data/product.json", {encoding: "utf-8"})
+        let productos = []
+        let producto = {
+            nombre: req.body.nombre,
+            stock: req.body.stock,
+            precio: req.body.precio,
         }
-        NewProduct.name = req.body.name
-        NewProduct.precio = req.body.precio
 
-        res.send ("nuevoProducto", {NewProduct: product})
+        productos = JSON.parse(jsonproduct)
+
+        productos.push(producto)
+        let productosJSON = JSON.stringify(productos)
+
     },
 
     indexEdit: (req, res) => {
