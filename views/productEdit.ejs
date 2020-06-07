@@ -42,27 +42,27 @@
                 </div>
             </div>
             <div class="col 7">
-
                 <% productDetail.forEach(product => {%>
-                <h2>Nombre del producto</h2>
-                <h3 class="product-title"><%= product.title %></h3>
-                <h2>Descripcion</h2>
-                <p class="product-description"><%= product.description %></p>
-                <h2>Especificaciones Tecnicas</h2>
-                <ul>
-                    <li>lorem</li>
-                    <li>lorem</li>
-                    <li>lorem</li>
-                    <li>lorem</li>
-                    <li>lorem</li>
-                    <li>lorem</li>
-                    <li>lorem</li>
-                </ul>
-                <h2 class="price">Precio: $<span><%= product.price %></span></h2>
+                <form action="/products/edit/<%= product.id %>?_method=PUT" method="POST">
+                    <h2>Nombre del producto</h2>
+                    <textarea rows="2" cols="80" type="text" name="title"> <%= product.title %></textarea>
+                    <h2>Descripcion</h2>
+                    <textarea rows="6" cols="80" type="text" name="description"> <%= product.description %></textarea>
+                    <h2>Especificaciones Tecnicas</h2>
+                    <ul>
+                        <li>lorem</li>
+                        <li>lorem</li>
+                        <li>lorem</li>
+                        <li>lorem</li>
+                        <li>lorem</li>
+                        <li>lorem</li>
+                        <li>lorem</li>
+                    </ul>
+                    <h2 class="price">Precio: $ <input type="text" name="price" value="<%= product.price %>"></h2>
+                    <button class="btn btn-primary btn-lg btnSeba" type="submit">Guardar cambios</button>
+                </form>
+
                 <div class="action">
-                    <form action="/products/edit/:id?_method=PUT" method="POST">
-                        <button class="btn btn-primary btn-lg btnSeba" type="submit">Guardar cambios</button>
-                    </form>
                     <form action="/products/edit/<%= product.id %>?_method=DELETE" method="POST">
                         <button type="submit" class="btn btn-secondary btn-lg btnSeba">Eliminar producto</button>
                     </form>

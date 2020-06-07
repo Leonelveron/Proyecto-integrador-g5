@@ -7,20 +7,20 @@ const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 const controlador = {
     list: (req, res) => {
         let allProducts = products.filter(product => product.stock > 0)
-        res.render('productsList2', {allProducts})
+        res.render('productsList2', { allProducts })
     },
 
     index: (req, res) => {
-            res.render('nuevoProducto')
+        res.render('nuevoProducto')
     },
 
-    detail: (req, res) =>{
+    detail: (req, res) => {
         let productDetail = products.filter(product => req.params.id == product.id)
-        res.render('producto', {productDetail: productDetail})
+        res.render('producto', { productDetail: productDetail })
     },
 
     create: (req, res) => {
-        let jsonproduct = fs.readFileSync("../data/product.json", {encoding: "utf-8"})
+        let jsonproduct = fs.readFileSync("../data/product.json", { encoding: "utf-8" })
         let productos = []
         let producto = {
             nombre: req.body.nombre,
@@ -37,17 +37,16 @@ const controlador = {
 
     indexEdit: (req, res) => {
         let productDetail = products.filter(product => req.params.id == product.id)
-        res.render('productEdit', {productDetail: productDetail})
-   },
+        res.render('productEdit', { productDetail: productDetail })
+    },
 
     editProduct: (req, res) => {
-        res.send ('Fui por PUT')
-
+        let productToModify = products.filter(product => req.params.id == product.id)
     },
 
     deleteProduct: (req, res) => {
         let productDeleted = products.filter(product => product.id != req.params.id)
-        let productDeletedJSON = JSON.stringify (productDeleted)
+        let productDeletedJSON = JSON.stringify(productDeleted)
         fs.writeFileSync('./data/products.json', productDeletedJSON)
         res.redirect('/')
     }
