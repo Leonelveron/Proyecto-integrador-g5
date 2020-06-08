@@ -42,6 +42,14 @@ const controlador = {
 
     editProduct: (req, res) => {
         let productToModify = products.filter(product => req.params.id == product.id)
+        productToModify ={
+            id: req.params.id,
+            title: req.body.title,
+            description: req.body.description,
+            price: req.body.price
+        }
+        productToModifyJSON = JSON.stringify(productToModify)
+        res.send(productToModifyJSON)
     },
 
     deleteProduct: (req, res) => {

@@ -41,7 +41,7 @@
                     </a>
                 </div>
             </div>
-            <div class="col 7">
+            <div class="col 7 mt-2">
                 <% productDetail.forEach(product => {%>
                 <form action="/products/edit/<%= product.id %>?_method=PUT" method="POST">
                     <h2>Nombre del producto</h2>
