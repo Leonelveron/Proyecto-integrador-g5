@@ -36,27 +36,22 @@ const controlador = {
     },
 
     indexEdit: (req, res) => {
-        let productDetail = products.filter(product => req.params.id == product.id)
-        res.render('productEdit', { productDetail: productDetail })
+        let productDetail = products.filter(product => req.params.id == product.id);
+        res.render('productEdit', { productDetail: productDetail });
     },
 
     editProduct: (req, res) => {
-        let productToModify = products.filter(product => req.params.id == product.id)
-        productToModify ={
-            id: req.params.id,
-            title: req.body.title,
-            description: req.body.description,
-            price: req.body.price
-        }
-        productToModifyJSON = JSON.stringify(productToModify)
-        res.send(productToModifyJSON)
+        let productEdited = req.body
+        let productEditedJSON = JSON.stringify(productEdited);
+        fs.writeFileSync('./data/products.json', productEditedJSON)
+        res.render('productEdit', { productEdited: productEdited })
     },
 
     deleteProduct: (req, res) => {
         let productDeleted = products.filter(product => product.id != req.params.id)
         let productDeletedJSON = JSON.stringify(productDeleted)
         fs.writeFileSync('./data/products.json', productDeletedJSON)
-        res.redirect('/')
+        res.redirect('/products/detail')
     }
 };
 
