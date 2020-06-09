@@ -41,10 +41,17 @@ const controlador = {
     },
 
     editProduct: (req, res) => {
-        let productEdited = req.body
-        let productEditedJSON = JSON.stringify(productEdited);
-        fs.writeFileSync('./data/products.json', productEditedJSON)
-        res.render('productEdit', { productEdited: productEdited })
+        let productEdited2 = products.filter(product => product.id != req.params.id)
+        let editedProduct = {
+            id: req.params.id,
+            title: req.body.title,
+            description: req.body.description,
+            price: req.body.price
+        }
+        productEdited2.push(editedProduct)
+        let productEdited2JSON = JSON.stringify(productEdited2)
+        fs.writeFileSync('./data/products.json', productEdited2JSON)
+        res.redirect('/')
     },
 
     deleteProduct: (req, res) => {
