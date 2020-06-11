@@ -3,9 +3,16 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-var methodOverride = require('method-override')
-
+var methodOverride = require('method-override');
+var session = require('express-session');
 var app = express();
+
+const indexRouter = require("./routes/index");
+const carritoRouter = require("./routes/carrito");
+const nuevoProductoRouter = require("./routes/nuevoProducto");
+const usersRouter = require("./routes/users");
+const productsRouter = require("./routes/products");
+var recordameMiddleware = require('./middlewares/recordameMiddleware');
 
 // view engine setup
 app.set('view engine', 'ejs');
@@ -17,19 +24,17 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(methodOverride('_method'));
+app.use(session({secret: 'Esto es un secreto'}));
+app.use(recordameMiddleware);
 
 // Route System
 
-const indexRouter = require("./routes/index");
-const carritoRouter = require("./routes/carrito");
-const nuevoProductoRouter = require("./routes/nuevoProducto");
-const usersRouter = require("./routes/users");
-const productsRouter = require("./routes/products");
+
 
 app.use('/', indexRouter);
 app.use('/carrito', carritoRouter);
 app.use('/nuevoproducto', nuevoProductoRouter);
-app.use('/registro', usersRouter);
+app.use('/users', usersRouter);
 app.use('/products', productsRouter);
 
 // catch 404 and forward to error handler
