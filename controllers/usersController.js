@@ -82,11 +82,18 @@ const controlador = {
       }
 
       res.redirect('/')
-      console.log(loggedUser)
     }
 
     else {
       res.render('registro', { errors: errors.errors })
+    }
+  },
+  check: (req, res) => {
+    if(req.session.loggedUser){
+      console.log(req.session)
+    res.send('Estas logueado ' + req.session.loggedUser.email)
+    } else{
+      res.send('No estas logueado')
     }
   }
 }

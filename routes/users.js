@@ -31,5 +31,6 @@ router.post('/login', [
     check('email_login').isEmail().withMessage('El campo "Email" debe tener un mail válido'),
     check('password_login').isLength({min: 6}).withMessage("La contraseña debe tener por lo menos 6 caracteres"),
 ], usersController.login);
+router.get('/check', usersController.check)
 
 module.exports = router;
