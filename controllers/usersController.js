@@ -45,7 +45,7 @@ const controlador = {
       users.push(user)
       let usersJSON = JSON.stringify(users)
       fs.writeFileSync('./data/profile.json', usersJSON)
-      res.redirect('/')
+      res.redirect('/', {userToLogin:userToLogin})
     }
     else {
       res.render('registro', { errors: errors.errors })
