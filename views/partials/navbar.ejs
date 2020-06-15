@@ -3,7 +3,7 @@
     <div class="row  bc-navbar pt-2">
       <div class="col-xl-3">
         <a href="/" class="links-decoration"><h1 class="logotipo">Shophone</h1></a>
-        <h5>"Lo hacemos facil para vos"</h5>
+        <h5>"Lo hacemos facil para vos"</h5><br>
       </div>
       <div class="col-xl-6">
         <form class="form-inline  my-2 my-lg-2 pt-2">
@@ -14,7 +14,12 @@
       <div class="col-xl-3 ingreso pt-2">
         <ul>
           <li>
-            <a href="/registro" class="letra"><i class="fas fa-user"></i> Mi cuenta</a>
+            <a href="/users" class="letra"><i class="fas fa-user"></i> 
+            <% if(user != undefined) { %>
+                Bienvenido <%= user.first_name %>!
+              <%} else { %>
+              Mi cuenta</a>
+              <% } %>
           </li>
           <li>
             <a href="/carrito" class="letra"><i class="fas fa-shopping-cart"></i> Mi carrito</p>
