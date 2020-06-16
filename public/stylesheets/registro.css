@@ -14,3 +14,11 @@ small.ejemplo-mail{
 input.rectangulos{
     width: 60%;
 }
+
+.titulo{
+    font-family: 'Michroma', sans-serif;
+}
+
+.boton-avatar{
+    background-color: #7F52BD;
+}

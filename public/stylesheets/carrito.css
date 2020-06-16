@@ -2,9 +2,14 @@ body{
     background-color: #e6dfdf;
 }
 
+h2.title{
+    font-family: 'Michroma', sans-serif;
+    padding: 3% 0;
+    
+}
 .tit-carrito{
     margin: 30px 20px;
-
+    font-family: 'Michroma', sans-serif;
 }
 
 
@@ -48,4 +53,12 @@ button.eliminar:hover{
 
 div a.nombres{
     text-decoration: none;
+}
+
+@media (max-width: 767px){
+    .boton{
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
 }

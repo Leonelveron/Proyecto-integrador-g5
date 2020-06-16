@@ -16,8 +16,8 @@
 
     <div class="container-fluid color-fondo">
         <div class="row">
-            <div class="col-12 col-lg-5 mt-1">
-                <h3>Mi cuenta</h3>
+            <div class="col-10 col-lg-5 mt-1">
+                <h3 class="titulo">Mi cuenta</h3>
                 <div class="form-group rectangulos">
                     <form action="/users/login" method="POST">
                         <label for="">Email</label>
@@ -47,9 +47,9 @@
             </div>
             
 
-            <div class="col-12 col-lg-6 mb-4 ficha">
+            <div class="col-10 col-lg-6 mb-4 ficha">
                 <form action="/users" class="mt-1" method="POST" enctype="multipart/form-data">
-                    <h3>Registro</h3>
+                    <h3 class="titulo">Registro</h3>
                     <div class="form-group rectangulos">
                         <label for="">Nombre</label>
                         <input type="text" class="form-control shadow p-3 mb-3 bg-white rounded" name="first_name">
@@ -73,9 +73,9 @@
                         <input type="text" class="form-control shadow p-3 mb-3 bg-white rounded"
                             name="passwordConfirm">
                     </div>
-                    <div class="form-group pb-2">
+                    <div class="form-group pb-2 ">
                         <label for=""></label>Foto de Perfil</label>
-                        <input type="file" class="form-control-file" id="exampleFormControlFile1" name="avatar">
+                        <input type="file" class="form-control-file" name="avatar">
                     </div>
                     <button type="submit" class="btn btn-dark btn-validar">Crear cuenta</button>
                 </form>

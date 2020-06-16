@@ -70,6 +70,21 @@ button.btn-buscar{
     font-size: 18px;
 }
 
-@media (max-width: 767){
-    
+.hamburguesa{
+    background-color: white;
+    display: flex;
+    align-content: center;
+    margin-bottom: 3%;
+}
+
+
+@media (max-width:425px){
+    .ingreso{
+        align-items: center ;
+    }
+    .pepito{
+        display: flex;
+        align-items: center;
+    }
+
 }
