@@ -69,3 +69,7 @@ button.btn-buscar{
 .letra-footer{
     font-size: 18px;
 }
+
+@media (max-width: 767){
+    
+}

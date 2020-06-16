@@ -1,6 +1,16 @@
 h2.title{
     font-family: 'Michroma', sans-serif;
     padding: 3% 0;
+    
+}
+.row{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.tarjetas{
+    display: flex;
+    justify-content: center;
 }
 
 
@@ -21,4 +31,8 @@ a.btn-final:hover{
     background-color: #7F52BD;
     color: white;
     border: #71D3D5 solid 1px;
+}
+
+.price{
+    font-size: 1.3rem;
 }
