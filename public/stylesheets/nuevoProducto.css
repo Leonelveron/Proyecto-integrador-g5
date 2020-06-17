@@ -18,10 +18,7 @@ html, body, textarea {
     width: 80%;
   }
 
-
-
-
-body{
+.letraLeo{
     font-family: 'Roboto', sans-serif;
 }
 
@@ -46,13 +43,6 @@ body{
     font-weight: 600;
 }
 
-
-p{
-    font-size: 15px;
-    font-weight: bold;
-    padding: 15px 10px;
-}
-
 .titulo{ 
     padding: 3% 5%;
     display: flex;
@@ -61,7 +51,7 @@ p{
 
 }
 
-h1{
+.tituloLeo{
     font-weight: 700;
 }
 

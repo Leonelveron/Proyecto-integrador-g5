@@ -44,7 +44,7 @@
             <div class="col 7">
                 <% productDetail.forEach(product => {%>
                 <form action="/products/edit/<%= product.id %>?_method=PUT" method="POST">
-                    <h2>Nombre del producto</h2>
+                    <h2 class="pt-3">Nombre del producto</h2>
                     <textarea rows="2" cols="80" type="text" name="title"> <%= product.title %></textarea>
                     <h2>Descripcion</h2>
                     <textarea rows="6" cols="80" type="text" name="description"> <%= product.description %></textarea>
