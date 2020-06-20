@@ -29,6 +29,8 @@ router.post('/', upload.any(), [
     check('passwordConfirm').isLength({ min: 6 }).withMessage("La contraseña debe tener por lo menos 6 caracteres")
 ], usersController.register);
 
+router.post('/myAccount', usersController.update);
+
 router.post('/login', [
     check('email_login').isEmail().withMessage('El campo "Email" debe tener un mail válido'),
     check('password_login').isLength({min: 6}).withMessage("La contraseña debe tener por lo menos 6 caracteres"),

@@ -3,6 +3,8 @@ var bcrypt = require('bcrypt');
 var multer = require('multer')
 var path = require('path')
 let { check, validationResult, body } = require('express-validator');
+let db = require('../db/models');
+const {Op} = require('sequelize');
 
 
 var storage = multer.diskStorage({
@@ -45,7 +47,7 @@ const controlador = {
       users.push(user)
       let usersJSON = JSON.stringify(users)
       fs.writeFileSync('./data/profile.json', usersJSON)
-      res.redirect('/')
+      res.redirect('/', {userToLogin:userToLogin})
     }
     else {
       res.render('registro', { errors: errors.errors })
@@ -95,6 +97,31 @@ const controlador = {
     } else{
       res.send('No estas logueado')
     }
+  },
+
+  update: (req, res) => {
+    db.nombreDelModelo.update({
+      first_name: req.body.first_name,
+        last_name: req.body.last_name,
+        email: req.body.email,
+        password: bcrypt.hashSync(req.body.password, 10),
+        avatar: req.files[0].filename
+    },
+    {
+      where: {
+        id: req.params.id
+      }
+    })
+    res.redirect('/users/myAccount' + req.params.id)
+  },
+  
+  delete: (req, res) => {
+    db.nombreDelModelo.destroy({
+      where:{
+        id: req.params.id
+      }
+    })
+    res.redirect('/')
   }
 }
 
