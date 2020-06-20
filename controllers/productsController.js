@@ -1,5 +1,7 @@
 const fs = require('fs');
 const path = require('path');
+let db = require('../db/models');
+const {Op} = require('sequelize');
 
 const productsFilePath = path.join(__dirname, '../data/products.json');
 const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
@@ -41,17 +43,22 @@ const controlador = {
     },
 
     editProduct: (req, res) => {
-        let productEdited = req.body
-        let productEditedJSON = JSON.stringify(productEdited);
-        fs.writeFileSync('./data/products.json', productEditedJSON)
-        res.render('productEdit', { productEdited: productEdited })
+        db.nombreDelModelo.update({
+            name: req.body.title,
+            description: req.body.description,
+            price: req.body.price,
+            brand: req.body.brand
+        })
+       
     },
 
     deleteProduct: (req, res) => {
-        let productDeleted = products.filter(product => product.id != req.params.id)
-        let productDeletedJSON = JSON.stringify(productDeleted)
-        fs.writeFileSync('./data/products.json', productDeletedJSON)
-        res.redirect('/products/detail')
+        db.nombreDelModelo.destroy({
+            where: {
+                id: req.params.id
+            }
+        })
+        res.redirect('/products')
     }
 };
 
