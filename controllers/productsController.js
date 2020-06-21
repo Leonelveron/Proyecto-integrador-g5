@@ -43,7 +43,7 @@ const controlador = {
     },
 
     editProduct: (req, res) => {
-        db.nombreDelModelo.update({
+        db.Products.update({
             name: req.body.title,
             description: req.body.description,
             price: req.body.price,
@@ -53,7 +53,7 @@ const controlador = {
     },
 
     deleteProduct: (req, res) => {
-        db.nombreDelModelo.destroy({
+        db.Products.destroy({
             where: {
                 id: req.params.id
             }

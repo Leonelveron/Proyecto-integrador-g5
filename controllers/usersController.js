@@ -100,7 +100,7 @@ const controlador = {
   },
 
   update: (req, res) => {
-    db.nombreDelModelo.update({
+    db.Users.update({
       first_name: req.body.first_name,
         last_name: req.body.last_name,
         email: req.body.email,
@@ -114,9 +114,9 @@ const controlador = {
     })
     res.redirect('/users/myAccount' + req.params.id)
   },
-  
+
   delete: (req, res) => {
-    db.nombreDelModelo.destroy({
+    db.Users.destroy({
       where:{
         id: req.params.id
       }
