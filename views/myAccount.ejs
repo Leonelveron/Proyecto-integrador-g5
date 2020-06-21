@@ -16,14 +16,14 @@
                 <h2>Mis datos</h2>
             </div>
             <div class="col-12 pb-2"> 
-                <img src="/images/<%= user.avatar%>" alt="Imagen de usuario">
+                <img src="../tmp/my-uploads/<%= user.avatar %>" alt="Imagen de usuario">
             </div>
             <div class="col-12 row">
                 <div class="col-2">
                     Email
                 </div>
                 <div class="col-2">
-                    <%= user.email %>
+                    <%= user.mail %>
                 </div>
             </div>
             <div class="col-12 row">
@@ -31,7 +31,7 @@
                     Nombre
                 </div>
                 <div class="col-2">
-                    <%= user.first_name %>
+                    <%= user.name %>
                 </div>
             </div>
             <div class="col-12 row">
@@ -39,7 +39,7 @@
                     Apellido
                 </div>
                 <div class="col-2">
-                    <%= user.last_name %>
+                    <%= user.surname %>
                 </div>
             </div>
         </div>

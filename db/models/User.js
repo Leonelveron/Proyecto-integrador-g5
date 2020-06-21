@@ -5,27 +5,27 @@ module.exports = (sequelize, dataTypes) => {
             type: dataTypes.BIGINT,
             primaryKey: true,
             autoIncrement: true,
-            notNull: true,
+            allowNull: false,
         },
         name: {
             type: dataTypes.STRING,
-            notNull: true
+            allowNull: false
         },
         surname: {
             type: dataTypes.STRING,
-            notNull: true
+            allowNull: false
         },
         mail: {
             type: dataTypes.STRING,
-            notNull: true,
+            allowNull: false,
         },
         password: {
             type: dataTypes.STRING,
-            notNull: true
+            allowNull: false
         },
         avatar: {
             type: dataTypes.STRING,
-            notNull: true
+            allowNull: false
         },
     }
     let config = {

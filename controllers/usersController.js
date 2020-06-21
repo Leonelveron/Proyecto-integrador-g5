@@ -29,25 +29,14 @@ const controlador = {
   register: (req, res, next) => {
     let errors = validationResult(req);
     if (errors.isEmpty()) {
-      let archivoUsers = fs.readFileSync('./data/profile.json', { encoding: 'utf-8' })
-      let users = []
-      let user = {
-        first_name: req.body.first_name,
-        last_name: req.body.last_name,
-        email: req.body.email,
+     db.Users.create({ 
+        name: req.body.first_name,
+        surname: req.body.last_name,
+        mail: req.body.email,
         password: bcrypt.hashSync(req.body.password, 10),
         avatar: req.files[0].filename
-      }
-      if (archivoUsers == "") {
-        users = []
-      }
-      else {
-        users = JSON.parse(archivoUsers)
-      }
-      users.push(user)
-      let usersJSON = JSON.stringify(users)
-      fs.writeFileSync('./data/profile.json', usersJSON)
-      res.redirect('/', {userToLogin:userToLogin})
+      })
+      res.redirect('/')
     }
     else {
       res.render('registro', { errors: errors.errors })
@@ -97,6 +86,13 @@ const controlador = {
     } else{
       res.send('No estas logueado')
     }
+  },
+  
+  myAccount: (req, res) => {
+    db.Users.findByPk(req.params.id, {}).
+      then(function (user) {
+          res.render('myAccount', { user: user })
+      })
   },
 
   update: (req, res) => {
