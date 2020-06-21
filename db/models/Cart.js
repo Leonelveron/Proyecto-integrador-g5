@@ -1,18 +1,22 @@
 module.exports = (sequelize, dataTypes) => {
     let alias = "Carts"
     let cols = {
-       id:{
-          type: dataTypes.INTEGER,
-          primaryKey: true,
-          autoIncrement: true
-       } ,
-       id_users:{
-        type: dataTypes.BIGINT,
-       },
+        id: {
+            type: dataTypes.BIGINT,
+            primaryKey: true,
+            autoIncrement: true,
+            notNull: true,
+        },
+        id_users: {
+            type: dataTypes.BIGINT,
+            notNull: true,
+        },
     }
     let config = {
         tableName: "carts",
-        timestamp:false
+        timestamp: true,
+        createdAt: "created_at",
+        updatedAt: "updated_at",
     }
 
     const Cart = sequelize.define(alias, cols, config);

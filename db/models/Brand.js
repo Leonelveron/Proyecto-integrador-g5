@@ -1,18 +1,23 @@
 module.exports = (sequelize, dataTypes) => {
     let alias = "Brands"
     let cols = {
-       id:{
-          type: dataTypes.INTEGER,
-          primaryKey: true,
-          autoIncrement: true
-       } ,
-       name:{
-        type: dataTypes.VARCHAR
-       },
+        id: {
+            type: dataTypes.BIGINT,
+            primaryKey: true,
+            autoIncrement: true,
+            notNull: true,
+
+        },
+        name: {
+            type: dataTypes.STRING,
+            notNull: true
+        },
     }
     let config = {
         tableName: "brands",
-        timestamp:false
+        timestamp: true,
+        createdAt: "created_at",
+        updatedAt: "updated_at",
     }
 
     const Brand = sequelize.define(alias, cols, config);
