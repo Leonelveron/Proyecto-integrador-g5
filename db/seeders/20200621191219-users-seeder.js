@@ -16,7 +16,7 @@ module.exports = {
     }
     for (let i = 0; i<19; i++){
       surnames.push({
-        surname: faker.name.lastName(),
+        surname: faker.name.lastName,
       })
     }
     for (let i = 0; i<19; i++){
@@ -35,7 +35,7 @@ module.exports = {
       })
     }
     
-      return queryInterface.bulkInsert('users',[ names, surnames, mails, passwords, avatars],  {});
+      return queryInterface.bulkInsert('Users',[ names, surnames, mails, passwords, avatars],  {});
   },
 
   down: (queryInterface, Sequelize) => {

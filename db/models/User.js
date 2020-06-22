@@ -9,11 +9,11 @@ module.exports = (sequelize, dataTypes) => {
         },
         name: {
             type: dataTypes.STRING,
-            allowNull: false
+            allowNull: false,
         },
         surname: {
             type: dataTypes.STRING,
-            allowNull: false
+            allowNull: false,
         },
         mail: {
             type: dataTypes.STRING,
