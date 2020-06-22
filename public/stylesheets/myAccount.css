@@ -25,3 +25,10 @@
     border-color: red;
     color: white;
   }
+
+  @media (max-width:424px){
+    .letra-chica{
+        font-size: 1rem;
+
+    }
+}

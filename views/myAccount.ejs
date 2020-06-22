@@ -19,12 +19,12 @@
             <div class="card mb-3 outline" style="max-width: 80%;">
                 <div class="row no-gutters outline">
                     <div class="col-md-4">
-                        <img src="/images/avatar-1592771160274.jpg" class="card-img" alt="Imagen de usuario">
+                        <img src="/images/<%= user.avatar %>" class="card-img" alt="Imagen de usuario">
                     </div>
                     <div class="col-md-8">
                         <div class="card-body">
                             <h4 class="card-title"><%= user.name %> <%= user.surname %></h4>
-                            <h4 class="card-title"><%= user.mail %></h4>
+                            <h4 class="card-title letra-chica"><%= user.mail %></h4>
                             <a href="#" class="card-link estilo-compras">Mis compras</a>
                             <div class="action">
                                 <form action="/users/myAccountedit/<%= user.id %>" method="POST">
