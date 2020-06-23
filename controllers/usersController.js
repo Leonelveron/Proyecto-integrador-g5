@@ -98,9 +98,9 @@ const controlador = {
 
   update: (req, res) => {
     db.Users.update({
-      first_name: req.body.first_name,
-      last_name: req.body.last_name,
-      email: req.body.email,
+      name: req.body.name,
+      surname: req.body.surname,
+      mail: req.body.mail,
       password: bcrypt.hashSync(req.body.password, 10),
       avatar: req.files[0].filename
     },
@@ -109,7 +109,7 @@ const controlador = {
           id: req.params.id
         }
       })
-    res.redirect('/users/myAccount' + req.params.id)
+    res.redirect('/users/myAccount/' + req.params.id)
   },
 
   delete: (req, res) => {
@@ -118,7 +118,7 @@ const controlador = {
         id: req.params.id
       }
     })
-    
+
     res.redirect('/')
   }
 }
