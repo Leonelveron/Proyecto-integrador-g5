@@ -27,11 +27,11 @@
                             <h4 class="card-title letra-chica"><%= user.mail %></h4>
                             <a href="#" class="card-link estilo-compras">Mis compras</a>
                             <div class="action">
-                                <form action="/users/myAccountedit/<%= user.id %>" method="POST">
+                                <form action="/users/myAccount/edit/<%= user.id %>" method="get">
                                     <button type="submit" class="btn btn-sm my-3 btnSeba">Editar</button>
                                 </form>
                                 <div class="action">
-                                    <form action="/users/myAccount/edit/<%= user.id %>" method="POST">
+                                    <form action="/users/myAccount/<%= user.id %>" method="POST">
                                         <button type="submit" class="btn btn-outline-danger btn-sm ">Eliminar
                                             cuenta</button>
                                     </form>

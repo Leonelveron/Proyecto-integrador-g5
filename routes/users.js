@@ -10,7 +10,7 @@ let { check, validationResult, body } = require('express-validator');
 
 var storage = multer.diskStorage({
     destination: function (req, file, cb) {
-        cb(null, 'tmp/my-uploads')
+        cb(null, './public/images')
     },
     filename: function (req, file, cb) {
         cb(null, file.fieldname + '-' + Date.now() + path.extname(file.originalname))
@@ -29,8 +29,10 @@ router.post('/', upload.any(), [
     check('passwordConfirm').isLength({ min: 6 }).withMessage("La contraseña debe tener por lo menos 6 caracteres")
 ], usersController.register);
 
-router.get('/myAccount/:id', usersController.myAccount);
-router.post('/myAccount/:id', usersController.update);
+router.get('/myAccount/:id', authMiddleware, usersController.myAccount);
+router.get('/myAccount/edit/:id',authMiddleware, usersController.updateView);
+router.post('/myAccount/edit/:id', upload.any(), usersController.update);
+router.post('/myAccount/:id', usersController.delete);
 
 router.post('/login', [
     check('email_login').isEmail().withMessage('El campo "Email" debe tener un mail válido'),

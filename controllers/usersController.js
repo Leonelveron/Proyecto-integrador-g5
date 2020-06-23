@@ -89,6 +89,13 @@ const controlador = {
       })
   },
 
+  updateView: (req, res) => {
+    db.Users.findByPk(req.params.id,{})
+    .then(function(user){
+      res.render('editAccount', {user:user})
+    })
+  },
+
   update: (req, res) => {
     db.Users.update({
       first_name: req.body.first_name,
@@ -111,6 +118,7 @@ const controlador = {
         id: req.params.id
       }
     })
+    
     res.redirect('/')
   }
 }
