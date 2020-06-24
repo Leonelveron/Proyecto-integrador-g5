@@ -97,6 +97,8 @@ const controlador = {
   },
 
   update: (req, res) => {
+    let errors = validationResult(req);
+    if (errors.isEmpty()){
     db.Users.update({
       name: req.body.name,
       surname: req.body.surname,
@@ -109,7 +111,12 @@ const controlador = {
           id: req.params.id
         }
       })
-    res.redirect('/users/myAccount/' + req.params.id)
+      console.log(req.body)
+    res.redirect('/users/myAccount/' + req.params.id)}
+    else{
+      console.log(req.body)
+      res.render('editAccount', { errors: errors.errors })
+    }
   },
 
   delete: (req, res) => {

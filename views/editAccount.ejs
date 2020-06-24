@@ -42,6 +42,18 @@
                                 <div class="action">
                                     <button type="submit" class="btn btn-sm my-3 btnSeba">Guardar cambios</button>
                             </form>
+                            <div class="mt-2">
+                                <% if (typeof errors != 'undefined') {%>
+                                    <p style="color:red">ERRORES:</p>
+                                    <ul>
+                                        <% for(let i=0; i<errors.length; i++) { %>
+                                            <li>
+                                                <%= errors[i].msg %>
+                                            </li>
+                                            <%}%>
+                                    </ul>
+                                        <%}%>
+                                    </div>
                         </div>
                     </div>
                 </div>

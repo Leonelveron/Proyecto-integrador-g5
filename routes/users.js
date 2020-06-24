@@ -29,15 +29,19 @@ router.post('/', upload.any(), [
     check('passwordConfirm').isLength({ min: 6 }).withMessage("La contraseña debe tener por lo menos 6 caracteres")
 ], usersController.register);
 
-router.get('/myAccount/:id', authMiddleware, usersController.myAccount);
-router.get('/myAccount/edit/:id',authMiddleware, usersController.updateView);
-router.post('/myAccount/edit/:id', upload.any(), usersController.update);
-router.post('/myAccount/:id', usersController.delete);
-
 router.post('/login', [
     check('email_login').isEmail().withMessage('El campo "Email" debe tener un mail válido'),
     check('password_login').isLength({min: 6}).withMessage("La contraseña debe tener por lo menos 6 caracteres"),
 ], usersController.login);
-router.get('/check', usersController.check)
+router.get('/check', usersController.check);
+
+router.get('/myAccount/:id', authMiddleware, usersController.myAccount);
+router.get('/myAccount/edit/:id',authMiddleware, usersController.updateView);
+router.put('/myAccount/edit/:id',[
+    check('name').isLength({ min: 1 }).withMessage('El campo "Nombre" no puede estar vacio'),
+], upload.any(), usersController.update);
+router.post('/myAccount/:id', usersController.delete);
+
+
 
 module.exports = router;

@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 let db = require('../db/models');
-const {Op} = require('sequelize');
+const { Op } = require('sequelize');
 
 const productsFilePath = path.join(__dirname, '../data/products.json');
 const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
@@ -48,8 +48,14 @@ const controlador = {
             description: req.body.description,
             price: req.body.price,
             brand: req.body.brand
-        })
-       
+        },
+            {
+                where: {
+                    id: req.params.id
+                }
+            })
+        res.redirect('/products/' + req.params.id)
+
     },
 
     deleteProduct: (req, res) => {
