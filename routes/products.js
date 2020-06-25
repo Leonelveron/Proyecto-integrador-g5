@@ -6,8 +6,8 @@ var guestMiddleware = require('../middlewares/guestMiddleware');
 
 
 router.get('/', productsController.list);
-router.post('/', productsController.create);
 router.get('/create', authMiddleware, productsController.index);
+router.post('/create', productsController.create);
 router.get('/:id', productsController.detail);
 router.get('/edit/:id',authMiddleware, productsController.indexEdit);
 router.put('/edit/:id', productsController.editProduct);

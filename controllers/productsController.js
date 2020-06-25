@@ -1,5 +1,9 @@
 const fs = require('fs');
 const path = require('path');
+const db = require("../db/models");
+const Sequelize = require('sequelize');
+const Op = Sequelize.Op;
+
 
 const productsFilePath = path.join(__dirname, '../data/products.json');
 const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
@@ -10,16 +14,52 @@ const controlador = {
         res.render('productsList2', { allProducts })
     },
 
-    index: (req, res) => {
+    /* db.(algo).findAll(
+        {order: [["(algo)", "ASC"]]}
+    ).then(function (products){
+     
+
+     res.render("productsList2",{"allproducts": products});
+    })
+     */
+
+    create: (req, res) => {
         res.render('nuevoProducto')
     },
+
+   /*  Con DB      db.(Algo).findAll().then(function (genres){
+        
+        res.render("nuevoProducto")
+    })
+}, */
+
 
     detail: (req, res) => {
         let productDetail = products.filter(product => req.params.id == product.id)
         res.render('producto', { productDetail: productDetail })
     },
 
-    create: (req, res) => {
+    created: (req, res) => {
+
+ 
+   /* Con DB  created : function (req, res) {
+            db.(algo).create({
+                marca: req.body.marca ,
+                modelo: req.body.modelo ,
+                estado: req.body.estado ,
+                stock: req.body.stock,
+                precio: req.body.precio,
+                genre_id: req.body.genre_id
+            }).then(function (product){
+             
+        
+                res.redirect("/products/detail/req.params.id");
+               })
+        }
+
+ */
+ 
+/* Antes DB  */
         let jsonproduct = fs.readFileSync("../data/product.json", { encoding: "utf-8" })
         let productos = []
         let producto = {
@@ -31,7 +71,7 @@ const controlador = {
         productos = JSON.parse(jsonproduct)
 
         productos.push(producto)
-        let productosJSON = JSON.stringify(productos)
+        let productosJSON = JSON.stringify(productos) 
 
     },
 
