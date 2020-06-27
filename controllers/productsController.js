@@ -19,6 +19,11 @@ const controlador = {
         /* let allProducts = products.filter(product => product.stock > 0)
         res.render('productsList2', { allProducts }) */
     },
+
+    index: (req, res) => {
+        res.render('nuevoProducto')
+    },
+    
     create: (req, res) => {
         db.Brand.findAll().then(function(brand){
             
