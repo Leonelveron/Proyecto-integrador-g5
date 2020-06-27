@@ -29,6 +29,14 @@ module.exports = (sequelize, dataTypes) => {
             otherKey: "id_products",
             timestamps: true
 
+
+        })
+    }
+
+    Cart.associate = function(models){
+        Cart.belongsTo(models.Users,{
+            as: "users",
+            foreignKey: "id_users"
         })
     }
 
