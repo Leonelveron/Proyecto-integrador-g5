@@ -46,5 +46,7 @@ module.exports = (sequelize, dataTypes) => {
 
     const Cellphone = sequelize.define(alias, cols, config);
 
+    
+
     return Cellphone;
 }
