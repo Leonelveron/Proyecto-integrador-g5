@@ -28,6 +28,7 @@ const controlador = {
 
   register: (req, res, next) => {
     let errors = validationResult(req);
+    console.log(validationResult);
     if (errors.isEmpty()) {
       db.Users.create({
         name: req.body.first_name,
