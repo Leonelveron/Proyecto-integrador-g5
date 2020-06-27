@@ -3,7 +3,7 @@ function authMiddleware(req, res, next) {
         next()
     }
     else {
-        res.send('Esta página es solo para administradores')
+        res.send('Esta página es solo para usuarios logueados')
     }
 }
 

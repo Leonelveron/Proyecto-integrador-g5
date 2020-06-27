@@ -3,6 +3,8 @@ var bcrypt = require('bcrypt');
 var multer = require('multer')
 var path = require('path')
 let { check, validationResult, body } = require('express-validator');
+let db = require('../db/models');
+const { Op } = require('sequelize');
 
 
 var storage = multer.diskStorage({
@@ -27,24 +29,13 @@ const controlador = {
   register: (req, res, next) => {
     let errors = validationResult(req);
     if (errors.isEmpty()) {
-      let archivoUsers = fs.readFileSync('./data/profile.json', { encoding: 'utf-8' })
-      let users = []
-      let user = {
-        first_name: req.body.first_name,
-        last_name: req.body.last_name,
-        email: req.body.email,
+      db.Users.create({
+        name: req.body.first_name,
+        surname: req.body.last_name,
+        mail: req.body.email,
         password: bcrypt.hashSync(req.body.password, 10),
         avatar: req.files[0].filename
-      }
-      if (archivoUsers == "") {
-        users = []
-      }
-      else {
-        users = JSON.parse(archivoUsers)
-      }
-      users.push(user)
-      let usersJSON = JSON.stringify(users)
-      fs.writeFileSync('./data/profile.json', usersJSON)
+      })
       res.redirect('/')
     }
     else {
@@ -55,33 +46,27 @@ const controlador = {
   login: (req, res) => {
     let errors = validationResult(req);
     if (errors.isEmpty()) {
-      let archivoUsers = fs.readFileSync('./data/profile.json', { encoding: 'utf-8' })
-      let users = []
-      if (archivoUsers == "") {
-        users = []
-      }
-      else {
-        users = JSON.parse(archivoUsers)
-      }
       let userToLogin
-
-      for (let i = 0; i < users.length; i++) {
-        if (users[i].email == req.body.email_login) {
-          if (bcrypt.compareSync(req.body.password_login, users[i].password)) {
-            userToLogin = users[i];
-            break;
+      db.Users.findAll()
+        .then(function (users) {
+          for (let i = 0; i < users.length; i++) {
+            if (users[i].mail == req.body.email_login) {
+              if (bcrypt.compareSync(req.body.password_login, users[i].password)) {
+                userToLogin = users[i];
+                break;
+              }
+            }
           }
-        }
-      }
-      if (userToLogin == undefined) {
-        res.render('registro', { errors: [{ msg: 'Datos invalidos' }] })
-      }
-      req.session.loggedUser = userToLogin
-      if( req.body.recordame != undefined){
-        res.cookie('recordame', userToLogin.email, {maxAge: 900000000})
-      }
+          if (userToLogin == undefined) {
+            res.render('registro', { errors: [{ msg: 'Datos invalidos' }] })
+          }
+          req.session.loggedUser = userToLogin
+          if (req.body.recordame != undefined) {
+            res.cookie('recordame', userToLogin.email, { maxAge: 900000000 })
+          }
 
-      res.redirect('/')
+          res.redirect('/')
+        })
     }
 
     else {
@@ -89,12 +74,59 @@ const controlador = {
     }
   },
   check: (req, res) => {
-    if(req.session.loggedUser){
+    if (req.session.loggedUser) {
       console.log(req.session)
-    res.send('Estas logueado ' + req.session.loggedUser.email)
-    } else{
+      res.send('Estas logueado ' + req.session.loggedUser.email)
+    } else {
       res.send('No estas logueado')
     }
+  },
+
+  myAccount: (req, res) => {
+    db.Users.findByPk(req.params.id, {}).
+      then(function (user) {
+        res.render('myAccount', { user: user })
+      })
+  },
+
+  updateView: (req, res) => {
+    db.Users.findByPk(req.params.id,{})
+    .then(function(user){
+      res.render('editAccount', {user:user})
+    })
+  },
+
+  update: (req, res) => {
+    let errors = validationResult(req);
+    if (errors.isEmpty()){
+    db.Users.update({
+      name: req.body.name,
+      surname: req.body.surname,
+      mail: req.body.mail,
+      password: bcrypt.hashSync(req.body.password, 10),
+      avatar: req.files[0].filename
+    },
+      {
+        where: {
+          id: req.params.id
+        }
+      })
+      console.log(req.body)
+    res.redirect('/users/myAccount/' + req.params.id)}
+    else{
+      console.log(req.body)
+      res.render('editAccount', { errors: errors.errors })
+    }
+  },
+
+  delete: (req, res) => {
+    db.Users.destroy({
+      where: {
+        id: req.params.id
+      }
+    })
+
+    res.redirect('/')
   }
 }
 

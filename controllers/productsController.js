@@ -10,45 +10,41 @@ const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
 const controlador = {
     list: (req, res) => {
-        let allProducts = products.filter(product => product.stock > 0)
-        res.render('productsList2', { allProducts })
-    },
 
-    /* db.(algo).findAll(
-        {order: [["(algo)", "ASC"]]}
-    ).then(function (products){
+        db.Product.findAll().then(function (products){
      
+            res.render("productsList2",{"allproducts": products});
+           })
 
-     res.render("productsList2",{"allproducts": products});
-    })
-     */
-
+        /* let allProducts = products.filter(product => product.stock > 0)
+        res.render('productsList2', { allProducts }) */
+    },
     create: (req, res) => {
         res.render('nuevoProducto')
     },
 
-   /*  Con DB      db.(Algo).findAll().then(function (genres){
-        
-        res.render("nuevoProducto")
-    })
-}, */
-
-
     detail: (req, res) => {
+
+        db.Product.findByPk(req.params.id,
+        ).then(function (product){
+            res.render("producto", {"product" : product})
+        })
+
+/* 
         let productDetail = products.filter(product => req.params.id == product.id)
-        res.render('producto', { productDetail: productDetail })
+        res.render('producto', { productDetail: productDetail }) */
     },
 
     created: (req, res) => {
 
  
    /* Con DB  created : function (req, res) {
-            db.(algo).create({
+            db.Product.create({
                 marca: req.body.marca ,
                 modelo: req.body.modelo ,
                 estado: req.body.estado ,
                 stock: req.body.stock,
-                precio: req.body.precio,
+                description: req.body.description,
                 genre_id: req.body.genre_id
             }).then(function (product){
              
@@ -81,17 +77,28 @@ const controlador = {
     },
 
     editProduct: (req, res) => {
-        let productEdited = req.body
-        let productEditedJSON = JSON.stringify(productEdited);
-        fs.writeFileSync('./data/products.json', productEditedJSON)
-        res.render('productEdit', { productEdited: productEdited })
+        db.Products.update({
+            name: req.body.title,
+            description: req.body.description,
+            price: req.body.price,
+            brand: req.body.brand
+        },
+            {
+                where: {
+                    id: req.params.id
+                }
+            })
+        res.redirect('/products/' + req.params.id)
+
     },
 
     deleteProduct: (req, res) => {
-        let productDeleted = products.filter(product => product.id != req.params.id)
-        let productDeletedJSON = JSON.stringify(productDeleted)
-        fs.writeFileSync('./data/products.json', productDeletedJSON)
-        res.redirect('/products/detail')
+        db.Products.destroy({
+            where: {
+                id: req.params.id
+            }
+        })
+        res.redirect('/products')
     }
 };
 

@@ -1,0 +1,42 @@
+body{
+  background-color: #e6dfdf;
+}
+
+.color-fondo{
+  background-color: #e6dfdf;
+}
+
+.btnSeba{
+    background-color: #5A2D82;
+    border-color: #5A2D82;
+    color: white;
+    display: flex;
+    justify-content: space-evenly;
+  }
+
+  .btnSeba:hover{
+    background-color: #5A2D82;
+    border-color: #5A2D82;
+    color: white;
+  }
+
+  .estilo-compras{
+      color: #5A2D82;
+  }
+
+  .outline{
+    border: none;
+}
+
+  .btn-secondary:hover{
+    background-color: red;
+    border-color: red;
+    color: white;
+  }
+
+  @media (max-width:424px){
+    .letra-chica{
+        font-size: 1rem;
+
+    }
+}
