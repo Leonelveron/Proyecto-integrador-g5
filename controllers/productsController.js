@@ -20,7 +20,12 @@ const controlador = {
         res.render('productsList2', { allProducts }) */
     },
     create: (req, res) => {
-        res.render('nuevoProducto')
+        db.Brand.findAll().then(function(brand){
+            
+            res.render('nuevoProducto', {"brand": brand}) 
+        
+        }) 
+        
     },
 
     detail: (req, res) => {
@@ -35,28 +40,26 @@ const controlador = {
         res.render('producto', { productDetail: productDetail }) */
     },
 
-    created: (req, res) => {
 
- 
-   /* Con DB  created : function (req, res) {
+   /* Con DB */
+   
+   created : function (req, res) {
             db.Product.create({
-                marca: req.body.marca ,
-                modelo: req.body.modelo ,
-                estado: req.body.estado ,
-                stock: req.body.stock,
+                name: req.body.name ,
+                id_brand: req.body.id_brand ,
+                price: req.body.price,
                 description: req.body.description,
-                genre_id: req.body.genre_id
             }).then(function (product){
              
         
                 res.redirect("/products/detail/req.params.id");
                })
-        }
+        },
 
- */
+ 
  
 /* Antes DB  */
-        let jsonproduct = fs.readFileSync("../data/product.json", { encoding: "utf-8" })
+  /*       let jsonproduct = fs.readFileSync("../data/product.json", { encoding: "utf-8" })
         let productos = []
         let producto = {
             nombre: req.body.nombre,
@@ -68,8 +71,7 @@ const controlador = {
 
         productos.push(producto)
         let productosJSON = JSON.stringify(productos) 
-
-    },
+ */
 
     indexEdit: (req, res) => {
         let productDetail = products.filter(product => req.params.id == product.id);

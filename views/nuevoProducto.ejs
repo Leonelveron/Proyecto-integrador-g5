@@ -29,14 +29,11 @@
 
           <li>
             <h3>Marca</h3>
-            <select class="cajas" name="marca" id="">
-              <option value="">Motorola</option>
-              <option value="">Asus</option>
-              <option value="">Nokia</option>
-              <option value="">as</option>
-              <option value="">s</option>
-              <option value="">s</option>
-              <option value="">s</option>
+            <select class="cajas" name="id_brand" id="">
+             <% brand.forEach(function (brand){  %> 
+                <option value= <%= brand.id %> ><%= brand.name  %> </option>
+            <%})%> 
+             
             </select>
           </li>
 
@@ -82,7 +79,7 @@
             <label for="tituloProducto">
               <h3>Titulo de la Publicacion</h3>
             </label>
-            <input class="cajas" type="text" name="tituloProducto" id="tituloProducto" maxlength="120">
+            <input class="cajas" type="text" name="name" id="name" maxlength="120">
 
           </li>
         </div>
@@ -109,7 +106,7 @@
                     <div class="input-group-prepend">
                       <span class="input-group-text" id="inputGroupPrepend">$</span>
                     </div>
-                    <input type="text" class="form-control" id="validationCustomUsername"
+                    <input name= "price" type="text" class="form-control" id="validationCustomUsername"
                       aria-describedby="inputGroupPrepend" required>
                     <div class="invalid-feedback">
                       Please choose a username.
@@ -229,7 +226,7 @@
             <h3>Descripcion</h3>
 
 
-            <textarea name="descripcionProducto" id="">Describi tu producto</textarea>
+            <textarea name="description" id="">Describi tu producto</textarea>
           </li>
         </div>
 
