@@ -27,10 +27,14 @@ const controlador = {
     },
 
     create: (req, res) => {
-        db.Brands.findAll().then(function (brand) {
-
-            res.render('nuevoProducto', { "brand": brand })
-
+        db.Products.create({
+            name: req.body.name,
+            description:req.body.description,
+            price: req.body.price,
+            id_brands: req.body.brand
+        }).then(function (brand) {
+            console.log(req.body)
+            res.redirect("/products/detail/" + req.params.id);
         })
 
     },
@@ -46,23 +50,6 @@ const controlador = {
                 let productDetail = products.filter(product => req.params.id == product.id)
                 res.render('producto', { productDetail: productDetail }) */
     },
-
-
-    /* Con DB */
-
-    created: function (req, res) {
-        db.Product.create({
-            name: req.body.name,
-            id_brand: req.body.id_brand,
-            price: req.body.price,
-            description: req.body.description,
-        }).then(function (product) {
-
-
-            res.redirect("/products/detail/req.params.id");
-        })
-    },
-
 
 
     /* Antes DB  */

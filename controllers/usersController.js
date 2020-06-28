@@ -65,7 +65,6 @@ const controlador = {
           if (req.body.recordame != undefined) {
             res.cookie('recordame', userToLogin.email, { maxAge: 900000000 })
           }
-
           res.redirect('/')
         })
     }
@@ -114,7 +113,6 @@ const controlador = {
       })
     res.redirect('/users/myAccount/' + req.params.id)}
     else{
-      console.log(req.body)
       res.render('editAccount', { errors: errors.errors })
     }
   },

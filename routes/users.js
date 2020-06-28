@@ -28,7 +28,7 @@ router.post('/login', loginMiddleware, usersController.login);
 router.get('/check', usersController.check);
 router.get('/myAccount/:id', authMiddleware, usersController.myAccount);
 router.get('/myAccount/edit/:id',authMiddleware, usersController.updateView);
-router.put('/myAccount/edit/:id' , upload.any(), usersController.update);
+router.put('/myAccount/edit/:id', userEditMiddleware , upload.any(), usersController.update);
 router.delete('/myAccount/:id', usersController.delete);
 
 

@@ -147,6 +147,18 @@ a{
    
 }
 
+.btn-secondary{
+    background-color: #5A2D82;
+    border-color: #5A2D82;
+    color: white;
+  }
+
+  .btn-secondary:hover{
+    background-color: #5A2D82;
+    border-color: #5A2D82;
+    color: white;
+  }
+
 .subborder{
     border-top: 1px rgb(193, 154, 226) solid;
     margin: 0;
