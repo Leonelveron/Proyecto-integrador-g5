@@ -3,10 +3,7 @@ const path = require('path');
 const db = require("../db/models");
 const Sequelize = require('sequelize');
 const Op = Sequelize.Op;
-
-
-const productsFilePath = path.join(__dirname, '../data/products.json');
-const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+let { check, validationResult, body } = require('express-validator');
 
 const controlador = {
     list: (req, res) => {
@@ -23,7 +20,7 @@ const controlador = {
     index: (req, res) => {
         res.render('nuevoProducto')
     },
-    
+
     create: (req, res) => {
         db.Brand.findAll().then(function(brand){
             
