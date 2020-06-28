@@ -4,7 +4,16 @@ const Op = Sequelize.Op;
 
 const controlador = {
   index: (req, res) => {
-    res.render('index', { title: 'Express' });
+    db.Products.findAll({
+      include: [{ association: "brands" }],
+      order: [
+        ['price', 'ASC']
+      ],
+      limit: 8
+  })
+      .then(function (products) {
+        res.render('index', { products: products})
+      })
   },
   search: (req, res) => {
     db.Products.findAll({

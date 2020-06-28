@@ -4,6 +4,7 @@
 <head>
   <%- include('partials/head2.ejs') %>
   <link rel="stylesheet" href="./stylesheets/Home.css">
+  <link rel="stylesheet" href="../stylesheets/productsList.css">
   <title>Index</title>
 
 </head>
@@ -39,48 +40,26 @@
 
   <main>
 
-    <h2 class="titulo-productos">Productos</h2>
+    <h2 class="titulo-productos my-4 p-2">Productos en oferta!</h2>
 
-    <section class="Productos-main">
-
-      <article>
-        <img src="./images/descarga.jpg" alt="">
-        <p>Precio $2800</p>
-      </article>
-      <article>
-        <img src="./images/descarga.jpg" alt="">
-        <p>Precio $2800</p>
-      </article>
-      <article>
-        <img src="./images/descarga.jpg" alt="">
-        <p>Precio $2800</p>
-      </article>
-      <article>
-        <img src="./images/descarga.jpg" alt="">
-        <p>Precio $2800</p>
-      </article>
-      <article>
-        <img src="./images/descarga.jpg" alt="">
-        <p>Precio $2800</p>
-      </article>
-      <article>
-        <img src="./images/descarga.jpg" alt="">
-        <p>Precio $2800</p>
-      </article>
-      <article>
-        <img src="./images/descarga.jpg" alt="">
-        <p>Precio $2800</p>
-      </article>
-      <article>
-        <img src="./images/descarga.jpg" alt="">
-        <p>Precio $2800</p>
-      </article>
-      <article>
-        <img src="./images/descarga.jpg" alt="">
-        <p>Precio $2800</p>
-      </article>
-
-    </section>
+    <div class="container products-wrapper">
+      <div class="row">
+        <% products.forEach(product => {%>
+        <div class="card col-12 col-sm-4 col-lg-3 bg-light p-4 mb-5 " style="width: 18rem;">
+          <img src="../images/descarga.jpg" class="card-img-top" alt="Imagen de producto">
+          <div class="card-body bg-light">
+            <a href="/products/<%= product.id%>" class="titulo">
+              <h4><%= product.name %></h4>
+            </a>
+            <p class="price">$ <%= product.price %></p>
+            <p class="price">$ <%= product.brands.name %></p>
+            <a class="btn btn-style-1 btn-dark btn-final" href="#"><i class="fe-icon-credit-card"></i>Agregar al
+              carrito</a>
+          </div>
+        </div>
+        <% }) %>
+      </div>
+    </div>
   </main>
 
   <!-- Navbar -->
