@@ -92,7 +92,7 @@ const controlador = {
             name: req.body.title,
             description: req.body.description,
             price: req.body.price,
-            brand: req.body.brand
+            id_brands: req.body.brand
         },
             {
                 where: {
