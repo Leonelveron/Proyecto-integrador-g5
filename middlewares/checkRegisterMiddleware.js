@@ -1,7 +1,6 @@
 let { check, validationResult, body } = require('express-validator');
 const db = require("../db/models");
 
-
 let registerMiddleware = [
     check('first_name').isLength({ min: 2 }).withMessage('El campo "Nombre" no puede estar vacio'),
     check('last_name').isLength({ min: 2 }).withMessage('El campo "Apellido" no puede estar vacio'),
@@ -17,7 +16,7 @@ let registerMiddleware = [
                 }
                 return true
             })
-    }).withMessage("El mail ya existe")
+    }).withMessage("El mail ya existe"),
 ]
 
 module.exports = registerMiddleware
