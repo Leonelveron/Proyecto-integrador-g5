@@ -8,9 +8,11 @@ let { check, validationResult, body } = require('express-validator');
 const controlador = {
     list: (req, res) => {
 
-        db.Product.findAll().then(function (products){
-     
-            res.render("productsList2",{"allproducts": products});
+        db.Products.findAll({
+            include: [{association : "brands"}]
+        })
+        .then(function (products) {
+            res.render("productsList2",{products: products});
            })
 
         /* let allProducts = products.filter(product => product.stock > 0)
@@ -22,7 +24,7 @@ const controlador = {
     },
 
     create: (req, res) => {
-        db.Brand.findAll().then(function(brand){
+        db.Brands.findAll().then(function(brand){
             
             res.render('nuevoProducto', {"brand": brand}) 
         
@@ -32,7 +34,7 @@ const controlador = {
 
     detail: (req, res) => {
 
-        db.Product.findByPk(req.params.id,
+        db.Products.findByPk(req.params.id,
         ).then(function (product){
             res.render("producto", {"product" : product})
         })
