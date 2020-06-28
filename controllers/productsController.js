@@ -36,7 +36,7 @@ const controlador = {
 
         db.Products.findByPk(req.params.id,
         ).then(function (product){
-            res.render("producto", {"product" : product})
+            res.render("producto", { product: product})
         })
 
 /* 
