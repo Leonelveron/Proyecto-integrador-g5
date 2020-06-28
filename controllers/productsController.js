@@ -78,8 +78,13 @@ const controlador = {
  */
 
     indexEdit: (req, res) => {
-        let productDetail = products.filter(product => req.params.id == product.id);
-        res.render('productEdit', { productDetail: productDetail });
+        let pedidoProducto = db.Products.findByPk(req.params.id);
+        let pedidoMArcas = db.Brands.findAll();
+        Promise.all([pedidoProducto, pedidoMArcas])
+        .then(function([product, brand]){
+            res.render('productEdit', { product: product, brand: brand })
+        })
+        
     },
 
     editProduct: (req, res) => {
