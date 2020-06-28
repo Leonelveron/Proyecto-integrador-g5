@@ -112,7 +112,6 @@ const controlador = {
           id: req.params.id
         }
       })
-      console.log(req.body)
     res.redirect('/users/myAccount/' + req.params.id)}
     else{
       console.log(req.body)

@@ -23,13 +23,12 @@
                     </div>
                     <div class="col-md-8">
                         <div class="card-body outline">
-                            <form action="/users/myAccount/edit/<%= user.id %>" method="POST"
-                                enctype="multipart/form-data">
+                            <form action="/users/myAccount/edit/<%= user.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
                                 <h4 class="card-title">Nombre</h4>
                                 <input type="name" class="form-control shadow p-3 mb-3 bg-white rounded outline"
                                     name="name" aria-describedby="emailHelp" value="<%= user.name %>">
                                 <h4 class="card-title">Apellido</h4>
-                                <input type="name" class="form-control shadow p-3 mb-3 bg-white rounded outline"
+                                <input type="surname" class="form-control shadow p-3 mb-3 bg-white rounded outline"
                                     name="surname" aria-describedby="emailHelp" value="<%= user.surname %>">
                                 <h4 class="card-title letra-chica">Email</h4>
                                 <input type="email" class="form-control shadow p-3 mb-3 bg-white rounded outline"

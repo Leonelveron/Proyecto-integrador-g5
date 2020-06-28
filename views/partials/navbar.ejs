@@ -14,10 +14,11 @@
       <div class="col-xl-3 ingreso pepito pt-2">
         <ul>
           <li>
-            <a href="/users" class="letra"><i class="fas fa-user"></i> 
             <% if(user != undefined) { %>
-                Bienvenide <%= user.name %>!
+              <a href="/users/myAccount/<%= user.id %>" class="letra"><i class="fas fa-user"></i> 
+                Bienvenid@ <%= user.name %>! </a>
               <%} else { %>
+                <a href="/users" class="letra"><i class="fas fa-user"></i>
               Mi cuenta</a>
               <% } %>
           </li>
