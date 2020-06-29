@@ -27,14 +27,14 @@ const controlador = {
     },
 
     create: (req, res) => {
+        console.log(req.body)
         db.Products.create({
             name: req.body.name,
-            description:req.body.description,
+            description: req.body.description,
             price: req.body.price,
-            id_brands: req.body.brand
+            id_brands: req.body.id_brands
         }).then(function (brand) {
-            console.log(req.body)
-            res.redirect("/products/detail/" + req.params.id);
+            res.redirect("/products/");
         })
 
     },

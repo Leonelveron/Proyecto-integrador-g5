@@ -17,79 +17,97 @@
   </div>
   <main class="centrado conteirner-fluid">
     <div>
-      <form action="/products/create" method="POST" enctype="multipart/form-data">
-        <div class="subtitulos">
-          <h2>Que equipo es?</h2> <i class="fas fa-mobile-alt fa-2x superalign mostrar"></i>
-        </div>
-        <div class="padding padding2">
-          <label for="tituloProducto"><h3>Nombre del equipo</h3></label>
-          <input class="cajas" type="text" name="name" id="" maxlength="120">
-        </div>
-        <div class="padding padding2">
-          <h3>Marca</h3>
-          <select class="cajas" name="id_brand" id="">
-            <% brand.forEach(function (brand){  %>
-            <option value=<%= brand.id %>><%= brand.name  %> </option>
-            <%})%>
-          </select>
-        </div>
-        <div class="padding padding2">
-          <label for="tituloProducto"><h3>Descripcion</h3></label>
-          <textarea name="description" class="cajas" id="" cols="30" rows="5"></textarea>
-        </div>
-        <div class="padding padding2 ">
-          <h3>Precio</h3>
-          <div class="form-row">
-            <div class="col-md-4 mb-3">
-              <div class="input-group">
-                <div class="input-group-prepend">
-                  <span class="input-group-text" id="inputGroupPrepend">$</span>
-                </div>
-                <input name="price" type="text" class="form-control" id="validationCustomUsername"
-                  aria-describedby="inputGroupPrepend" required>
+      <div class="subtitulos">
+        <h2>Que equipo es?</h2> <i class="fas fa-mobile-alt fa-2x superalign mostrar"></i>
+      </div>
+      <div class="padding padding2">
+        <form action="/products/create" method="POST">
+          <label for="tituloProducto">
+            <h3>Nombre del equipo</h3>
+          </label>
+          <input class="cajas" type="text" name="name" id="">
+      </div>
+      <div class="padding padding2">
+        <h3>Marca</h3>
+        <select class="cajas" name="id_brands" id="">
+          <% for (let i=0; i<brand.length; i++) {%>
+            <option value="<%= brand[i].id %>"> <%= brand[i].name %> </option>
+          <% } %>
+        </select>
+      </div>
+      <div class="padding padding2">
+        <label for="">
+          <h3>Descripcion</h3>
+        </label>
+        <textarea name="description" class="cajas" id="" cols="30" rows="5"></textarea>
+      </div>
+      <div class="padding padding2 ">
+        <h3>Precio</h3>
+        <div class="form-row">
+          <div class="col-md-4 mb-3">
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroupPrepend">$</span>
               </div>
+              <input name="price" type="number" class="form-control" id="validationCustomUsername"
+                aria-describedby="inputGroupPrepend" required>
             </div>
           </div>
         </div>
-        <div class="padding padding2">
-          <label for="tituloProducto">
-            <h3>Tamaño de pantalla</h3>
+      </div>
+      <div class="padding padding2">
+        <label for="tituloProducto">
+          <h3>Tamaño de pantalla</h3>
+        </label>
+        <input class="cajas" type="text" name="screen_size" id="name" maxlength="120">
+      </div>
+      <div class="padding padding2">
+        <label for="tituloProducto">
+          <h3>Resolución de pantalla</h3>
+        </label>
+        <input class="cajas" type="text" name="screen_resolution" id="" maxlength="120">
+      </div>
+      <div class="padding padding2">
+        <label for="tituloProducto">
+          <h3>Sistema operativo</h3>
+        </label>
+        <input class="cajas" type="text" name="os" id="" maxlength="120">
+      </div>
+      <div class="padding padding2">
+        <label for="tituloProducto">
+          <h3>Procesador</h3>
+        </label>
+        <input class="cajas" type="text" name="processor" id="" maxlength="120">
+      </div>
+      <div class="padding padding2">
+        <label for="tituloProducto">
+          <h3>Almacenamiento</h3>
+        </label>
+        <input class="cajas" type="text" name="storage" id="" maxlength="120">
+      </div>
+      <div class="padding padding2">
+        <label for="tituloProducto">
+          <h3>Capacidad de la batería</h3>
+        </label>
+        <input class="cajas" type="text" name="batery" id="" maxlength="120">
+      </div>
+      <div class="padding padding2">
+        <label for="tituloProducto">
+          <h3>Es resistente al agua?</h3>
+        </label>
+        <input class="cajas" type="text" name="water_resistance" id="" maxlength="120">
+      </div>
+      <div class="padding padding2 ">
+        <div class="form-group">
+          <label for="">
+            <h3>Cargar Fotos</h3>
           </label>
-          <input class="cajas" type="text" name="screen_size" id="name" maxlength="120">
+          <input type="file" class="form-control-file" id="" name="foto">
         </div>
-        <div class="padding padding2">
-          <label for="tituloProducto"><h3>Resolución de pantalla</h3></label>
-          <input class="cajas" type="text" name="screnn_resolution" id="" maxlength="120">
-        </div>
-        <div class="padding padding2">
-          <label for="tituloProducto"><h3>Sistema operativo</h3></label>
-          <input class="cajas" type="text" name="os" id="" maxlength="120">
-        </div>
-        <div class="padding padding2">
-          <label for="tituloProducto"><h3>Procesador</h3></label>
-          <input class="cajas" type="text" name="processor" id="name" maxlength="120">
-        </div>
-        <div class="padding padding2">
-          <label for="tituloProducto"><h3>Almacenamiento</h3></label>
-          <input class="cajas" type="text" name="storage" id="name" maxlength="120">
-        </div>
-        <div class="padding padding2">
-          <label for="tituloProducto"><h3>Capacidad de la batería</h3></label>
-          <input class="cajas" type="text" name="batery" id="name" maxlength="120">
-        </div>
-        <div class="padding padding2">
-          <label for="tituloProducto"><h3>Es resistente al agua?</h3></label>
-          <input class="cajas" type="text" name="water_resistance" id="name" maxlength="120">
-        </div>
-        <div class="padding padding2 ">
-          <h3>Cargar Fotos</h3>
-          <div class="form-group">
-            <label for="exampleFormControlFile1"> </label>
-            <input type="file" class="form-control-file" id="exampleFormControlFile1" name>
-          </div>
-          <button class="btn btn-secondary btn-lg btnSeba" type="submit">Guardar</button>
-        </div>
+        <button class="btn btn-secondary btn-lg btnSeba" type="submit">Guardar</button>
+      </div>
       </form>
+    </div>
   </main>
 
   <%- include('partials/footer.ejs') %>
