@@ -80,3 +80,21 @@ El planteamiento de diseño con respecto a la accesibilidad sigue estando en seg
 
 ###### Stop Doing
 Dispariedad de entrega y distribucion entre los miembros del grupo. 
+
+
+## Sprint 5
+
+###### Star Doing
+Categorizar las dudas, buscando por que medios se puede obtener la respuesta más agil. 
+
+###### More of
+Un paneo general de como los distintos elementos del proyecto conforman una unidad. 
+
+###### Keep Doing
+Mantener al tanto el progreso de cada miembro del equipo
+
+###### Less of
+El planteamiento de diseño con respecto a la accesibilidad sigue estando en segundo plano.
+
+###### Stop Doing
+Dispariedad de entrega y distribucion entre los miembros del grupo. 
