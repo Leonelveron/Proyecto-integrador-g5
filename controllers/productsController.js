@@ -20,23 +20,51 @@ const controlador = {
     },
 
     index: (req, res) => {
-        db.Brands.findAll({})
+        db.Brands.findAll({
+        })
             .then(function (brand) {
                 res.render('nuevoProducto', { brand: brand })
             })
     },
 
     create: (req, res) => {
-        console.log(req.body)
-        db.Products.create({
-            name: req.body.name,
-            description: req.body.description,
-            price: req.body.price,
-            id_brands: req.body.id_brands
-        }).then(function (brand) {
-            res.redirect("/products/");
-        })
+        let errors = validationResult(req);
+        if (errors.isEmpty()) {
+            db.Products.create({
+                name: req.body.name,
+                description: req.body.description,
+                price: req.body.price,
+                id_brands: req.body.id_brands
+            })
 
+            // let PK = db.Products.findAll({
+            //     order:[['id', 'ASC']],
+            //     limit: 1
+            // }).then(function(product){
+            //      console.log(product.id)
+            // })
+
+            // db.Cellphones.create({
+            //     include: [{ association: "products" }],
+            //     screen_size: req.params.screen_size,
+            //     screen_resolution: req.params.screen_resolution,
+            //     os: req.params.os,
+            //     processor: req.params.processor,
+            //     dimensions: req.params.dimensions,
+            //     storage: req.params.storage,
+            //     batery: req.params.batery,
+            //     water_resistance: req.params.water_resistance,
+            //     id_products: PK
+            // })
+            res.redirect("/products/");
+        }
+        else {
+            db.Brands.findAll({
+            })
+                .then(function (brand) {
+                    res.render('nuevoProducto', { errors: errors.errors, brand: brand })
+                })
+        }
     },
 
     detail: (req, res) => {
