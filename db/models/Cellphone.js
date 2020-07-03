@@ -11,7 +11,7 @@ module.exports = (sequelize, dataTypes) => {
             type: dataTypes.STRING,
 
         },
-        screem_resolution: {
+        screen_resolution: {
             type: dataTypes.STRING,
         },
         os: {

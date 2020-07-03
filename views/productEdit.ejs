@@ -42,18 +42,28 @@
                 </div>
             </div>
             <div class="col 7">
-                <% productDetail.forEach(product => {%>
                 <form action="/products/edit/<%= product.id %>?_method=PUT" method="POST">
                     <h3 class="pt-3 letra-titles">Nombre del producto</h3>
-                    <textarea rows="2" cols="80" type="text" name="title" class="form-control shadow p-3 mb-3 bg-white rounded"> <%= product.title %></textarea>
+                    <textarea rows="2" cols="80" type="text" name="title"
+                        class="form-control shadow p-3 mb-3 bg-white rounded"> <%= product.name %></textarea>
                     <h2 class="letra-titles">Descripcion</h2>
-                    <textarea rows="6" cols="80" type="text" name="description" class="form-control shadow p-3 mb-3 bg-white rounded"> <%= product.description %></textarea>
+                    <textarea rows="6" cols="80" type="text" name="description"
+                        class="form-control shadow p-3 mb-3 bg-white rounded"> <%= product.description %></textarea>
                     <div class="mb-3">
-                    <select id="inputState" class="form-control">
+                        <select id="inputState" class="form-control" name="brand">
+                            <% for (let i=0 ; i<brand.length; i++) { %>
+                                <% if (brand[i].id == product.brand_id) { %>
+                            <option value="<%= brand[i].id %>" selected>
+                            <%= brand[i].name %>
+                            </option>
+                            <% } else { %>
+                                <option value="<%= brand[i].id %>">
+                                <%= brand[i].name %>
+                                </option>
+                                <% } %>
+                                <% } %>
+                        </select>
                     </div>
-                        <option selected>Marca</option>
-                        <option>Samsung</option>
-                      </select>
                     <h3 class="letra-titles">Especificaciones Tecnicas</h3>
                     <ul>
                         <li>lorem</li>
@@ -67,13 +77,14 @@
                     <div class="container">
                         <div class="row">
                             <div class="col-3 m-0 p-0">
-                    <h3 class="price letra-titles">Precio: $</h3>
-                </div>
-                <div class="col-3">
-                    <input type="text" name="price" value="<%= product.price %>" class="form-control shadow bg-white rounded m-0">
-                </div>
-                </div>
-            </div>
+                                <h3 class="price letra-titles">Precio: $</h3>
+                            </div>
+                            <div class="col-3">
+                                <input type="text" name="price" value="<%= product.price %>"
+                                    class="form-control shadow bg-white rounded m-0">
+                            </div>
+                        </div>
+                    </div>
                     <button class="btn btn-primary btn-lg btnSeba" type="submit">Guardar cambios</button>
                 </form>
 
@@ -85,8 +96,6 @@
             </div>
         </div>
     </div>
-
-    <% })%>
 
     <%- include('partials/footer.ejs') %>
 

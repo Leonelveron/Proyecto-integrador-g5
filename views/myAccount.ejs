@@ -31,9 +31,8 @@
                                     <button type="submit" class="btn btn-sm my-3 btnSeba">Editar</button>
                                 </form>
                                 <div class="action">
-                                    <form action="/users/myAccount/<%= user.id %>" method="POST">
-                                        <button type="submit" class="btn btn-outline-danger btn-sm ">Eliminar
-                                            cuenta</button>
+                                    <form action="/users/myAccount/<%= user.id %>?_method=DELETE" method="POST">
+                                        <button type="submit" class="btn btn-outline-danger btn-sm ">Eliminar cuenta</button>
                                     </form>
                                 </div>
                             </div>

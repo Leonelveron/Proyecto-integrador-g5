@@ -6,18 +6,19 @@
         <h5>"Lo hacemos facil para vos"</h5><br>
       </div>
       <div class="col-xl-6">
-        <form class="form-inline  my-2 my-lg-2 pt-2">
-          <input class="form-control  busqueda mr-sm-2 mx-2" type="search" placeholder="Aquí podes buscar lo que necesitas..." aria-label="Search">
+        <form class="form-inline  my-2 my-lg-2 pt-2" action="/search" method="POST">
+          <input class="form-control  busqueda mr-sm-2 mx-2" name="products" type="search" placeholder="Aquí podes buscar lo que necesitas..." aria-label="Search">
           <button class="btn  my-2 my-sm-0 btn-buscar" type="submit">Buscar</button>
         </form>
       </div>
       <div class="col-xl-3 ingreso pepito pt-2">
         <ul>
           <li>
-            <a href="/users" class="letra"><i class="fas fa-user"></i> 
             <% if(user != undefined) { %>
-                Bienvenido <%= user.name %>!
+              <a href="/users/myAccount/<%= user.id %>" class="letra"><i class="fas fa-user"></i> 
+                Bienvenid@ <%= user.name %>! </a>
               <%} else { %>
+                <a href="/users" class="letra"><i class="fas fa-user"></i>
               Mi cuenta</a>
               <% } %>
           </li>

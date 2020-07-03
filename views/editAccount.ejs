@@ -4,7 +4,7 @@
 <head>
     <%- include('partials/head2.ejs') %>
     <link rel="stylesheet" href="/stylesheets/myAccount.css">
-    <title>Shphone - Mi cuenta</title>
+    <title>Shophone - Mi cuenta</title>
 
 </head>
 
@@ -23,13 +23,13 @@
                     </div>
                     <div class="col-md-8">
                         <div class="card-body outline">
-                            <form action="/users/myAccount/edit/<%= user.id %>" method="POST"
+                            <form action="/users/myAccount/edit/<%= user.id %>?_method=PATCH" method="POST"
                                 enctype="multipart/form-data">
                                 <h4 class="card-title">Nombre</h4>
                                 <input type="name" class="form-control shadow p-3 mb-3 bg-white rounded outline"
                                     name="name" aria-describedby="emailHelp" value="<%= user.name %>">
                                 <h4 class="card-title">Apellido</h4>
-                                <input type="name" class="form-control shadow p-3 mb-3 bg-white rounded outline"
+                                <input type="surname" class="form-control shadow p-3 mb-3 bg-white rounded outline"
                                     name="surname" aria-describedby="emailHelp" value="<%= user.surname %>">
                                 <h4 class="card-title letra-chica">Email</h4>
                                 <input type="email" class="form-control shadow p-3 mb-3 bg-white rounded outline"
@@ -39,21 +39,20 @@
                                     name="password" aria-describedby="emailHelp" value="">
                                 <h4 class="card-title">Foto de perfil</h4>
                                 <input type="file" class="form-control-file" name="avatar">
-                                <div class="action">
-                                    <button type="submit" class="btn btn-sm my-3 btnSeba">Guardar cambios</button>
+                                <button type="submit" class="btn btn-sm my-3 btnSeba">Guardar cambios</button>
                             </form>
                             <div class="mt-2">
                                 <% if (typeof errors != 'undefined') {%>
-                                    <p style="color:red">ERRORES:</p>
-                                    <ul>
-                                        <% for(let i=0; i<errors.length; i++) { %>
-                                            <li>
-                                                <%= errors[i].msg %>
-                                            </li>
-                                            <%}%>
+                                <p style="color:red">ERRORES:</p>
+                                <ul>
+                                    <% for(let i=0; i<errors.length; i++) { %>
+                                    <li>
+                                        <%= errors[i].msg %>
+                                    </li>
+                                    <%}%>
                                     </ul>
                                         <%}%>
-                                    </div>
+                            </div>
                         </div>
                     </div>
                 </div>

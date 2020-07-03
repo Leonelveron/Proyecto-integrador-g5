@@ -9,7 +9,6 @@ var guestMiddleware = require('../middlewares/guestMiddleware');
 var loginMiddleware = require('../middlewares/checkLoginMiddlewate');
 var registerMiddleware = require('../middlewares/checkRegisterMiddleware');
 var userEditMiddleware = require('../middlewares/userEditMiddleware');
-let { check, validationResult, body } = require('express-validator');
 
 var storage = multer.diskStorage({
     destination: function (req, file, cb) {
@@ -26,11 +25,10 @@ router.get('/',guestMiddleware, usersController.index);
 router.post('/', upload.any(), registerMiddleware , usersController.register);
 router.post('/login', loginMiddleware, usersController.login);
 router.get('/check', usersController.check);
-
 router.get('/myAccount/:id', authMiddleware, usersController.myAccount);
 router.get('/myAccount/edit/:id',authMiddleware, usersController.updateView);
-router.put('/myAccount/edit/:id', userEditMiddleware , upload.any(), usersController.update);
-router.post('/myAccount/:id', usersController.delete);
+router.patch('/myAccount/edit/:id', userEditMiddleware , upload.any(), usersController.update);
+router.delete('/myAccount/:id', usersController.delete);
 
 
 
