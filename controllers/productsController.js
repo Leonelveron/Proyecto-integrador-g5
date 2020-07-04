@@ -106,6 +106,8 @@ const controlador = {
     },
 
     editProduct: (req, res) => {
+        let errors = validationResult(req);
+        if (errors.isEmpty()) {
         db.Products.update({
             name: req.body.title,
             description: req.body.description,
@@ -118,6 +120,15 @@ const controlador = {
                 }
             })
         res.redirect('/products/' + req.params.id)
+        }
+        else{
+            let pedidoProducto = db.Products.findByPk(req.params.id);
+            let pedidoMArcas = db.Brands.findAll();
+            Promise.all([pedidoProducto, pedidoMArcas])
+                .then(function ([product, brand]) {
+                    res.render('productEdit', { product: product, brand: brand, errors: errors.errors })
+                })        
+            }
 
     },
 
