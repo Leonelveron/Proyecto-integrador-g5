@@ -42,7 +42,7 @@ app.use('/carrito', carritoRouter);
 app.use('/users', usersRouter);
 app.use('/products', productsRouter);
 app.use('/api/users', apiUsersRouter);
-app.use('/api/users', apiProductsRouter);
+app.use('/api/products', apiProductsRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
