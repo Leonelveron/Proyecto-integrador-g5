@@ -12,6 +12,9 @@ const carritoRouter = require("./routes/carrito");
 const usersRouter = require("./routes/users");
 const productsRouter = require("./routes/products");
 var recordameMiddleware = require('./middlewares/recordameMiddleware');
+const apiUsersRouter = require('./api/routes/users');
+const apiProductsRouter = require('./api/routes/products');
+
 
 // view engine setup
 app.set('view engine', 'ejs');
@@ -38,6 +41,8 @@ app.use('/', indexRouter);
 app.use('/carrito', carritoRouter);
 app.use('/users', usersRouter);
 app.use('/products', productsRouter);
+app.use('/api/users', apiUsersRouter);
+app.use('/api/users', apiProductsRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
