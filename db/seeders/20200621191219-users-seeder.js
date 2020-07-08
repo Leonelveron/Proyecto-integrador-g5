@@ -3,7 +3,7 @@ var faker = require('faker')
 
 module.exports = {
   up: (queryInterface, Sequelize) => {
-    let users = []
+    let verdura = []
 
 
     for (let i = 0; i<19; i++){
