@@ -2,7 +2,7 @@ var db = require('../../db/models');
 
 const controlador = {
     list: (req, res) => {
-        db.Users.findAll({
+        db.User.findAll({
             attributes: ['id', 'name', 'mail']
         })
             .then(users => {
