@@ -1,6 +1,9 @@
 body{
     background-color: #E6DFDF ;
 }
+.altura{
+    height: 50vh;
+}
 
 
 .Productos-main{
@@ -32,4 +35,11 @@ article img{
     margin-left: 20px;
     padding-bottom: 5px;
     padding-left: 10px;
+    font-size: 1.7rem;
+}
+
+@media(max-width: 679px){
+    .slide{
+        display: none;
+    }
 }
