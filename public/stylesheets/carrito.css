@@ -53,6 +53,7 @@ button.eliminar:hover{
 
 div a.nombres{
     text-decoration: none;
+    color: #7F52BD;
 }
 
 @media (max-width: 767px){
