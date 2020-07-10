@@ -33,11 +33,14 @@
             <%}%>
     </div>
       <div class="padding padding2">
-        <form action="/products/create" method="POST">
+        <form action="/products/create" class="js-nombre form-group" method="POST">
           <label for="tituloProducto">
             <h3>Nombre del equipo</h3>
           </label>
-          <input class="cajas" type="text" name="name" id="">
+          <input class="cajas form-control" type="text" name="name" id="">
+          <div class="invalid-feedback">
+            El campo debe tener mas de 4 caracteres
+          </div>
       </div>
       <div class="padding padding2">
         <h3>Marca</h3>
@@ -51,7 +54,10 @@
         <label for="">
           <h3>Descripcion</h3>
         </label>
-        <textarea name="description" class="cajas" id="" cols="30" rows="5"></textarea>
+        <textarea name="description " class="cajas form-control js-descripcion" id="" cols="30" rows="5"></textarea>
+        <div class="invalid-feedback">
+          El campo debe tener mas de 20 caracteres
+        </div>
       </div>
       <div class="padding padding2 ">
         <h3>Precio</h3>
@@ -61,13 +67,16 @@
               <div class="input-group-prepend">
                 <span class="input-group-text" id="inputGroupPrepend">$</span>
               </div>
-              <input name="price" type="number" class="form-control" id="validationCustomUsername"
+              <input name="price" type="number" class="form-control js-precio" id="validationCustomUsername"
                 aria-describedby="inputGroupPrepend" required>
+                <div class="invalid-feedback">
+                  El campo debe ser mayor a 10
+                </div>
             </div>
           </div>
         </div>
       </div>
-      <div class="padding padding2">
+      <!-- <div class="padding padding2">
         <label for="tituloProducto">
           <h3>Tamaño de pantalla</h3>
         </label>
@@ -108,15 +117,15 @@
           <h3>Es resistente al agua?</h3>
         </label>
         <input class="cajas" type="text" name="water_resistance" id="" maxlength="120">
-      </div>
+      </div> -->
       <div class="padding padding2 ">
         <div class="form-group">
-          <label for="">
+          <!-- <label for="">
             <h3>Cargar Fotos</h3>
           </label>
-          <input type="file" class="form-control-file" id="" name="foto">
+          <input type="file" class="form-control-file" id="" name="foto"> -->
         </div>
-        <button class="btn btn-secondary btn-lg btnSeba" type="submit">Guardar</button>
+        <button class="btn btn-secondary btn-lg btnSeba js-guardar disabled" type="submit">Guardar</button>
       </div>
       </form>
     </div>
@@ -133,6 +142,8 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
     integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
     crossorigin="anonymous"></script>
+    <script src="/js/validation.js">  </script>
+
 </body>
 
 </html>

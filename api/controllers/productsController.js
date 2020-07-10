@@ -2,8 +2,8 @@ var db = require('../../db/models');
 
 const controlador = {
     list: (req, res) => {
-        db.Product.findAll({
-            attributes: ['id', 'name', 'price',"description","id_brand"]
+        db.Products.findAll({
+            attributes: ['id', 'name', 'price',"description","id_brands"]
         })
             .then(products => {
                 for (let i = 0; i < products.length; i++) {
@@ -21,9 +21,9 @@ const controlador = {
             })
     },
 
-    detail: (res,req){
-        db.Product.findByPK
-    }
+    // detail: (res,req){
+    //     db.Product.findByPK
+    // }
 
 }
 
