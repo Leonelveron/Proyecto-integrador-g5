@@ -51,10 +51,9 @@
             <a href="/products/<%= product.id%>" class="titulo">
               <h4><%= product.name %></h4>
             </a>
+            <p class="price"><%= product.brands.name %></p>
             <p class="price">$ <%= product.price %></p>
-            <p class="price">$ <%= product.brands.name %></p>
-            <a class="btn btn-style-1 btn-dark btn-final" href="#"><i class="fe-icon-credit-card"></i>Agregar al
-              carrito</a>
+            <a class="btn btn-style-1 btn-dark btn-final" href="/products/<%= product.id%>"><i class="fe-icon-credit-card"></i>Ver detalle</a>
           </div>
         </div>
         <% }) %>

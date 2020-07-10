@@ -29,13 +29,14 @@ article img{
 
 .titulo-productos{
     width: 60%;
-    background-color: #71D3D5;
+    background-color: #7F52BD;
     border-radius: 10px 10px 10px 10px;
     margin-top: 5px;
     margin-left: 20px;
     padding-bottom: 5px;
     padding-left: 10px;
     font-size: 1.7rem;
+    color: white;
 }
 
 @media(max-width: 679px){
