@@ -18,9 +18,6 @@ var storage = multer.diskStorage({
 
 var upload = multer({ storage: storage })
 
-const profilesFilePath = path.join(__dirname, '../data/profile.json');
-const profiles = JSON.parse(fs.readFileSync(profilesFilePath, 'utf-8'));
-
 const controlador = {
   index: (req, res, ) => {
     res.render('registro');
