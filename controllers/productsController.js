@@ -68,11 +68,12 @@ const controlador = {
     },
 
     detail: (req, res) => {
-
-        db.Products.findByPk(req.params.id,
-        ).then(function (product) {
-            res.render("producto", { product: product })
+        db.Products.findByPk(req.params.id, {
+            include: [{ association: "brands" }]
         })
+            .then(function (product) {
+                res.render("producto", { product: product})
+            })
 
         /* 
                 let productDetail = products.filter(product => req.params.id == product.id)
@@ -106,19 +107,28 @@ const controlador = {
     },
 
     editProduct: (req, res) => {
-        db.Products.update({
-            name: req.body.title,
-            description: req.body.description,
-            price: req.body.price,
-            id_brands: req.body.brand
-        },
-            {
-                where: {
-                    id: req.params.id
-                }
-            })
-        res.redirect('/products/' + req.params.id)
-
+        let errors = validationResult(req);
+        if (errors.isEmpty()) {
+            db.Products.update({
+                name: req.body.title,
+                description: req.body.description,
+                price: req.body.price,
+                id_brands: req.body.brand
+            },
+                {
+                    where: {
+                        id: req.params.id
+                    }
+                })
+            res.redirect('/products/' + req.params.id)
+        } else {
+            let pedidoProducto = db.Products.findByPk(req.params.id);
+            let pedidoMArcas = db.Brands.findAll();
+            Promise.all([pedidoProducto, pedidoMArcas])
+                .then(function ([product, brand]) {
+                    res.render('productEdit', { product: product, brand: brand, errors: errors.errors })
+                })
+        }
     },
 
     deleteProduct: (req, res) => {

@@ -42,6 +42,18 @@
                 </div>
             </div>
             <div class="col 7">
+                <div class="mt-2">
+                    <% if (typeof errors != 'undefined') {%>
+                    <p style="color:red">ERRORES:</p>
+                    <ul>
+                        <% for(let i=0; i<errors.length; i++) { %>
+                        <li>
+                            <%= errors[i].msg %>
+                        </li>
+                        <%}%>
+                        </ul>
+                        <%}%>
+                </div>
                 <form action="/products/edit/<%= product.id %>?_method=PUT" method="POST">
                     <h3 class="pt-3 letra-titles">Nombre del producto</h3>
                     <textarea rows="2" cols="80" type="text" name="title"
@@ -52,16 +64,16 @@
                     <div class="mb-3">
                         <select id="inputState" class="form-control" name="brand">
                             <% for (let i=0 ; i<brand.length; i++) { %>
-                                <% if (brand[i].id == product.brand_id) { %>
+                            <% if (brand[i].id == product.brand_id) { %>
                             <option value="<%= brand[i].id %>" selected>
-                            <%= brand[i].name %>
+                                <%= brand[i].name %>
                             </option>
                             <% } else { %>
-                                <option value="<%= brand[i].id %>">
+                            <option value="<%= brand[i].id %>">
                                 <%= brand[i].name %>
-                                </option>
-                                <% } %>
-                                <% } %>
+                            </option>
+                            <% } %>
+                            <% } %>
                         </select>
                     </div>
                     <h3 class="letra-titles">Especificaciones Tecnicas</h3>
