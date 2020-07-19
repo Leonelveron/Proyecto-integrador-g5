@@ -4,9 +4,14 @@ body{
 
 h2.title{
     font-family: 'Michroma', sans-serif;
-    padding: 3% 0;
-    
-}
+    padding: 1% 0;
+    width: 30%;
+    background-color: #5A2D81;
+    border-radius: 10px 10px 10px 10px;
+    font-size: 1.7rem;
+    color: white;
+    }
+
 .row{
     display: flex;
     justify-content: space-evenly;

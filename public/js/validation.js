@@ -8,6 +8,10 @@ window.addEventListener('load', function(){
     let nombreOK
     let descripcionOK
 
+    function habilitarGuardar(){
+        
+    }
+
     nombre.addEventListener('keyup', function(event){
         event.target.classList.add('is-invalid')
         if(event.target.value.length > 4){

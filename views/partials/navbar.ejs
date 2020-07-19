@@ -51,15 +51,9 @@
             Marcas
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="#">Samsung</a>
-            <a class="dropdown-item" href="#">Motorola</a>
-            <a class="dropdown-item" href="#">Lg</a>
-            <a class="dropdown-item" href="#">Huawei</a>
-            <a class="dropdown-item" href="#">Xiaomi</a>
-            <a class="dropdown-item" href="#">Apple</a>
-            <a class="dropdown-item" href="#">Sony</a>
-            <a class="dropdown-item" href="#">Google</a>
-            <a class="dropdown-item" href="#">Nokia</a>
+            <% marcas.forEach(marca => {%>
+            <a class="dropdown-item" href="#"><%= marca.name %></a>
+            <% }) %>
           </div>
         </li>
         <li class="nav-item active">

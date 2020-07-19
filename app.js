@@ -6,12 +6,14 @@ var logger = require('morgan');
 var methodOverride = require('method-override');
 var session = require('express-session');
 var app = express();
+var db = require("./db/models");
+
 
 const indexRouter = require("./routes/index");
 const carritoRouter = require("./routes/carrito");
 const usersRouter = require("./routes/users");
 const productsRouter = require("./routes/products");
-var recordameMiddleware = require('./middlewares/recordameMiddleware');
+const recordameMiddleware = require('./middlewares/recordameMiddleware');
 const apiUsersRouter = require('./api/routes/users');
 const apiProductsRouter = require('./api/routes/products');
 
@@ -33,9 +35,14 @@ app.use(function(req, res, next) {
   next();
 });
 
+app.use(function(req, res, next) {
+  db.Brands.findAll().then(function(brands){
+    res.locals.marcas = brands
+    next();
+  })
+});
+
 // Route System
-
-
 
 app.use('/', indexRouter);
 app.use('/carrito', carritoRouter);
