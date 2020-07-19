@@ -72,8 +72,7 @@ const controlador = {
   },
   check: (req, res) => {
     if (req.session.loggedUser) {
-      console.log(req.session)
-      res.send('Estas logueado ' + req.session.loggedUser.email)
+      res.send('Estas logueado ' + req.session.loggedUser.mail)
     } else {
       res.send('No estas logueado')
     }

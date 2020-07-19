@@ -59,7 +59,7 @@
             <p class="price"><%= product.brands.name %></p>
             <p class="price">$ <%= product.price %></p>
             <a class="btn btn-style-1 btn-dark btn-final mb-3" href="/products/<%= product.id%>">Ver detalle</a>
-            <a class="btn btn-style-1 btn-dark btn-final" href="#">Agregar al carrito</a>
+            <a class="btn btn-style-1 btn-dark btn-final js-carrito" href="">Agregar al carrito</a>
           </div>
         </div>
         <% }) %>
@@ -71,6 +71,18 @@
 
   <%- include('partials/footer.ejs') %>
 
+  <!-- <script>
+    let btnCarrito = document.querySelector('.js-carrito')
+    btnCarrito.addEventListener('click', function(e){
+      e.preventDefault();
+      if ( user != undefined) {
+        console.log('Hola nico!')
+      }
+      else{
+        alert('Debes estar loguado para agregar productos al carrito')
+      }
+    })
+  </script> -->
   <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
     integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
     crossorigin="anonymous"></script>
