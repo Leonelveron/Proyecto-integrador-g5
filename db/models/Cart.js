@@ -21,24 +21,29 @@ module.exports = (sequelize, dataTypes) => {
 
     const Cart = sequelize.define(alias, cols, config);
 
-    Cart.associate = function(models){
-        Cart.belongsToMany(models.Products,{
-            as:"products",
-            througt: "carts_products",
+    Cart.associate = function (models) {
+        Cart.belongsToMany(models.Products, {
+            as: "products",
+            through: "carts_products",
             foreignKey: "id_carts",
             otherKey: "id_products",
             timestamps: true
-
-
         })
-    }
 
-    Cart.associate = function(models){
-        Cart.belongsTo(models.Users,{
+        Cart.belongsTo(models.Users, {
             as: "users",
             foreignKey: "id_users"
         })
+
+        Cart.belongsToMany(models.Products, {
+            as: 'productsPivot',
+            through: 'carts_products',
+            foreignKey: 'id_carts',
+            otherKey: 'id_products',
+            timestamps: true
+        });
     }
+
 
     return Cart;
 }

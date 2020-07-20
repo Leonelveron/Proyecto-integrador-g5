@@ -12,6 +12,18 @@ const controlador = {
       .then((products) => {
         res.render('carrito', { products: products });
       });
+  },
+
+  cart: (req, res) => {
+    db.Carts.findOne({
+      include: ['productsPivot'],
+      where: {
+        id_users: req.session.loggedUser.id,
+        id: req.params.id
+      }
+    }).then((cart) => {
+      res.render('carrito', { cart: cart });
+    });
   }
 };
 

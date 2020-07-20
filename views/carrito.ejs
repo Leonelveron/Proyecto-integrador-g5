@@ -5,7 +5,7 @@
 
     <%- include('partials/head2.ejs') %>
 
-    <link rel="stylesheet" href="./stylesheets/carrito.css">
+    <link rel="stylesheet" href="../stylesheets/carrito.css">
     <title>Mi Carrito</title>
 </head>
 
@@ -20,18 +20,18 @@
     </div>
 
     <div class="container-fluid pb-5 mb-2">
-        <% products.forEach(product => {%>
+        <% cart.productsPivot.forEach(product => {%>
         <div class="row cart-item d-md-flex tarjeta">
             <div class=" col-xl-3 col-lg-3 col-md-6 px-3 m-3">
                 <a class="cart-item-product" href="#">
-                    <img src="./images/descarga1.jpg" alt="Product">
+                    <img src="../images/descarga1.jpg" alt="Product">
                 </a>
             </div>
             <div class=" col-xl-3 col-lg-3 col-md-3 px-3 my-3">
                 <a class="cart-item-product nombres" href="/products/<%= product.id%>">
                     <h4 class="cart-item-product-title"><%= product.name %></h4>
                 </a>
-                <span><strong>Marca:</strong> <%= product.brands.name %></span>
+                <span><strong>Marca:</strong> <%= product.name %></span>
             </div>
             <div class=" col-xl-1 col-lg-1 col-md-4 col-sm-4 col-4 my-3 text-center">
                 <div class="cart-item-label mb-2">Cantidad</div>
