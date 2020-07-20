@@ -7,16 +7,11 @@ let registerMiddleware = [
     check('email').isEmail().withMessage('El campo "Email" debe tener un mail válido'),
     check('password').isLength({ min: 6 }).withMessage("La contraseña debe tener por lo menos 6 caracteres"),
     body('email').custom(function (value) {
-        db.Users.findOne({
+        return db.Users.findOne({
             where: { mail: value }
         }).then(function (user) {
-            console.log(value)
-            console.log(user)
-            if (user === null) {
-                return true
-            }
-            else {
-                return false
+            if (user) {
+                return Promise.reject()
             }
         })
     }).withMessage("El mail ya existe"),
