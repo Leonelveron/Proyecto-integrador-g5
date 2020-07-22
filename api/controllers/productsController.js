@@ -21,7 +21,7 @@ const controlador = {
             })
     },
 
-    detail: (res,req){
+    detail: (res,req)=>{
         db.Product.findByPK
     }
 
