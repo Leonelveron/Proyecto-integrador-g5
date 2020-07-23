@@ -9,7 +9,8 @@ window.addEventListener('load', function(){
     let descripcionOK
 
     function habilitarGuardar(){
-        
+        if(nombreOK && precioOK && descripcionOK === true){
+            btnGuardar.classList.remove('disabled')}
     }
 
     nombre.addEventListener('keyup', function(event){
@@ -17,6 +18,7 @@ window.addEventListener('load', function(){
         if(event.target.value.length > 4){
             event.target.classList.replace('is-invalid', 'is-valid')
             nombreOK = true
+            habilitarGuardar()
         }else{
             event.target.classList.replace('is-valid', 'is-invalid')
         }
@@ -26,6 +28,7 @@ window.addEventListener('load', function(){
         if(event.target.value.length > 20){
             event.target.classList.replace('is-invalid', 'is-valid')
             descripcionOK = true
+            habilitarGuardar()
         }else{
             event.target.classList.replace('is-valid', 'is-invalid')
         }
@@ -35,8 +38,7 @@ window.addEventListener('load', function(){
         if(event.target.value > 10){
             event.target.classList.replace('is-invalid', 'is-valid')
             precioOK = true
-            if(nombreOK && precioOK && descripcionOK === true){
-                btnGuardar.classList.remove('disabled')}
+            habilitarGuardar()
         }else{
             event.target.classList.replace('is-valid', 'is-invalid')
             btnGuardar.classList.add('disabled')
