@@ -21,8 +21,8 @@ const controlador = {
         id_users: req.session.loggedUser.id,
         id: req.params.id
       }
-    }).then((cart) => {
-      res.render('carrito', { cart: cart });
+    }).then((carts) => {
+      res.render('carrito', { carts : carts });
     });
   }
 };

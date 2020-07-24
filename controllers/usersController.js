@@ -45,7 +45,9 @@ const controlador = {
     let errors = validationResult(req);
     if (errors.isEmpty()) {
       let userToLogin
-      db.Users.findAll()
+      db.Users.findAll({
+        include: [{ association: "carts" }]
+      })
         .then(function (users) {
           for (let i = 0; i < users.length; i++) {
             if (users[i].mail == req.body.email_login) {

@@ -45,10 +45,10 @@ window.addEventListener('load', function(){
         }
     })
 
-    btnGuardar.addEventListener('click', function(e){
-        e.preventDefault()
+    // btnGuardar.addEventListener('click', function(e){
+    //     e.preventDefault()
 
         
 
-    })
+    // })
 })

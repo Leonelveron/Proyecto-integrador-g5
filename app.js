@@ -16,6 +16,7 @@ const productsRouter = require("./routes/products");
 const recordameMiddleware = require('./middlewares/recordameMiddleware');
 const apiUsersRouter = require('./api/routes/users');
 const apiProductsRouter = require('./api/routes/products');
+const carritoMW = require('./middlewares/carritoMiddleware');
 
 
 // view engine setup
@@ -36,15 +37,16 @@ app.use(function(req, res, next) {
 });
 
 app.use((req, res, next) => {res.header('Access-Control-Allow-Origin', '*');
- next();}); 
+ next();})
 
 app.use(function(req, res, next) {
   db.Brands.findAll().then(function(brands){
     res.locals.marcas = brands
     next();
   })
-});
+})
 
+app.use(carritoMW)
 // Route System
 
 app.use('/', indexRouter);
@@ -53,6 +55,7 @@ app.use('/users', usersRouter);
 app.use('/products', productsRouter);
 app.use('/api/users', apiUsersRouter);
 app.use('/api/products', apiProductsRouter);
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

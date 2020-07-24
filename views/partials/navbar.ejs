@@ -17,14 +17,15 @@
             <% if(user != undefined) { %>
               <a href="/users/myAccount/<%= user.id %>" class="letra"><i class="fas fa-user"></i> 
                 Bienvenid@ <%= user.name %>! </a>
+                <li>
+                  <a href="/carrito/<%= cart[0].id %>" class="letra"><i class="fas fa-shopping-cart"></i> Mi carrito</p></a>
+                </li>
               <%} else { %>
                 <a href="/users" class="letra"><i class="fas fa-user"></i>
               Mi cuenta</a>
               <% } %>
           </li>
-          <li>
-            <a href="/carrito" class="letra"><i class="fas fa-shopping-cart"></i> Mi carrito</p></a>
-          </li>
+          
         </ul>
       </div>
     </div>
