@@ -72,7 +72,7 @@ const controlador = {
             include: [{ association: "brands" }]
         })
             .then(function (product) {
-                res.render("producto", { product: product})
+                res.render("producto", { product: product })
             })
 
         /* 
@@ -138,6 +138,18 @@ const controlador = {
             }
         })
         res.redirect('/products')
+    },
+
+    brands: (req, res) => {
+        db.Products.findAll({
+            include: [{ association: "brands" }],
+            where: {
+                id_brands: req.params.id
+            }
+        })
+            .then(function (products) {
+                res.render("productsListBrands", { products: products });
+            })
     }
 };
 

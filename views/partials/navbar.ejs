@@ -53,7 +53,7 @@
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
             <% marcas.forEach(marca => {%>
-            <a class="dropdown-item" href="#"><%= marca.name %></a>
+            <a class="dropdown-item" href="/products/brands/<%= marca.id %>"><%= marca.name %></a>
             <% }) %>
           </div>
         </li>
