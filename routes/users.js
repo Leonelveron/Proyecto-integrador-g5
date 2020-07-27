@@ -29,6 +29,7 @@ router.get('/myAccount/:id', authMiddleware, usersController.myAccount);
 router.get('/myAccount/edit/:id',authMiddleware, usersController.updateView);
 router.patch('/myAccount/edit/:id', upload.any(), userEditMiddleware, usersController.update);
 router.delete('/myAccount/:id', usersController.delete);
+router.post('/myAccount/close', usersController.close);
 
 
 

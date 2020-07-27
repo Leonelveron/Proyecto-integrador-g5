@@ -123,6 +123,11 @@ const controlador = {
     })
 
     res.redirect('/')
+  },
+
+  close: (req, res) => {
+    req.session.loggedUser = undefined
+    res.redirect('/')
   }
 }
 
