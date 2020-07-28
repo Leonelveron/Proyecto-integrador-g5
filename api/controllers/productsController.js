@@ -21,10 +21,12 @@ const controlador = {
             })
     },
 
-    // detail: (res,req){
-    //     db.Product.findByPK
-    // }
-
+    detail: function(req, res){
+        db.Product.findByPk(req.params.id)
+        .then(function(product){
+            res.json(product)
+        })
+    }
 }
 
 module.exports = controlador
