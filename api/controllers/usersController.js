@@ -21,7 +21,7 @@ const controlador = {
             })
     },
     detail: function(req, res){
-        db.User.findByPk(req.params.id)
+        db.Users.findByPk(req.params.id)
         .then(function(user){
             res.json(user)
         })

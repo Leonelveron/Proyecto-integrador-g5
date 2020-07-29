@@ -22,7 +22,7 @@ const controlador = {
     },
 
     detail: function(req, res){
-        db.Product.findByPk(req.params.id)
+        db.Products.findByPk(req.params.id)
         .then(function(product){
             res.json(product)
         })
