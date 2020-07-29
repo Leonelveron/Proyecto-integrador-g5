@@ -9,23 +9,6 @@ function recordameMiddleware(req, res, next) {
         }).then(function (user) {
             req.session.loggedUser = user
         })
-        // let archivoUsers = fs.readFileSync('./data/profile.json', { encoding: 'utf-8' })
-        // let users = []
-        // if (archivoUsers == "") {
-        //     users = []
-        // }
-        // else {
-        //     users = JSON.parse(archivoUsers)
-        // }
-        // let userToLogin
-
-        // for (let i = 0; i < users.length; i++) {
-        //     if (users[i].email == req.cookies.recordame) {
-        //         userToLogin = users[i];
-        //         break;
-        //     }
-        // }
-        // req.session.loggedUser = userToLogin 
     }
     next();
 }

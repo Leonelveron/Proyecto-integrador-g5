@@ -14,9 +14,6 @@ const controlador = {
             .then(function (products) {
                 res.render("productsList2", { products: products });
             })
-
-        /* let allProducts = products.filter(product => product.stock > 0)
-        res.render('productsList2', { allProducts }) */
     },
 
     index: (req, res) => {
@@ -36,26 +33,6 @@ const controlador = {
                 price: req.body.price,
                 id_brands: req.body.id_brands
             })
-
-            // let PK = db.Products.findAll({
-            //     order:[['id', 'ASC']],
-            //     limit: 1
-            // }).then(function(product){
-            //      console.log(product.id)
-            // })
-
-            // db.Cellphones.create({
-            //     include: [{ association: "products" }],
-            //     screen_size: req.params.screen_size,
-            //     screen_resolution: req.params.screen_resolution,
-            //     os: req.params.os,
-            //     processor: req.params.processor,
-            //     dimensions: req.params.dimensions,
-            //     storage: req.params.storage,
-            //     batery: req.params.batery,
-            //     water_resistance: req.params.water_resistance,
-            //     id_products: PK
-            // })
             res.redirect("/products/");
         }
         else {
@@ -74,27 +51,7 @@ const controlador = {
             .then(function (product) {
                 res.render("producto", { product: product })
             })
-
-        /* 
-                let productDetail = products.filter(product => req.params.id == product.id)
-                res.render('producto', { productDetail: productDetail }) */
     },
-
-
-    /* Antes DB  */
-    /*       let jsonproduct = fs.readFileSync("../data/product.json", { encoding: "utf-8" })
-          let productos = []
-          let producto = {
-              nombre: req.body.nombre,
-              stock: req.body.stock,
-              precio: req.body.precio,
-          }
-  
-          productos = JSON.parse(jsonproduct)
-  
-          productos.push(producto)
-          let productosJSON = JSON.stringify(productos) 
-   */
 
     indexEdit: (req, res) => {
         let pedidoProducto = db.Products.findByPk(req.params.id);

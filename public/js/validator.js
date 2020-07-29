@@ -85,26 +85,5 @@ let formRegistro = document.querySelector("form.registro");
                 
             }
         }
-
-
     });
-
-
-
-/*let formProducto = document.querySelector("form.producto");
-
-
-formProducto.addEventListener("submit", function(){
-    alert("hiciste un submit de producto");
-
-    let errores = [];
-
-    
-
-
-})
-
-*/
-
-
 })
