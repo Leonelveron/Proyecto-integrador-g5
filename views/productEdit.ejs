@@ -13,7 +13,7 @@
 
     <div class="container">
         <div class="row">
-            <div class="col 5 mt-3" id="col-izq">
+            <div class="col-12 col-xl-5 col-lg-5 col-md-5 mt-3" id="col-izq">
                 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
                     <ol class="carousel-indicators">
                         <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -41,7 +41,7 @@
                     </a>
                 </div>
             </div>
-            <div class="col 7">
+            <div class="col-12 col-xl-6 col-lg-6 col-md-5">
                 <div class="mt-2">
                     <% if (typeof errors != 'undefined') {%>
                     <p style="color:red">ERRORES:</p>
@@ -88,10 +88,10 @@
                     </ul>
                     <div class="container">
                         <div class="row">
-                            <div class="col-3 m-0 p-0">
+                            <div class="col-5 col-sm-4 col-md-5 col-lg-3 col-xl-3 m-0 p-0">
                                 <h3 class="price letra-titles">Precio: $</h3>
                             </div>
-                            <div class="col-3">
+                            <div class="col-4 col-md-5 col-lg-3 col-xl-3">
                                 <input type="text" name="price" value="<%= product.price %>"
                                     class="form-control shadow bg-white rounded m-0">
                             </div>
