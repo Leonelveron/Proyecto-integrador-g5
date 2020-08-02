@@ -49,7 +49,7 @@
     <div class="container products-wrapper">
       <div class="row">
         <% products.forEach(product => {%>
-        <div class="card col-12 col-sm-4 col-lg-3 bg-light p-4 mb-5 " style="width: 18rem;">
+        <div class="card col-12 col-sm-4 col-md-4 col-lg-3 bg-light p-4 mb-5 " style="width: 18rem;">
           <a href="/products/<%= product.id%>"><img src="../images/descarga.jpg" class="card-img-top"
               alt="Imagen de producto"></a>
           <div class="card-body bg-light">
@@ -59,7 +59,7 @@
             <p class="price"><%= product.brands.name %></p>
             <p class="price">$ <%= product.price %></p>
             <a class="btn btn-style-1 btn-dark btn-final mb-3" href="/products/<%= product.id%>">Ver detalle</a>
-            <a class="btn btn-style-1 btn-dark btn-final js-carrito" href="">Agregar al carrito</a>
+            <!-- <a class="btn btn-style-1 btn-dark btn-final js-carrito" href="">Agregar al carrito</a> -->
           </div>
         </div>
         <% }) %>

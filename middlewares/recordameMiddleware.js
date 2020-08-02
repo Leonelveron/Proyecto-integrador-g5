@@ -1,6 +1,4 @@
-var fs = require('fs');
 const db = require("../db/models");
-
 
 function recordameMiddleware(req, res, next) {
     if (req.cookies.recordame != undefined && req.session.loggedUser == undefined) {
@@ -12,6 +10,5 @@ function recordameMiddleware(req, res, next) {
     }
     next();
 }
-
 
 module.exports = recordameMiddleware
