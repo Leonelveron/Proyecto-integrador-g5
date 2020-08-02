@@ -15,6 +15,7 @@ const controlador = {
         res.render('index', { products: products})
       })
   },
+  
   search: (req, res) => {
     db.Products.findAll({
       include: [{ association: "brands" }],

@@ -35,8 +35,7 @@ const controlador = {
         avatar: req.files[0].filename
       })
       res.redirect('/')
-    }
-    else {
+    }else {
       res.render('registro', { errors: errors.errors })
     }
   },
@@ -66,12 +65,11 @@ const controlador = {
           }
           res.redirect('/')
         })
-    }
-
-    else {
+    }else {
       res.render('registro', { errors: errors.errors })
     }
   },
+
   check: (req, res) => {
     if (req.session.loggedUser) {
       res.send('Estas logueado ' + req.session.loggedUser.mail)
@@ -81,14 +79,14 @@ const controlador = {
   },
 
   myAccount: (req, res) => {
-    db.Users.findByPk(req.params.id, {}).
+    db.Users.findByPk(req.params.id).
       then(function (user) {
         res.render('myAccount', { user: user })
       })
   },
 
   updateView: (req, res) => {
-    db.Users.findByPk(req.params.id,{})
+    db.Users.findByPk(req.params.id)
     .then(function(user){
       res.render('editAccount', {user:user})
     })
@@ -121,7 +119,6 @@ const controlador = {
         id: req.params.id
       }
     })
-
     res.redirect('/')
   },
 
