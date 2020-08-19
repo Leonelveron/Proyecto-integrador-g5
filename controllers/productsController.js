@@ -50,7 +50,9 @@ const controlador = {
         })
             .then(function (product) {
                 res.render("producto", { product: product })
+                console.log(product);
             })
+          
     },
 
     indexEdit: (req, res) => {

@@ -24,6 +24,40 @@ module.exports = (sequelize, dataTypes) => {
             notNull: true
         },
 
+        screen_size: {
+            type: dataTypes.STRING,
+            notNull: true
+
+        },
+        screen_resolution: {
+            type: dataTypes.STRING,
+            notNull: true
+        },
+        os: {
+            type: dataTypes.STRING,
+            notNull: true
+        },
+        processor: {
+            type: dataTypes.STRING,
+            notNull: true
+        },
+        dimensions: {
+            type: dataTypes.STRING,
+            notNull: true
+        },
+        storage: {
+            type: dataTypes.STRING,
+            notNull: true
+        },
+        water_resistance: {
+            type: dataTypes.STRING,
+            notNull: true
+        },
+        battery:{
+            type: dataTypes.STRING,
+            notNull: true
+        }
+
     }
     let config = {
         tableName: "products",

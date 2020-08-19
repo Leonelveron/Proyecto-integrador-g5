@@ -9,6 +9,7 @@ var guestMiddleware = require('../middlewares/guestMiddleware');
 var loginMiddleware = require('../middlewares/checkLoginMiddlewate');
 var registerMiddleware = require('../middlewares/checkRegisterMiddleware');
 var userEditMiddleware = require('../middlewares/userEditMiddleware');
+const { route } = require('../api/routes/products');
 
 var storage = multer.diskStorage({
     destination: function (req, file, cb) {
@@ -30,6 +31,7 @@ router.get('/myAccount/edit/:id',authMiddleware, usersController.updateView);
 router.patch('/myAccount/edit/:id', upload.any(), userEditMiddleware, usersController.update);
 router.delete('/myAccount/:id', usersController.delete);
 router.post('/myAccount/close', usersController.close);
+router.get("/myAccount/:id/miscompras", authMiddleware, usersController.miscompras )
 
 
 

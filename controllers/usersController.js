@@ -93,15 +93,22 @@ const controlador = {
   },
 
   update: (req, res) => {
+    console.log(req)
     let errors = validationResult(req);
+    let toUpdate = {
+      name: req.session.name,
+      surname: req.session.surname,
+      mail: req.session.mail,
+      password: bcrypt.hashSync(req.body.password, 10),   
+    }
+    if (req.files[0]){
+      toUpdate = {
+        ...toUpdate,
+        avatar: req.files[0].filename
+      }
+    }
     if (errors.isEmpty()){
-    db.Users.update({
-      name: req.body.name,
-      surname: req.body.surname,
-      mail: req.body.mail,
-      password: bcrypt.hashSync(req.body.password, 10),
-      avatar: req.files[0].filename
-    },
+    db.Users.update(toUpdate,
       {
         where: {
           id: req.params.id
@@ -125,7 +132,11 @@ const controlador = {
   close: (req, res) => {
     req.session.loggedUser = undefined
     res.redirect('/')
+  },
+  miscompras: (req, res) => {
+  res.render("miscompras")
   }
 }
+
 
 module.exports = controlador;

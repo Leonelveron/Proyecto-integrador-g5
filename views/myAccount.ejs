@@ -25,7 +25,7 @@
                         <div class="card-body">
                             <h4 class="card-title"><%= user.name %> <%= user.surname %></h4>
                             <h4 class="card-title letra-chica"><%= user.mail %></h4>
-                            <a href="#" class="card-link estilo-compras">Mis compras</a>
+                            <a href="/users/myAccount/<%= user.id %>/miscompras" class="card-link estilo-compras">Mis compras</a>
                             <div class="action">
                                 <form action="/users/myAccount/edit/<%= user.id %>" method="get">
                                     <button type="submit" class="btn btn-sm my-3 btnSeba">Editar</button>

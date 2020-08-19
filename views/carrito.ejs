@@ -13,14 +13,14 @@
 
     <!-- Navbar -->
 
-    <%- include('partials/navbar.ejs') %>
+<%- include('partials/navbar.ejs') %> 
 
     <div>
         <h2 class="tit-carrito">Carrito de productos <i class="fas fa-shopping-cart fa-sm"></i></h2>
     </div>
 
     <div class="container-fluid pb-5 mb-2">
-        <% carts.productsPivot.forEach(product => {%>
+       
         <div class="row cart-item d-md-flex tarjeta">
             <div class=" col-xl-3 col-lg-3 col-md-6 px-3 m-3">
                 <a class="cart-item-product" href="#">
@@ -28,7 +28,7 @@
                 </a>
             </div>
             <div class=" col-xl-3 col-lg-3 col-md-3 px-3 my-3">
-                <a class="cart-item-product nombres" href="/products/<%= product.id%>">
+                <a class="cart-item-product nombres" href="">
                     <h4 class="cart-item-product-title"><%= product.name %></h4>
                 </a>
                 <span><strong>Marca:</strong> <%= product.name %></span>
@@ -49,7 +49,7 @@
                 <button type="button" class="btn btn-dark eliminar">X</button>
             </div>
         </div>
-        <% }) %>
+     
     </div>
 
     <div class="row boton mx-2 mb-3">

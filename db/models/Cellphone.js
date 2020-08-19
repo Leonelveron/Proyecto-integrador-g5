@@ -9,28 +9,36 @@ module.exports = (sequelize, dataTypes) => {
         },
         screen_size: {
             type: dataTypes.STRING,
+            notNull: true
 
         },
         screen_resolution: {
             type: dataTypes.STRING,
+            notNull: true
         },
         os: {
             type: dataTypes.STRING,
+            notNull: true
         },
         processor: {
             type: dataTypes.STRING,
+            notNull: true
         },
         dimensions: {
             type: dataTypes.STRING,
+            notNull: true
         },
         storage: {
             type: dataTypes.STRING,
+            notNull: true
         },
         batery: {
             type: dataTypes.STRING,
+            notNull: true
         },
         water_resistance: {
-            type: dataTypes.STRING
+            type: dataTypes.STRING,
+            notNull: true
         },
         id_products: {
             type: dataTypes.BIGINT,
@@ -52,8 +60,5 @@ module.exports = (sequelize, dataTypes) => {
             foreignKey: "id_products"
         })
     }
-
-    
-
     return Cellphone;
 }
