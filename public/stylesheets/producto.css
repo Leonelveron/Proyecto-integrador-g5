@@ -2,9 +2,7 @@
   font-family: 'Roboto', sans-serif;
 }
 
-.ul{
-  list-style: none;
-}
+
 .bc-navbar{
   background-color: #5A2D82;
   color: white;
@@ -87,12 +85,71 @@ p{
   padding-left: 15px;
 }
 
+.espectecnicas{
+  text-align: left;
+  padding-left: 30px;
+  font-size: 20px;
+  border-bottom:2px solid rgb(161, 161, 161);
+
+}
+
+.s1s{
+  padding-left: 50px;
+  text-align: right;
+  font-weight: bold;
+}
+
+.s2s{
+  padding-left: 64px;
+  text-align: right;
+  font-weight: bold;
+}
+
+
+
+.s3s{
+  padding-left: 125px;
+  text-align: right;
+  font-weight: bold;
+}
+
+
+.s4s{
+  padding-left: 112px;
+  text-align: right;
+  font-weight: bold;
+}
+
+
+.s5s{
+  padding-left: 80px;
+  text-align: right;
+  font-weight: bold;
+}
+
+
+.s6s{
+  padding-left: 84px;
+  text-align: right;
+  font-weight: bold;
+}
+.s7s{
+  padding-left: 165px;
+  text-align: right;
+  font-weight: bold;
+}
+.s8s{
+  padding-left: 205px;
+  text-align: right;
+  font-weight: bold;
+}
 
 
 
 
 
-   
-   
+
+
+
 
   

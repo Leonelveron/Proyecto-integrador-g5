@@ -96,9 +96,9 @@ const controlador = {
     console.log(req)
     let errors = validationResult(req);
     let toUpdate = {
-      name: req.session.name,
-      surname: req.session.surname,
-      mail: req.session.mail,
+      name: req.body.name,
+      surname: req.body.surname,
+      mail: req.body.mail,
       password: bcrypt.hashSync(req.body.password, 10),   
     }
     if (req.files[0]){

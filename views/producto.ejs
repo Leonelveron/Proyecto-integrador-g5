@@ -55,21 +55,22 @@
         <p class="product-description"><%= product.brands.name %></p>
         <h3 class="mt-3">Descripcion</h3>
         <p class="product-description"><%= product.description %></p>
+          
 
+
+        <div class="especificaciones">
         <h2>Especificaciones Tecnicas</h2>
         <ul>
-          <li><p></p></li>
-          <li> <p>OS:   <%= product.os %></p></li>
-          <li><p>Tamaño de pantalla  <%= product.screen_size %></p></li>
-          <li><p>Sistema Operativo   <%= product.os %></p></li>
-          <li><p>Procesador   <%= product.processor %></p></li>
-          <li><p>Dimensiones   <%= product.dimensions %></p></li>
-          <li><p>Almacenamiento   <%= product.storage %></p></li>
-          <li><p>Resiste al agua?   <%= product.water_resistance %></p></li>
-          <li><p>Bateria   <%= product.battery %></p></li>
-         
-
+          <li><p class="espectecnicas">OS:<span class="s8s"><%= product.os %></span></p></li>
+          <li><p class="espectecnicas">Tamaño de pantalla: <span class="s1s"> <%= product.screen_size %></span></p></li>
+          <li><p class="espectecnicas">Sistema Operativo: <span class="s2s">  <%= product.os %></span></p></li>
+          <li><p class="espectecnicas">Procesador:  <span class="s3s"><%= product.processor %></span></p></li>
+          <li><p class="espectecnicas">Dimensiones:  <span class="s4s" > <%= product.dimensions %></span></p></li>
+          <li><p class="espectecnicas">Almacenamiento:<span class="s5s">   <%= product.storage %></span></p></li>
+          <li><p class="espectecnicas">Resiste al agua?:  <span class="s6s"> <%= product.water_resistance %></span></p></li>
+          <li><p class="espectecnicas">Bateria: <span class="s7s">  <%= product.battery %></span></p></li>
         </ul>
+       </div>
 
         <h2 class="price">Precio: $<span><%= product.price %></span></h2>
 
