@@ -25,16 +25,16 @@
                         <div class="card-body">
                             <h4 class="card-title"><%= user.name %> <%= user.surname %></h4>
                             <h4 class="card-title letra-chica"><%= user.mail %></h4>
-                            <a href="/users/myAccount/<%= user.id %>/miscompras" class="card-link estilo-compras">Mis compras</a>
+                            <a href="/users/myAccount/miscompras" class="card-link estilo-compras">Mis compras</a>
                             <div class="action">
-                                <form action="/users/myAccount/edit/<%= user.id %>" method="get">
+                                <form action="/users/myAccount/edit" method="get">
                                     <button type="submit" class="btn btn-sm my-3 btnSeba">Editar</button>
                                 </form>
                                 <form action="/users/myAccount/close" method="POST">
                                     <button type="submit" class="btn btn-sm my-3 btnSeba">Cerrar sesión</button>
                                 </form>
                                 <div class="action">
-                                    <form action="/users/myAccount/<%= user.id %>?_method=DELETE" method="POST">
+                                    <form action="/users/myAccount?_method=DELETE" method="POST">
                                         <button type="submit" class="btn btn-outline-danger btn-sm ">Eliminar cuenta</button>
                                     </form>
                                 </div>

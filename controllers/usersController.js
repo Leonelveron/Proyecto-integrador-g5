@@ -43,7 +43,9 @@ const controlador = {
       })
       res.redirect('/')
     } else {
-      res.render('registro', { errors: errors.errors })
+      res.render('registro', {
+        errors: errors.errors
+      })
     }
   },
 
@@ -96,25 +98,37 @@ const controlador = {
   },
 
   myAccount: (req, res) => {
-    db.Users.findByPk(req.params.id).
-    then(function (user) {
-      res.render('myAccount', {
-        user: user
-      })
-    })
-  },
+    const {
+      loggedUser
+    } = req.session
+    console.log(loggedUser)
+    db.Users.findByPk(loggedUser.id)
+      .then(function (user) {
+        res.render('myAccount', {
+          user
 
+
+        })
+      })
+
+  },
   updateView: (req, res) => {
-    db.Users.findByPk(req.params.id)
+    const {
+      loggedUser
+    } = req.session
+    db.Users.findByPk(loggedUser.id)
       .then(function (user) {
         res.render('editAccount', {
-          user: user
+          user
         })
       })
   },
 
   update: (req, res) => {
     console.log(req)
+    const {
+      loggedUser
+    } = req.session
     let errors = validationResult(req);
     let toUpdate = {
       name: req.body.name,
@@ -131,10 +145,10 @@ const controlador = {
     if (errors.isEmpty()) {
       db.Users.update(toUpdate, {
         where: {
-          id: req.params.id
+          id: loggedUser.id
         }
       })
-      res.redirect('/users/myAccount/' + req.params.id)
+      res.redirect('/users/myAccount')
     } else {
       res.render('editAccount', {
         errors: errors.errors
@@ -143,9 +157,14 @@ const controlador = {
   },
 
   delete: (req, res) => {
+    const {
+      loggedUser: {
+        id
+      }
+    } = req.session
     db.Users.destroy({
       where: {
-        id: req.params.id
+        id
       }
     })
     res.redirect('/')
@@ -164,10 +183,12 @@ const controlador = {
       }
     }).then((carts) => {
       console.log(carts)
-      res.render('miscompras', { carts : carts });
+      res.render('miscompras', {
+        carts: carts
+      });
     });
   }
-  
+
 
 }
 module.exports = controlador;

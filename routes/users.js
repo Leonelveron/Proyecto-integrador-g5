@@ -26,12 +26,12 @@ router.get('/',guestMiddleware, usersController.index);
 router.post('/', upload.any(), registerMiddleware , usersController.register);
 router.post('/login', loginMiddleware, usersController.login);
 router.get('/check', usersController.check);
-router.get('/myAccount/:id', authMiddleware, usersController.myAccount);
-router.get('/myAccount/edit/:id',authMiddleware, usersController.updateView);
-router.patch('/myAccount/edit/:id', upload.any(), userEditMiddleware, usersController.update);
-router.delete('/myAccount/:id', usersController.delete);
+router.get('/myAccount', authMiddleware, usersController.myAccount);
+router.get('/myAccount/edit',authMiddleware, usersController.updateView);
+router.patch('/myAccount/edit', upload.any(), userEditMiddleware, usersController.update);
+router.delete('/myAccount', usersController.delete);
 router.post('/myAccount/close', usersController.close);
-router.get("/myAccount/:id/miscompras", authMiddleware, usersController.miscompras2 )
+router.get("/myAccount/miscompras", authMiddleware, usersController.miscompras2 )
 
 
 
