@@ -2,9 +2,15 @@ var fs = require('fs');
 var bcrypt = require('bcrypt');
 var multer = require('multer')
 var path = require('path')
-let { check, validationResult, body } = require('express-validator');
+let {
+  check,
+  validationResult,
+  body
+} = require('express-validator');
 let db = require('../db/models');
-const { Op } = require('sequelize');
+const {
+  Op
+} = require('sequelize');
 
 
 var storage = multer.diskStorage({
@@ -16,7 +22,9 @@ var storage = multer.diskStorage({
   }
 })
 
-var upload = multer({ storage: storage })
+var upload = multer({
+  storage: storage
+})
 
 const controlador = {
   index: (req, res, ) => {
@@ -25,7 +33,6 @@ const controlador = {
 
   register: (req, res, next) => {
     let errors = validationResult(req);
-    console.log(validationResult);
     if (errors.isEmpty()) {
       db.Users.create({
         name: req.body.first_name,
@@ -35,7 +42,7 @@ const controlador = {
         avatar: req.files[0].filename
       })
       res.redirect('/')
-    }else {
+    } else {
       res.render('registro', { errors: errors.errors })
     }
   },
@@ -45,8 +52,10 @@ const controlador = {
     if (errors.isEmpty()) {
       let userToLogin
       db.Users.findAll({
-        include: [{ association: "carts" }]
-      })
+          include: [{
+            association: "carts"
+          }]
+        })
         .then(function (users) {
           for (let i = 0; i < users.length; i++) {
             if (users[i].mail == req.body.email_login) {
@@ -57,16 +66,24 @@ const controlador = {
             }
           }
           if (userToLogin == undefined) {
-            res.render('registro', { errors: [{ msg: 'Datos invalidos' }] })
+            res.render('registro', {
+              errors: [{
+                msg: 'Datos invalidos'
+              }]
+            })
           }
           req.session.loggedUser = userToLogin
           if (req.body.recordame != undefined) {
-            res.cookie('recordame', userToLogin.email, { maxAge: 900000000 })
+            res.cookie('recordame', userToLogin.email, {
+              maxAge: 900000000
+            })
           }
           res.redirect('/')
         })
-    }else {
-      res.render('registro', { errors: errors.errors })
+    } else {
+      res.render('registro', {
+        errors: errors.errors
+      })
     }
   },
 
@@ -80,16 +97,20 @@ const controlador = {
 
   myAccount: (req, res) => {
     db.Users.findByPk(req.params.id).
-      then(function (user) {
-        res.render('myAccount', { user: user })
+    then(function (user) {
+      res.render('myAccount', {
+        user: user
       })
+    })
   },
 
   updateView: (req, res) => {
     db.Users.findByPk(req.params.id)
-    .then(function(user){
-      res.render('editAccount', {user:user})
-    })
+      .then(function (user) {
+        res.render('editAccount', {
+          user: user
+        })
+      })
   },
 
   update: (req, res) => {
@@ -99,24 +120,25 @@ const controlador = {
       name: req.body.name,
       surname: req.body.surname,
       mail: req.body.mail,
-      password: bcrypt.hashSync(req.body.password, 10),   
+      password: bcrypt.hashSync(req.body.password, 10),
     }
-    if (req.files[0]){
+    if (req.files[0]) {
       toUpdate = {
         ...toUpdate,
         avatar: req.files[0].filename
       }
     }
-    if (errors.isEmpty()){
-    db.Users.update(toUpdate,
-      {
+    if (errors.isEmpty()) {
+      db.Users.update(toUpdate, {
         where: {
           id: req.params.id
         }
       })
-    res.redirect('/users/myAccount/' + req.params.id)}
-    else{
-      res.render('editAccount', { errors: errors.errors })
+      res.redirect('/users/myAccount/' + req.params.id)
+    } else {
+      res.render('editAccount', {
+        errors: errors.errors
+      })
     }
   },
 
@@ -133,10 +155,19 @@ const controlador = {
     req.session.loggedUser = undefined
     res.redirect('/')
   },
-  miscompras: (req, res) => {
-  res.render("miscompras")
+
+  miscompras2: (req, res) => {
+    db.Carts.findAll({
+      include: ['productsPivot'],
+      where: {
+        id_users: req.session.loggedUser.id,
+      }
+    }).then((carts) => {
+      console.log(carts)
+      res.render('miscompras', { carts : carts });
+    });
   }
+  
+
 }
-
-
 module.exports = controlador;
