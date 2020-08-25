@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <%- include('partials/head2.ejs') %>
+  <link rel="stylesheet" href="./stylesheets/Home.css">
+  <link rel="stylesheet" href="../stylesheets/productsList.css">
+  <title>Index</title>
+
+</head>
+
+<body>
+
+  <!-- Navbar -->
+
+  <%- include('partials/navbar.ejs') %>
+
+  <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+    <div class="carousel-inner ">
+      <div class="carousel-item active altura">
+        <img src="https://i02.appmifile.com/images/2018/12/27/026512ec-6095-40f5-aac6-c2330275741e.png"
+          class="d-block w-100" alt="...">
+      </div>
+      <div class="carousel-item altura">
+        <img
+          src="https://images.squarespace-cdn.com/content/v1/5af72836ec4eb775ef56a720/1583694230076-40BYTFB9VVR9RGKVP8PL/ke17ZwdGBToddI8pDm48kP2fYrjyz0zH5rXifSq2qwIUqsxRUqqbr1mOJYKfIPR7LoDQ9mXPOjoJoqy81S2I8N_N4V1vUb5AoIIIbLZhVYxCRW4BPu10St3TBAUQYVKcjFy2UHB6U2PqknRIV-Rz1X7FfstKLL7bidFHg-hePTY8nBXiYl5II2ovheUUD1NT/banner+site+web+size+galaxy+a51+a50s+2-1140x380.jpg?format=2500w"
+          class="d-block w-100" alt="...">
+      </div>
+      <div class="carousel-item altura">
+        <img src="https://www.mobilephonesdirect.co.uk/assets/img/resources/oneplus-6t-banner.jpg" class="d-block w-100"
+          alt="...">
+      </div>
+    </div>
+    <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+
+
+  <main>
+    <div class="d-flex justify-content-center">
+      <h2 class="titulo-productos my-4 p-2 d-flex justify-content-center">Productos en oferta!</h2>
+    </div>
+    <div class="container products-wrapper">
+      <div class="row">
+        <% products.forEach(product => {%>
+        <div class="card col-12 col-sm-4 col-md-4 col-lg-3 bg-light p-4 mb-5 " style="width: 18rem;">
+          <a href="/products/<%= product.id%>"><img src="../images/descarga.jpg" class="card-img-top"
+              alt="Imagen de producto"></a>
+          <div class="card-body bg-light">
+            <a href="/products/<%= product.id%>" class="titulo">
+              <h4><%= product.name %></h4>
+            </a>
+            <p class="price"><%= product.brands.name %></p>
+            <p class="price">$ <%= product.price %></p>
+            <a class="btn btn-style-1 btn-dark btn-final mb-3" href="/products/<%= product.id%>">Ver detalle</a>
+            <!-- <a class="btn btn-style-1 btn-dark btn-final js-carrito" href="">Agregar al carrito</a> -->
+          </div>
+        </div>
+        <% }) %>
+      </div>
+    </div>
+  </main>
+
+  <!-- Navbar -->
+
+  <%- include('partials/footer.ejs') %>
+
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>

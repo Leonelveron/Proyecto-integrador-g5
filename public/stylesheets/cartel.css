@@ -1,0 +1,16 @@
+.cartel{
+    padding: 7%;
+    display: flex;
+    justify-content: center;
+}
+
+a.inicio{
+    color: #5A2D82;
+    text-decoration: none !important;
+
+}
+
+a.inicio:hover{
+    color: #5A2D82;
+    text-decoration: none !important;
+}

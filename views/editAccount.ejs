@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('partials/head2.ejs') %>
+    <link rel="stylesheet" href="/stylesheets/myAccount.css">
+    <title>Shophone - Mi cuenta</title>
+
+</head>
+
+<body>
+
+    <%- include('partials/navbar.ejs') %>
+    <div class="container color-fondo">
+        <div class="column">
+            <div class="col-12">
+                <h2 class="my-3">Mis datos</h2>
+            </div>
+            <div class="card mb-3 outline color-fondo" style="max-width: 80%;">
+                <div class="row no-gutters">
+                    <div class="col-md-4">
+                        <img src="/images/<%= user.avatar %>" class="card-img" alt="Imagen de usuario">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body outline">
+                            <div class="mt-2">
+                                <% if (typeof errors != 'undefined') {%>
+                                <p style="color:red">ERRORES:</p>
+                                <ul>
+                                    <% for(let i=0; i<errors.length; i++) { %>
+                                    <li>
+                                        <%= errors[i].msg %>
+                                    </li>
+                                    <%}%>
+                                    </ul>
+                                    <%}%>
+                            </div>
+                            <form action="/users/myAccount/edit?_method=PATCH" method="POST"
+                                enctype="multipart/form-data">
+                                <h4 class="card-title">Nombre</h4>
+                                <input type="text" class="form-control shadow p-3 mb-3 bg-white rounded outline"
+                                    name="name" aria-describedby="emailHelp" value="<%= user.name %>">
+                                <h4 class="card-title">Apellido</h4>
+                                <input type="text" class="form-control shadow p-3 mb-3 bg-white rounded outline"
+                                    name="surname" aria-describedby="emailHelp" value="<%= user.surname %>">
+                                <h4 class="card-title letra-chica">Email</h4>
+                                <input type="text" class="form-control shadow p-3 mb-3 bg-white rounded outline"
+                                    name="mail" aria-describedby="emailHelp" value="<%= user.mail %>">
+                                <h4 class="card-title letra-chica">Contraseña</h4>
+                                <input type="password" class="form-control shadow p-3 mb-3 bg-white rounded outline"
+                                    name="password" aria-describedby="emailHelp" value="">
+                                <h4 class="card-title">Foto de perfil</h4>
+                                <input type="file" class="form-control-file" name="avatar">
+                                <button type="submit" class="btn btn-sm my-3 btnSeba">Guardar cambios</button>
+                                
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <%- include('partials/footer.ejs') %>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

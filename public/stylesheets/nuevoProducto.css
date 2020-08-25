@@ -1,0 +1,215 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+
+html, body, textarea {
+    box-sizing: border-box;
+  }
+  html, body {
+    margin: 0;
+    height: 100%;
+  }
+  
+  textarea {
+    height: 40vh;
+    width: 80%;
+  }
+
+
+.centrado{
+    width: 70%;
+    margin:0 auto;
+    border: 1px solid  rgb(193, 154, 226);
+    margin-bottom: 2%;
+}
+
+
+.arriba{
+    top: 0px;
+    padding: 0;
+    background-color: #5A2D82;
+    
+}
+
+.logo{
+    color: white;
+    font-size: 32px;
+    font-weight: 600;
+}
+
+.titulo{ 
+    padding: 3% 5%;
+    display: flex;
+    justify-content: center;
+    font-family: 'Roboto', sans-serif;
+
+}
+
+.tituloLeo{
+    font-weight: 700;
+}
+
+.subtitulos{
+    padding: 1% 2%;
+    display: flex;
+    justify-content: flex-start;
+    font-family: 'Roboto', sans-serif;
+   
+
+}
+
+
+.superalign{
+    margin-top: 0.5%;
+    padding-left: 1%;
+}
+
+.cajas{
+    display: flex;
+    align-content: space-around;
+    height: 35px;
+    width: 70%;
+    border: 1px solid rgb(216, 214, 214);
+
+
+}
+
+h3{
+    font-size: 18px;
+
+}
+
+.padding{
+    padding-left: 3%;
+}
+
+.porc{
+    width: 150px;
+    height: 50px;
+    float: right;
+    overflow: hidden;
+    border: solid 1px rgb(179, 179, 179);
+    
+}
+
+.estado{
+    padding-bottom: 2%;
+
+}
+
+
+.padding2{
+    padding-bottom: 3%;
+}
+
+.oculto{
+    display: none;
+}
+
+.mostrar{
+    display: flex;
+}
+
+
+.botones{
+    display: block;
+}
+li{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+}
+
+.bc-footer{
+    background-color: #5A2D82;
+    color: white;
+    margin: 0px;
+    
+}
+
+.footer-centrado{
+    text-align: center;
+}
+
+.logo-footer{
+    font-family: 'Michroma', sans-serif;
+    padding-left: 15px;
+}
+
+.buttonLocation{
+    display: flex;
+    flex-wrap: wrap;
+   
+}
+
+.btn-secondary{
+    background-color: #5A2D82;
+    border-color: #5A2D82;
+    color: white;
+  }
+
+  .btn-secondary:hover{
+    background-color: #5A2D82;
+    border-color: #5A2D82;
+    color: white;
+  }
+
+.subborder{
+    border-top: 1px rgb(193, 154, 226) solid;
+    margin: 0;
+
+}
+
+h2{
+    padding: 5px;
+    font-size: 32px;
+}
+
+.foto{
+  
+    height:70px;
+    width: 70px;
+}
+
+.ubibotones{
+    display: flex;
+    margin: 2% 0;
+}
+
+.finalboton{
+    display: flex;
+    justify-content: space-evenly;
+    margin: 3% 0;    
+}
+
+.fondoBoton{
+    background-color: #5A2D82;
+    color: white;
+}
+
+
+
+
+@media (max-width:460px){
+
+    .mostrar{ display: none;}
+
+    h2{
+        font-size: 18px ;
+    }
+
+    .centrado{
+        margin: 4% auto;
+        width: 90%;
+    }
+
+ 
+
+
+
+}

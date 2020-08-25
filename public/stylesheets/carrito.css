@@ -1,0 +1,65 @@
+body{
+    background-color: #e6dfdf;
+}
+
+h2.title{
+    font-family: 'Michroma', sans-serif;
+    padding: 3% 0;
+    
+}
+.tit-carrito{
+    margin: 30px 20px;
+    font-family: 'Michroma', sans-serif;
+}
+
+
+h4{
+    display: flex;
+    flex-direction: row;
+}
+
+
+a.btn-final:hover{
+    background-color: #7F52BD;
+    color: white;
+    border: #71D3D5 solid 1px;
+}
+
+.boton{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.Logo-Marca h1 {
+    margin-left: 25px;
+}
+
+.tarjeta{
+    display: flex;
+    justify-content: space-evenly;
+    border-bottom: lightgray solid 1px;
+}
+
+button.eliminar{
+    border-radius: 50%;
+}
+
+button.eliminar:hover{
+    background-color: red;
+    color: white;
+    border-color: red;
+    border-radius: 50%;
+}
+
+div a.nombres{
+    text-decoration: none;
+    color: #7F52BD;
+}
+
+@media (max-width: 767px){
+    .boton{
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+}

@@ -1,0 +1,69 @@
+<div>
+  <div class="container-fluid">
+    <div class="row  bc-navbar pt-2">
+      <div class="col-xl-3">
+        <a href="/" class="links-decoration"><h1 class="logotipo">Shophone</h1></a>
+        <h5>"Lo hacemos facil para vos"</h5><br>
+      </div>
+      <div class="col-xl-6">
+        <form class="form-inline  my-2 my-lg-2 pt-2" action="/search" method="POST">
+          <input class="form-control  busqueda mr-sm-2 mx-2" name="products" type="search" placeholder="Aquí podes buscar lo que necesitas..." aria-label="Search">
+          <button class="btn  my-2 my-sm-0 btn-buscar" type="submit">Buscar</button>
+        </form>
+      </div>
+      <div class="col-xl-3 ingreso pepito pt-2">
+        <ul>
+          <li>
+            <% if(user != undefined) { %>
+              <a href="/users/myAccount" class="letra"><i class="fas fa-user"></i> 
+                Bienvenid@! <%= user.name %> </a>
+                <li>
+                  <a href="/carrito/" class="letra"><i class="fas fa-shopping-cart"></i> Mi carrito</p></a>
+                </li>
+              <%} else { %>
+                <a href="/users" class="letra"><i class="fas fa-user"></i>
+              Mi cuenta</a>
+              <% } %>
+          </li>
+          
+        </ul>
+      </div>
+    </div>
+  </div>
+  
+  <nav class="navbar navbar-expand-lg navbar-light bc-navbar pt-0 pepito">   
+        <button class="navbar-toggler hamburguesa" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle letra" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Productos
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="/products">Celulares</a>
+            <a class="dropdown-item" href="#">Fundas y vidrios protectores</a>
+            <a class="dropdown-item" href="#">Cargadores</a>
+          </div>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle letra" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Marcas
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <% marcas.forEach(marca => {%>
+            <a class="dropdown-item" href="/products/brands/<%= marca.id %>"><%= marca.name %></a>
+            <% }) %>
+          </div>
+        </li>
+      </ul>
+      <div>
+        <a class="links-decoration" href="https://web.whatsapp.com/"><i class="fab fa-whatsapp-square fa-2x"></i></a>
+        <a class="links-decoration" href="https://es-la.facebook.com/"><i class="fab fa-facebook-square fa-2x"></i></a>
+        <a class="links-decoration" href="https://www.instagram.com/?hl=es-la"><i class="fab fa-instagram-square fa-2x"></i></a>
+        <a class="links-decoration" href="https://twitter.com/home"><i class="fab fa-twitter-square fa-2x"></i></a>
+      </div>
+    </div>
+  </nav>
+</div>

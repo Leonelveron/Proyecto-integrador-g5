@@ -1,0 +1,47 @@
+body{
+    background-color: #e6dfdf;
+}
+
+h2.title{
+    font-family: 'Michroma', sans-serif;
+    padding: 1% 0;
+    width: 70%;
+    background-color: #5A2D81;
+    border-radius: 10px 10px 10px 10px;
+    font-size: 1.7rem;
+    color: white;
+    }
+
+.row{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.tarjetas{
+    display: flex;
+    justify-content: center;
+}
+
+
+div a.titulo{
+    text-decoration: none;
+    color: rgb(126, 32, 207);
+}
+
+div a.titulo:hover{
+    text-decoration: none;
+}
+
+div h2.price{
+    padding: 5% 0;
+}
+
+a.btn-final:hover{
+    background-color: #7F52BD;
+    color: white;
+    border: #71D3D5 solid 1px;
+}
+
+.price{
+    font-size: 1.3rem;
+}

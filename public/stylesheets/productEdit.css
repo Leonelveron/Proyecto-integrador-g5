@@ -1,0 +1,38 @@
+.btnSeba{
+    background-color: #5A2D82;
+    border-color: #5A2D82;
+    color: white;
+    display: flex;
+    justify-content: space-evenly;
+    margin: 3%; 
+  }
+
+  .letra-titles{
+    font-family: 'Roboto', sans-serif;
+  }
+  
+  .btn-secondary{
+    background-color: #5A2D82;
+    border-color: #5A2D82;
+    color: white;
+  }
+
+  .btn-secondary:hover{
+    background-color: red;
+    border-color: red;
+    color: white;
+  }
+  
+ 
+  
+  #col-izq{
+    height: 80%;
+    width: 80%;
+  }
+
+  #botones{
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  

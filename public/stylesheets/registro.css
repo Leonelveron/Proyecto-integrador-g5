@@ -1,0 +1,24 @@
+.color-fondo{
+    background-color: #e6dfdf;
+    font-weight: bold;
+}
+
+button.btn-validar:hover{
+    background-color: #7F52BD;
+}
+
+small.ejemplo-mail{
+    margin-top: -2.50rem;
+}
+
+input.rectangulos{
+    width: 60%;
+}
+
+.titulo{
+    font-family: 'Michroma', sans-serif;
+}
+
+.boton-avatar{
+    background-color: #7F52BD;
+}

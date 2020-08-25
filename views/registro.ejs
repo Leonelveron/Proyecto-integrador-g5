@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('partials/head2.ejs') %>
+    <link rel="stylesheet" href="../stylesheets/registro.css">
+
+    <title>Registro</title>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+
+    <%- include('partials/navbar.ejs') %>
+
+
+
+    <div class="container-fluid color-fondo">
+        <div class="row">
+            <div class="col-10 col-lg-5 mt-1">
+                <h3 class="titulo">Mi cuenta</h3>
+                <div class="form-group rectangulos">
+                    <form action="/users/login" class="login" method="POST">
+                        <label for="">Email</label>
+                        <input type="email_login" class="form-control shadow p-3 mb-3 bg-white rounded email_login"
+                            name="email_login" aria-describedby="emailHelp">
+                        <label for="">Contraseña</label>
+                        <input type="password" class="form-control shadow p-3 mb-3 bg-white rounded password_login"
+                            name="password_login">
+                        <div class="custom-control custom-checkbox my-1 mr-sm-2 mb-3">
+                            <input type="checkbox" class="custom-control-input" id="customControlInline"
+                                name="recordame">
+                            <label class="custom-control-label" for="customControlInline">Recordame</label>
+                        </div>
+                        <button type="submit" class="btn btn-dark btn-validar">Ingresar</button>
+                    </form>
+                    <div class="mt-2">
+
+                        <% if (typeof errors != 'undefined') {%>
+                        <p style="color:red">ERRORES:</p>
+                        <ul>
+                            <% for(let i=0; i<errors.length; i++) { %>
+                            <li>
+                                <%= errors[i].msg %>
+                            </li>
+                            <%}%>
+                        </ul>
+                            <%}%>
+                    </div>
+                    <div class="errores">
+                        <ul></ul>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-10 col-lg-6 mb-4 ficha">
+                <form action="/users" class="mt-1 registro" method="POST" enctype="multipart/form-data">
+                    <h3 class="titulo">Registro</h3>
+                    <div class="form-group rectangulos">
+                        <label for="">Nombre</label>
+                        <input type="text" class="form-control shadow p-3 mb-3 bg-white rounded nombre"
+                            name="first_name">
+                    </div>
+                    <div class="form-group rectangulos">
+                        <label for="">Apellido</label>
+                        <input type="text" class="form-control shadow p-3 mb-3 bg-white rounded apellido"
+                            name="last_name">
+                    </div>
+                    <div class="form-group rectangulos">
+                        <label for="">Email</label>
+                        <input type="text" class="form-control shadow p-3 mb-5 bg-white rounded email" name="email"
+                            aria-describedby="emailHelp">
+                        <small id="emailHelp" class="form-text text-muted ejemplo-mail">ejemplo@hotmail.com</small>
+                    </div>
+                    <div class="form-group rectangulos">
+                        <label for="">Contraseña</label>
+                        <input type="password" class="form-control shadow p-3 mb-3 bg-white rounded password"
+                            name="password">
+                    </div>
+                    <div class="form-group pb-2 ">
+                        <label for=""></label>Foto de Perfil</label>
+                        <input type="file" class="form-control-file" name="avatar">
+                    </div>
+                    <button type="submit" class="btn btn-dark btn-validar">Crear cuenta</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- footer -->
+
+    <%- include('partials/footer.ejs') %>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+
+
+    <script src="/js/validator.js">  </script>
+</body>
+
+</html>
