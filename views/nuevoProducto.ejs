@@ -11,12 +11,13 @@
 
   <%- include('partials/navbar.ejs') %>
 
+  
   <div class="titulo mostrar">
-    <h1 class="tituloLeo">Nuevo celular</h1> <i class="fas fa-hand-holding-usd fa-3x padding mostrar"></i> <i
-      class="far fa-smile-wink  fa-3x padding"></i>
-  </div>
+    <h1>Vende tu celular ya!</h1> <i class="fas fa-hand-holding-usd fa-3x padding mostrar"></i> <i class="far fa-smile-wink  fa-3x padding"></i>
+ </div>
+
   <main class="centrado conteirner-fluid">
-    <div>
+    
       <div class="subtitulos">
         <h2>Que equipo es?</h2> <i class="fas fa-mobile-alt fa-2x superalign mostrar"></i>
       </div>
@@ -32,63 +33,155 @@
         </ul>
             <%}%>
     </div>
+
+    <form action="/products/create" class="js-nombre form-group" method="POST">
+      
       <div class="padding padding2">
-        <form action="/products/create" class="js-nombre form-group" method="POST">
-          <label for="tituloProducto">
-            <h3>Nombre del equipo</h3>
+      <h3>Marca</h3>
+      <select class="cajas" name="id_brands" id="">
+        <% for (let i=0; i<brand.length; i++) {%>
+          <option value="<%= brand[i].id %>"> <%= brand[i].name %> </option>
+        <% } %>
+      </select>
+      </div>
+          
+      <div class="padding padding2">
+        
+         <label for="tituloProducto">
+            <h3>Modelo del equipo</h3>
           </label>
           <input class="cajas form-control" type="text" name="name" id="">
           <div class="invalid-feedback">
             El campo debe tener mas de 4 caracteres
           </div>
       </div>
-      <div class="padding padding2">
-        <h3>Marca</h3>
-        <select class="cajas" name="id_brands" id="">
-          <% for (let i=0; i<brand.length; i++) {%>
-            <option value="<%= brand[i].id %>"> <%= brand[i].name %> </option>
-          <% } %>
-        </select>
+
+     <!--  <div class="padding estado">
+        <h3>En que estado esta?</h3>
+          <input type="radio" name="status" value="false">Usado
+          <input type="radio" name="status" value="true">Nuevo
+      </div> -->
+
+      <div class="subborder">
+      
+
+      <div class="subtitulos">
+        <h2>Datos de la publicacion</h2> <i class="fas fa-info fa-2x superalign mostrar"></i>
       </div>
-      <div class="padding padding2">
-        <label for="">
-          <h3>Descripcion</h3>
-        </label>
-        <textarea name="description" class="cajas form-control js-descripcion" id="" cols="30" rows="5"></textarea>
-        <div class="invalid-feedback">
-          El campo debe tener mas de 20 caracteres
-        </div>
-      </div>
-      <div class="padding padding2 ">
-        <h3>Precio</h3>
-        <div class="form-row">
-          <div class="col-md-4 mb-3">
-            <div class="input-group">
-              <div class="input-group-prepend">
-                <span class="input-group-text" id="inputGroupPrepend">$</span>
-              </div>
-              <input name="price" type="number" class="form-control js-precio" id="validationCustomUsername"
-                aria-describedby="inputGroupPrepend" required>
-                <div class="invalid-feedback">
-                  El campo debe ser mayor a 10
-                </div>
-                <br>
-                <br>
-                <br>
-                <div class="form-group py-4">
-                  <label for=""></label>Foto de producto</label>
-                  <input type="file" class="form-control-file" name="avatar">
-              </div>
+
+      <div class="padding padding2"> 
+        <li> 
+      <label  for="tituloProducto"> <h3>Titulo de la Publicacion</h3></label>
+      <input class="cajas" type="text" name="tituloProducto" id="tituloProducto" maxlength="120" >
+
+       </li>
+     </div>
+
+     <div class="padding padding2 ">
+      <h3>Precio</h3>
+      <div class="form-row">
+        <div class="col-md-4 mb-3">
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="inputGroupPrepend">$</span>
             </div>
+            <input name="price" type="number" class="form-control js-precio" id="validationCustomUsername"
+              aria-describedby="inputGroupPrepend" required>
+              <div class="invalid-feedback">
+                El campo debe ser mayor a 10
+              </div>
           </div>
         </div>
       </div>
-      <div class="padding padding2 ">
-        <div class="form-group">
-        </div>
-        <button class="btn btn-secondary btn-lg btnSeba js-guardar disabled" type="submit">Guardar</button>
       </div>
+
+      </div>
+
+      <div class="subborder">
+
+     <div class="subtitulos">
+      <h2>Subi fotos y describi tu celular!</h2> <i class="fas fa-camera fa-2x superalign mostrar"></i>
+     </div>
+        
+     <div class="padding padding2">
+      <label for="">
+        <h3>Contá como es!</h3>
+      </label>
+      <textarea name="description" class="cajas form-control js-descripcion" id="" cols="30" rows="5"></textarea>
+      <div class="invalid-feedback">
+        El campo debe tener mas de 20 caracteres
+      </div>
+     </div>
+        <!-- 
+        <div class="padding2 padding"> 
+    
+          <h3>Cargar Fotos</h3>
+          <li>
+          
+          <div class="form-group">
+          <label for="exampleFormControlFile1"> </label>
+          <input type="file" class="form-control-file" id="exampleFormControlFile1">
+          <div>
+            <button type="button" class="btn btn-outline-dark foto"><i class="fas fa-images fa-2x"></i> </button>
+    
+          </div> 
+        </div>
+    
+        </li>
+        </div> -->
+    
+      </div>
+
+      <div >
+      
+        <div class="padding padding2">
+          <h3>Tamaño de pantalla</h3>
+          <input class="cajas form-control" type="text" name="screen_size" id="">
+      </div>
+
+      <div class="padding padding2">
+        <h3>Resolucion de pantalla</h3>
+        <input class="cajas form-control" type="text" name="screen_resolution" id="">
+     </div>
+
+      <div class="padding padding2">
+      <h3>Sistema Operativo</h3>
+      <input class="cajas form-control" type="text" name="os" id="">
+       </div>
+
+       <div class="padding padding2">
+        <h3>Procesador</h3>
+        <input class="cajas form-control" type="text" name="processor" id="">
+     </div>
+
+     <div class="padding padding2">
+     <h3>Almacenamiento</h3>
+     <input class="cajas form-control" type="text" name="storage" id="">
+     </div>
+
+     <div class="padding padding2">
+     <h3>Batería</h3>
+     <input class="cajas form-control" type="text" name="battery" id="">
+       </div>
+
+      <!--  <div class="padding padding2">
+       <h3>Es resistente al agua?</h3>
+        <input type="radio" name="water_resistent" value="true">Sí
+         <input type="radio" name="water_resistent" value="false">No
+           </div> -->
+
+           <div class="padding padding2">
+            <h3>Agua</h3>
+            <input class="cajas form-control" type="text" name="water_resistence" id="">
+              </div>
+
+        </div>
+        <div class="padding padding2">
+          <button class="btn btn-secondary btn-lg btnSeba js-guardar disabled" type="submit">Guardar</button>
+        </div>
+       
       </form>
+      
     </div>
   </main>
 

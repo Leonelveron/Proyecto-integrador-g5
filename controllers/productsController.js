@@ -31,7 +31,14 @@ const controlador = {
                 name: req.body.name,
                 description: req.body.description,
                 price: req.body.price,
-                id_brands: req.body.id_brands
+                id_brands: req.body.id_brands,
+                screen_size: req.body.screen_size,
+                screen_resolution: req.body.screen_resolution,
+                os: req.body.os,
+                processor: req.body.processor,
+                storage: req.body.storage,
+                battery: req.body.battery,
+                water_resistance: req.body.water_resistance
             })
             res.redirect("/products/");
         }
