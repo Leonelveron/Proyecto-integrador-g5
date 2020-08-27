@@ -19,7 +19,7 @@ const controlador = {
       include: ['productsPivot'],
       where: {
         id_users: req.session.loggedUser.id,
-        id: req.params.id
+        id:5
       }
     }).then((carts) => {
       res.render('carrito', { carts : carts });
