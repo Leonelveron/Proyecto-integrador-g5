@@ -79,7 +79,14 @@ const controlador = {
                 name: req.body.title,
                 description: req.body.description,
                 price: req.body.price,
-                id_brands: req.body.brand
+                id_brands: req.body.brand,
+                os: req.body.os,
+                screen_size: req.body.screen_size,
+                processor: req.body.processor,
+                dimensions: req.body.dimensions,
+                storage: req.body.storage,
+                water_resistance: req.body.water_resistance,
+                battery: req.body.battery
             },
                 {
                     where: {
