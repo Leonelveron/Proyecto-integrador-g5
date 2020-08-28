@@ -4,6 +4,20 @@ const db = require("../db/models");
 const Sequelize = require('sequelize');
 const Op = Sequelize.Op;
 let { check, validationResult, body } = require('express-validator');
+var multer = require('multer');
+
+var storage = multer.diskStorage({
+    destination: function (req, file, cb) {
+      cb(null, '.tmp/phonePictures')
+    },
+    filename: function (req, file, cb) {
+      cb(null, file.fieldname + '-' + Date.now() + path.extname(file.originalname))
+    }
+  })
+  
+  var upload = multer({
+    storage: storage
+  });
 
 const controlador = {
     list: (req, res) => {
@@ -31,6 +45,7 @@ const controlador = {
                 name: req.body.name,
                 description: req.body.description,
                 price: req.body.price,
+                dimensions: req.body.dimensions,
                 id_brands: req.body.id_brands,
                 screen_size: req.body.screen_size,
                 screen_resolution: req.body.screen_resolution,
@@ -38,7 +53,9 @@ const controlador = {
                 processor: req.body.processor,
                 storage: req.body.storage,
                 battery: req.body.battery,
-                water_resistance: req.body.water_resistance
+                water_resistance: req.body.water_resistance,
+                picture: req.files[0].filename
+
             })
             res.redirect("/products/");
         }
