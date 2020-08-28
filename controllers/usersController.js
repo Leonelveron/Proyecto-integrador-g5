@@ -167,6 +167,7 @@ const controlador = {
         id
       }
     })
+    req.session.loggedUser = undefined
     res.redirect('/')
   },
 
