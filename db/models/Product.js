@@ -56,7 +56,11 @@ module.exports = (sequelize, dataTypes) => {
         battery:{
             type: dataTypes.STRING,
             notNull: true
-        }
+        },
+        picture: {
+            type: dataTypes.STRING,
+            notNull: true
+        } 
 
     }
     let config = {

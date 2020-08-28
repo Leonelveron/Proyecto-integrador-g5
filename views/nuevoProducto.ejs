@@ -34,7 +34,7 @@
             <%}%>
     </div>
 
-    <form action="/products/create" class="js-nombre form-group" method="POST">
+    <form action="/products/create" class="form-group" method="POST" enctype="multipart/form-data">
       
       <div class="padding padding2">
       <h3>Marca</h3>
@@ -50,17 +50,11 @@
          <label for="tituloProducto">
             <h3>Modelo del equipo</h3>
           </label>
-          <input class="cajas form-control" type="text" name="name" id="">
+          <input class="cajas form-control js-nombre" type="text" name="name" id="">
           <div class="invalid-feedback">
             El campo debe tener mas de 4 caracteres
           </div>
       </div>
-
-     <!--  <div class="padding estado">
-        <h3>En que estado esta?</h3>
-          <input type="radio" name="status" value="false">Usado
-          <input type="radio" name="status" value="true">Nuevo
-      </div> -->
 
       <div class="subborder">
       
@@ -72,7 +66,7 @@
       <div class="padding padding2"> 
         <li> 
       <label  for="tituloProducto"> <h3>Titulo de la Publicacion</h3></label>
-      <input class="cajas" type="text" name="tituloProducto" id="tituloProducto" maxlength="120" >
+      <input class="cajas " type="text" name="title" id="tituloProducto" maxlength="120" >
 
        </li>
      </div>
@@ -85,10 +79,10 @@
             <div class="input-group-prepend">
               <span class="input-group-text" id="inputGroupPrepend">$</span>
             </div>
-            <input name="price" type="number" class="form-control js-precio" id="validationCustomUsername"
+            <input name="price" type= "number" class="form-control js-precio" id="validationCustomUsername"
               aria-describedby="inputGroupPrepend" required>
               <div class="invalid-feedback">
-                El campo debe ser mayor a 10
+                El campo debe ser mayor a 100
               </div>
           </div>
         </div>
@@ -103,6 +97,11 @@
       <h2>Subi fotos y describi tu celular!</h2> <i class="fas fa-camera fa-2x superalign mostrar"></i>
      </div>
         
+      <div class="padding padding2">
+        <h3>Subi una Foto!</h3>
+        <input type="file" class="form-control-file" name="picture"> 
+     </div> 
+     
      <div class="padding padding2">
       <label for="">
         <h3>Contá como es!</h3>
@@ -110,70 +109,77 @@
       <textarea name="description" class="cajas form-control js-descripcion" id="" cols="30" rows="5"></textarea>
       <div class="invalid-feedback">
         El campo debe tener mas de 20 caracteres
-      </div>
-     </div>
-        <!-- 
-        <div class="padding2 padding"> 
+         </div>
+         </div>
+    </div> 
     
-          <h3>Cargar Fotos</h3>
-          <li>
-          
-          <div class="form-group">
-          <label for="exampleFormControlFile1"> </label>
-          <input type="file" class="form-control-file" id="exampleFormControlFile1">
-          <div>
-            <button type="button" class="btn btn-outline-dark foto"><i class="fas fa-images fa-2x"></i> </button>
-    
-          </div> 
-        </div>
-    
-        </li>
-        </div> -->
-    
-      </div>
 
-      <div >
+      <div>
+
+        <div class="padding padding2">
+          <h3>Dimensiones</h3>
+          <input class="cajas form-control js-dimen" type="text" name="dimensions" id="">
+          <div class="invalid-feedback">
+            El campo debe tener mas de 4 caracteres
+          </div>
+      </div>
       
         <div class="padding padding2">
           <h3>Tamaño de pantalla</h3>
-          <input class="cajas form-control" type="text" name="screen_size" id="">
+          <input class="cajas form-control js-tama" type="text" name="screen_size" id="">
+          <div class="invalid-feedback">
+            El campo debe tener mas de 4 caracteres
+          </div>
       </div>
 
       <div class="padding padding2">
         <h3>Resolucion de pantalla</h3>
-        <input class="cajas form-control" type="text" name="screen_resolution" id="">
+        <input class="cajas form-control js-reso" type="text" name="screen_resolution" id="">
+        <div class="invalid-feedback">
+          El campo debe tener mas de 4 caracteres
+        </div>
      </div>
 
-      <div class="padding padding2">
+      <div class="padding padding2 ">
       <h3>Sistema Operativo</h3>
-      <input class="cajas form-control" type="text" name="os" id="">
+      <input class="cajas form-control js-so" type="text" name="os" id="">
+      <div class="invalid-feedback">
+        El campo debe tener mas de 4 caracteres
+      </div>
        </div>
 
        <div class="padding padding2">
         <h3>Procesador</h3>
-        <input class="cajas form-control" type="text" name="processor" id="">
+        <input class="cajas form-control js-proce" type="text" name="processor" id="">
+        <div class="invalid-feedback">
+          El campo debe tener mas de 4 caracteres
+        </div>
      </div>
 
      <div class="padding padding2">
      <h3>Almacenamiento</h3>
-     <input class="cajas form-control" type="text" name="storage" id="">
+     <input class="cajas form-control js-alma" type="text" name="storage" id="">
+     <div class="invalid-feedback">
+      El campo debe tener mas de 4 caracteres
+    </div>
      </div>
 
      <div class="padding padding2">
      <h3>Batería</h3>
-     <input class="cajas form-control" type="text" name="battery" id="">
+     <input class="cajas form-control js-bate" type="text" name="battery" id="">
+     <div class="invalid-feedback">
+      El campo debe tener mas de 4 caracteres
+    </div>
        </div>
 
-      <!--  <div class="padding padding2">
-       <h3>Es resistente al agua?</h3>
-        <input type="radio" name="water_resistent" value="true">Sí
-         <input type="radio" name="water_resistent" value="false">No
-           </div> -->
 
-           <div class="padding padding2">
-            <h3>Agua</h3>
-            <input class="cajas form-control" type="text" name="water_resistence" id="">
-              </div>
+      <div class="padding padding2">
+      <h3>Es resistente al agua?</h3>
+       <input class="cajas form-control js-agua" type="text" name="water_resistance" id="">
+       <div class="invalid-feedback">
+        El campo debe tener mas de 4 caracteres
+      </div>
+      </div>
 
         </div>
         <div class="padding padding2">
