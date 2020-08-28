@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   
+    <%- include('partials/head2.ejs') %>
+
+    <link rel="stylesheet" href="./stylesheets/myAccount.css">
+    <title>Administrador</title>    
+</head>
+
+<!-- Que tan posible es crear esta vista directamente en myAcount -->
+
+<body>
+    <%- include('partials/navbar.ejs') %>
+    <div class="container">
+        <div class="column">
+            <div class="col-12">
+                <h2 class="my-3">Administrador</h2>
+            </div>
+            <div class="card mb-3 outline" style="max-width: 80%;">
+                <div class="row no-gutters outline">
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h4 class="card-title"><%= user.name %> <%= user.surname %></h4>
+
+                            
+                            <a href="/products/create" class="card-link estilo-compras">CREAR PRODUCTO</a>
+                            <div class="action">
+                                <!--
+                            
+                                <form action="/products/delete/" method="POST">
+                                <select name="products">
+                                <% for(let i = 0; i < products.length; i++){ %>
+                                    <option value="<%=products[i].id%>" selected>
+                                        <%=products[i].name%>
+                                    </option>
+                                <% } %>
+                                </select>
+                                <button type="submit" class="btn btn-outline-danger btn-sm">ELIMINAR</button>
+                                </form>
+                            
+
+                        
+                                </div>
+                            </div>
+
+                            
+                            <div class="action">
+                            
+                                <form action="/products/delete/>" method="POST">
+                                <select name="products">
+                                <% for(let i = 0; i < products.length; i++){ %>
+                                    <option value="<%=products[i].id%>" selected>
+                                        <%=products[i].name%>
+                                    </option>
+                                <% } %>
+                                </select>
+                                <button type="submit" class="btn btn-outline-danger btn-sm">ELIMINAR</button>
+                                </form>
+                            
+
+                        
+                                </div>
+                            </div>
+                            -->
+
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+
+
+
+
+</body>
+
+<%- include('partials/footer.ejs') %>
+        
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+
+
+</html>

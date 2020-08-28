@@ -57,10 +57,12 @@ module.exports = (sequelize, dataTypes) => {
             type: dataTypes.STRING,
             notNull: true
         },
+        /*
         picture: {
             type: dataTypes.STRING,
             notNull: true
         } 
+        */
 
     }
     let config = {

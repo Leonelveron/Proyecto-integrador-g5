@@ -63,6 +63,9 @@ const controlador = {
             if (users[i].mail == req.body.email_login) {
               if (bcrypt.compareSync(req.body.password_login, users[i].password)) {
                 userToLogin = users[i];
+                console.log(users[i].admin)
+                console.log(users[i])
+
                 break;
               }
             }
@@ -188,6 +191,41 @@ const controlador = {
         carts: carts
       });
     });
+  },
+
+  admin: (req, res) => {
+    const {
+      loggedUser
+    } = req.session
+    console.log(loggedUser)
+    if(loggedUser.admin == 1){
+    db.Products.findAll({
+
+    }).then((products)=>{
+      console.log(products);
+      res.render('admin', {
+        products: products
+        
+      })
+    })
+  }else{
+    res.redirect('/')
+  }
+
+    
+    /*
+    let pedidoProducts = db.Products.findAll()
+    let pedidoUsers = db.Users.findAll()
+
+    Promise.all([pedidoProducts, pedidoUsers])
+      .then(function(products, users){
+
+        res.render('admin', {products:products, users:users})
+
+      })
+      
+      */
+
   }
 
 

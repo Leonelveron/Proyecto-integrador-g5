@@ -63,7 +63,6 @@
         <ul>
           <li><p class="espectecnicas">OS:<span class="s8s"><%= product.os %></span></p></li>
           <li><p class="espectecnicas">Tamaño de pantalla: <span class="s1s"> <%= product.screen_size %></span></p></li>
-          <li><p class="espectecnicas">Sistema Operativo: <span class="s2s">  <%= product.os %></span></p></li>
           <li><p class="espectecnicas">Procesador:  <span class="s3s"><%= product.processor %></span></p></li>
           <li><p class="espectecnicas">Dimensiones:  <span class="s4s" > <%= product.dimensions %></span></p></li>
           <li><p class="espectecnicas">Almacenamiento:<span class="s5s">   <%= product.storage %></span></p></li>
@@ -78,6 +77,14 @@
         <div class="action" id="botones">
 
           <a href="./carrito.ejs">  <button class="btn btn-primary btn-lg btnSeba" type="button">Agregar al carrito</button></a>
+
+          <%if(user.admin == 1){%>
+
+            <form action="/products/edit/<%= product.id %>" method="GET">
+              <button type="submit" class="btn btn-outline-danger btn-sm">Editar Producto</button>
+            </form>
+
+          <%}%>
 
         </div>
       </div>

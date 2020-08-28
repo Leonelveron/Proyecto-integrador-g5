@@ -15,11 +15,23 @@
         <ul>
           <li>
             <% if(user != undefined) { %>
+
+              <% if(user.admin == 1) { %>
+                <a href="/users/myAccount" class="letra"><i class="fas fa-user"></i> 
+                  Bienvenid@! Administrador <%= user.name %> </a>
+
+                  <li>
+                    <a href="/carrito/" class="letra"><i class="fas fa-shopping-cart"></i> Mi carrito</p></a>
+                  </li>
+
+                <%} else { %>
+
               <a href="/users/myAccount" class="letra"><i class="fas fa-user"></i> 
                 Bienvenid@! <%= user.name %> </a>
                 <li>
                   <a href="/carrito/" class="letra"><i class="fas fa-shopping-cart"></i> Mi carrito</p></a>
                 </li>
+                <% } %>
               <%} else { %>
                 <a href="/users" class="letra"><i class="fas fa-user"></i>
               Mi cuenta</a>

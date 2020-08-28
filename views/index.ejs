@@ -59,7 +59,22 @@
             <p class="price"><%= product.brands.name %></p>
             <p class="price">$ <%= product.price %></p>
             <a class="btn btn-style-1 btn-dark btn-final mb-3" href="/products/<%= product.id%>">Ver detalle</a>
-            <!-- <a class="btn btn-style-1 btn-dark btn-final js-carrito" href="">Agregar al carrito</a> -->
+            <%if(user != undefined){%>
+            <a class="btn btn-style-1 btn-dark btn-final js-carrito" href="">Agregar al carrito</a>
+
+            <%if(user.admin == 1){%>
+              
+              <form action="/products/edit/<%= product.id %>" method="GET">
+                <button type="submit" class="btn btn-outline-danger btn-sm">Editar Producto</button>
+              </form>
+  
+            <%}%>
+
+
+
+            <%}%>
+
+            
           </div>
         </div>
         <% }) %>

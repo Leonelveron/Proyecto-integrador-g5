@@ -27,6 +27,10 @@ module.exports = (sequelize, dataTypes) => {
             type: dataTypes.STRING,
             allowNull: false
         },
+        admin: {
+            type: dataTypes.INTEGER,
+            allowNull: true
+        }
     }
     let config = {
         tableName: "users",

@@ -32,6 +32,7 @@ router.patch('/myAccount/edit', upload.any(), userEditMiddleware, usersControlle
 router.delete('/myAccount', usersController.delete);
 router.post('/myAccount/close', usersController.close);
 router.get("/myAccount/miscompras", authMiddleware, usersController.miscompras2 )
+router.get("/admin", usersController.admin)
 
 
 

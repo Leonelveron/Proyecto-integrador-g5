@@ -33,10 +33,19 @@
                                 <form action="/users/myAccount/close" method="POST">
                                     <button type="submit" class="btn btn-sm my-3 btnSeba">Cerrar sesión</button>
                                 </form>
+                                <%if(user.admin == 1){%>
+
+                                    <form action="/users/admin" method="get">
+                                        <button type="submit" class="btn btn-sm my-3 btnSeba">Herramientas de Administrador</button>
+                                    </form>
+
+                                <%}%>
                                 <div class="action">
                                     <form action="/users/myAccount?_method=DELETE" method="POST">
                                         <button type="submit" class="btn btn-outline-danger btn-sm ">Eliminar cuenta</button>
                                     </form>
+
+                        
                                 </div>
                             </div>
                         </div>
