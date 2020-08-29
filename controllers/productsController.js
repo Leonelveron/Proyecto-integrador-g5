@@ -18,7 +18,6 @@ var storage = multer.diskStorage({
   var upload = multer({
     storage: storage
   });
-
 const controlador = {
     list: (req, res) => {
 
@@ -45,7 +44,6 @@ const controlador = {
                 name: req.body.name,
                 description: req.body.description,
                 price: req.body.price,
-                dimensions: req.body.dimensions,
                 id_brands: req.body.id_brands,
                 screen_size: req.body.screen_size,
                 screen_resolution: req.body.screen_resolution,
@@ -54,7 +52,8 @@ const controlador = {
                 storage: req.body.storage,
                 battery: req.body.battery,
                 water_resistance: req.body.water_resistance,
-                picture: req.files[0].filename
+                picture: req.files[0].filename,
+                dimensions: req.body.dimensions
 
             })
             res.redirect("/products/");
@@ -74,7 +73,7 @@ const controlador = {
         })
             .then(function (product) {
                 res.render("producto", { product: product })
-                console.log(product);
+                
             })
           
     },

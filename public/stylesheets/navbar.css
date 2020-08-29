@@ -77,6 +77,11 @@ button.btn-buscar{
     margin-bottom: 3%;
 }
 
+.links-decoration-red{
+    color: rgb(133, 99, 133);
+    text-decoration: none;
+}
+
 
 @media (max-width:425px){
     .ingreso{
