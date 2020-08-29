@@ -60,7 +60,11 @@
             <p class="price">$ <%= product.price %></p>
             <a class="btn btn-style-1 btn-dark btn-final mb-3" href="/products/<%= product.id%>">Ver detalle</a>
             <%if(user != undefined){%>
-            <a class="btn btn-style-1 btn-dark btn-final js-carrito" href="">Agregar al carrito</a>
+
+
+            <form action="/carrito/add/<%= product.id%>" method="POST">
+              <button type="submit" class="btn btn-style-1 btn-dark btn-final js-carrito">Agregar al carrito</button>
+            </form>
 
             <%if(user.admin == 1){%>
               

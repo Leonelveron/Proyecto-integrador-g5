@@ -75,15 +75,24 @@
 
 
         <div class="action" id="botones">
+          <%if(user != undefined){%>
 
-          <a href="./carrito.ejs">  <button class="btn btn-primary btn-lg btnSeba" type="button">Agregar al carrito</button></a>
+            
+            <form action="/carrito/add/<%= product.id%>" method="POST">
+              <button type="submit" class="btn btn-style-1 btn-dark btn-final js-carrito">Agregar al carrito</button>
+            </form>
 
-          <%if(user.admin == 1){%>
+
+          
+          <%if(user != undefined && user.admin == 1){%>
 
             <form action="/products/edit/<%= product.id %>" method="GET">
               <button type="submit" class="btn btn-outline-danger btn-sm">Editar Producto</button>
             </form>
 
+          <%}%>
+
+          
           <%}%>
 
         </div>
